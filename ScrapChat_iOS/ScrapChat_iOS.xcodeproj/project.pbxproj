@@ -15,6 +15,7 @@
 		F3607C8D23275A4100503D55 /* ScrapChat_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C8C23275A4100503D55 /* ScrapChat_iOSTests.swift */; };
 		F3607C9823275A4200503D55 /* ScrapChat_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C9723275A4200503D55 /* ScrapChat_iOSUITests.swift */; };
 		F3607CAF232760B000503D55 /* Model_ScrapChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3607CAD232760B000503D55 /* Model_ScrapChat.xcdatamodeld */; };
+		F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607CB3232770BD00503D55 /* RoundRectButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F3607C9723275A4200503D55 /* ScrapChat_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapChat_iOSUITests.swift; sourceTree = "<group>"; };
 		F3607C9923275A4200503D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3607CAE232760B000503D55 /* Model_ScrapChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model_ScrapChat.xcdatamodel; sourceTree = "<group>"; };
+		F3607CB3232770BD00503D55 /* RoundRectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundRectButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +101,13 @@
 		F3607C7623275A4000503D55 /* ScrapChat_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				F3607CB223276DC000503D55 /* Designable */,
+				F3607C7723275A4000503D55 /* AppDelegate.swift */,
+				F3607C7E23275A4100503D55 /* Assets.xcassets */,
+				F3607C8323275A4100503D55 /* Info.plist */,
 				F3607CB0232760C600503D55 /* Model */,
 				F3607CAC23275D9200503D55 /* Controller */,
 				F3607CA923275D4400503D55 /* View */,
-				F3607C7723275A4000503D55 /* AppDelegate.swift */,
-				F3607C7E23275A4100503D55 /* Assets.xcassets */,
-				F3607C8023275A4100503D55 /* LaunchScreen.storyboard */,
-				F3607C8323275A4100503D55 /* Info.plist */,
 			);
 			path = ScrapChat_iOS;
 			sourceTree = "<group>";
@@ -131,6 +133,7 @@
 		F3607CA923275D4400503D55 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F3607C8023275A4100503D55 /* LaunchScreen.storyboard */,
 				F3607C7B23275A4000503D55 /* Main.storyboard */,
 			);
 			name = View;
@@ -150,6 +153,14 @@
 				F3607CAD232760B000503D55 /* Model_ScrapChat.xcdatamodeld */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F3607CB223276DC000503D55 /* Designable */ = {
+			isa = PBXGroup;
+			children = (
+				F3607CB3232770BD00503D55 /* RoundRectButton.swift */,
+			);
+			path = Designable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +296,7 @@
 			files = (
 				F3607C7A23275A4000503D55 /* ViewController.swift in Sources */,
 				F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */,
+				F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */,
 				F3607CAF232760B000503D55 /* Model_ScrapChat.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
