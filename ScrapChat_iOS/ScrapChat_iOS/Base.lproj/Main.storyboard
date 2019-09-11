@@ -18,12 +18,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5em-Gj-pwo" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
+                                <rect key="frame" x="216" y="225.5" width="150.5" height="273"/>
+                                <color key="backgroundColor" red="0.68838435411453247" green="0.99994796514511108" blue="0.81896191835403442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="21"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wig-v2-gsb" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
+                                <rect key="frame" x="392.5" y="54.5" width="273.5" height="150.5"/>
+                                <color key="backgroundColor" red="0.6898067129813269" green="0.99977070089999998" blue="0.81806813590057903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="21"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObS-3D-jq4" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
                                 <rect key="frame" x="1219" y="48" width="106" height="106"/>
                                 <color key="backgroundColor" red="0.4446041127" green="0.4446041127" blue="0.4446041127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="106" id="XFf-pM-W6N"/>
-                                    <constraint firstAttribute="width" constant="106" id="emM-kD-2VX"/>
+                                    <constraint firstAttribute="width" secondItem="ObS-3D-jq4" secondAttribute="height" multiplier="1:1" id="THA-TR-W2r"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="106" id="emM-kD-2VX"/>
                                 </constraints>
                                 <color key="tintColor" red="0.44460411269430056" green="0.44460411269430056" blue="0.44460411269430056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button">
@@ -35,39 +55,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dX-hC-cJq" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
-                                <rect key="frame" x="700" y="225.5" width="273.5" height="273"/>
-                                <color key="backgroundColor" red="0.84320938337984241" green="0.49067540459584003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="9dX-hC-cJq" secondAttribute="height" multiplier="1:1" id="vK8-wT-E8I"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avV-nU-Wxx" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
-                                <rect key="frame" x="392.5" y="225.5" width="273.5" height="273"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.54168102114921401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="avV-nU-Wxx" secondAttribute="height" multiplier="1:1" id="zga-dB-kJ1"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="21"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzv-x3-ivF" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
                                 <rect key="frame" x="392.5" y="529.5" width="273.5" height="273"/>
                                 <color key="backgroundColor" red="1" green="0.38624763181288513" blue="0.35657650975903188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fzv-x3-ivF" secondAttribute="height" multiplier="1:1" id="YjQ-5p-ljq"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Events"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -80,25 +74,67 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kFx-M5-df0" secondAttribute="height" multiplier="1:1" id="XQ2-hX-JOK"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="ScrapBook"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dX-hC-cJq" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
+                                <rect key="frame" x="700" y="225.5" width="273.5" height="273"/>
+                                <color key="backgroundColor" red="0.84320938337984241" green="0.49067540459584003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9dX-hC-cJq" secondAttribute="height" multiplier="1:1" id="vK8-wT-E8I"/>
+                                </constraints>
+                                <state key="normal" title="Community"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avV-nU-Wxx" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
+                                <rect key="frame" x="392.5" y="225.5" width="273.5" height="273"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.54168102114921401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="avV-nU-Wxx" secondAttribute="height" multiplier="1:1" id="zga-dB-kJ1"/>
+                                </constraints>
+                                <state key="normal" title="Call"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="21"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="expandClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t3W-QH-pRY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="5em-Gj-pwo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="8Wt-U1-G6E"/>
+                            <constraint firstItem="5em-Gj-pwo" firstAttribute="centerY" secondItem="avV-nU-Wxx" secondAttribute="centerY" id="9QO-Du-jIS"/>
                             <constraint firstItem="Fzv-x3-ivF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="CnM-gw-e4Y"/>
+                            <constraint firstItem="wig-v2-gsb" firstAttribute="centerX" secondItem="avV-nU-Wxx" secondAttribute="centerX" id="DFA-Je-6HJ"/>
                             <constraint firstItem="kFx-M5-df0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="Dw8-Rr-6mL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kFx-M5-df0" secondAttribute="trailing" symbolic="YES" id="GKa-cp-o6E"/>
                             <constraint firstItem="9dX-hC-cJq" firstAttribute="centerY" secondItem="avV-nU-Wxx" secondAttribute="centerY" id="LVe-nV-mDU"/>
+                            <constraint firstItem="Fzv-x3-ivF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="LmM-nU-k6y"/>
+                            <constraint firstItem="5em-Gj-pwo" firstAttribute="height" secondItem="avV-nU-Wxx" secondAttribute="height" id="PRc-0e-VxN"/>
+                            <constraint firstItem="wig-v2-gsb" firstAttribute="height" secondItem="avV-nU-Wxx" secondAttribute="height" multiplier="0.55" id="QnP-hw-BzG"/>
+                            <constraint firstItem="wig-v2-gsb" firstAttribute="width" secondItem="avV-nU-Wxx" secondAttribute="width" id="Qw2-nq-t2W"/>
+                            <constraint firstItem="ObS-3D-jq4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wig-v2-gsb" secondAttribute="trailing" constant="8" symbolic="YES" id="UjX-YB-PgP"/>
                             <constraint firstItem="9dX-hC-cJq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="1.025" id="YxZ-lV-M3q"/>
+                            <constraint firstItem="5em-Gj-pwo" firstAttribute="width" secondItem="avV-nU-Wxx" secondAttribute="width" multiplier="0.55" id="a4J-gy-B1b"/>
+                            <constraint firstItem="5em-Gj-pwo" firstAttribute="trailing" secondItem="avV-nU-Wxx" secondAttribute="trailing" multiplier="0.55" id="bNY-h1-kTH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="ObS-3D-jq4" secondAttribute="top" multiplier="0.5" id="cUH-bg-ioa"/>
+                            <constraint firstItem="avV-nU-Wxx" firstAttribute="top" secondItem="wig-v2-gsb" secondAttribute="bottom" multiplier="1.1" id="dA8-Zp-uLt"/>
                             <constraint firstItem="Fzv-x3-ivF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.03" id="dTp-mc-bWH"/>
                             <constraint firstItem="kFx-M5-df0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="1.025" id="dfg-oz-Atn"/>
                             <constraint firstItem="kFx-M5-df0" firstAttribute="centerY" secondItem="Fzv-x3-ivF" secondAttribute="centerY" id="dzY-qa-Wai"/>
                             <constraint firstItem="ObS-3D-jq4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" multiplier="0.97" id="fhK-U7-GBb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9dX-hC-cJq" secondAttribute="trailing" symbolic="YES" id="gDS-4G-MXd"/>
                             <constraint firstItem="Fzv-x3-ivF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="0.975" id="isb-WX-tET"/>
                             <constraint firstItem="avV-nU-Wxx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="0.975" id="nj6-v7-gMm"/>
                             <constraint firstItem="9dX-hC-cJq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="sSb-tj-jcZ"/>
@@ -107,6 +143,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="asGroup" destination="5em-Gj-pwo" id="w7u-da-F36"/>
+                        <outlet property="asOne" destination="wig-v2-gsb" id="vTw-4a-XM8"/>
+                        <outlet property="callButton" destination="avV-nU-Wxx" id="7wp-OJ-KXx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
