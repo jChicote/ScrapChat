@@ -14,12 +14,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var asGroup: UIButton!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var backgroundButton: UIButton!
+    @IBOutlet weak var settingBackButton: UIButton!
     
     //note modal popouts should be used with care
     @IBOutlet weak var profileBackground: UIButton!
     @IBOutlet weak var profilePopView: UIView!
     @IBOutlet weak var profileBackButton: UIButton!
+    
+    //Constraints
     @IBOutlet weak var profileYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var settingXConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var SettingsViewPop: UIView!
     
     var isExpanded = false
     var oneButtonCenter: CGPoint!
@@ -28,16 +34,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        asOne.isHidden = true
+        asGroup.isHidden = true
         profilePopView.layer.cornerRadius = 20
         profilePopView.layer.masksToBounds = true
-        
-        oneButtonCenter = asOne.center
-        groupButtonCenter = asGroup.center
 
     }
     
     //Needs to use viewDidRender due to the load cycle
     override func viewDidAppear(_ animated: Bool) {
+        oneButtonCenter = asOne.center
+        groupButtonCenter = asGroup.center
+        
         asOne.center = callButton.center
         print(asOne.center)
         asGroup.center = callButton.center
@@ -46,6 +54,8 @@ class ViewController: UIViewController {
 
     //this is especially for the call button
     @IBAction func expandClicked(_ sender: UIButton) {
+        asOne.isHidden = false
+        asGroup.isHidden = false
         if isExpanded == false {
              UIView.animate(withDuration: 0.5, animations: {
                 self.asOne.center = self.oneButtonCenter
@@ -96,6 +106,24 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             self.profileBackground.alpha = 0
             self.view.layoutIfNeeded()
+            self.centerCallButtons()
+        })
+    }
+    
+    @IBAction func openSettings(_ sender: UIButton) {
+        self.settingXConstraint.constant = 291
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+            self.settingBackButton.alpha = 0.7
+            self.centerCallButtons()
+        })
+    }
+    
+    @IBAction func closeSettings(_ sender: Any) {
+        self.settingXConstraint.constant = -500
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+            self.settingBackButton.alpha = 0
             self.centerCallButtons()
         })
     }

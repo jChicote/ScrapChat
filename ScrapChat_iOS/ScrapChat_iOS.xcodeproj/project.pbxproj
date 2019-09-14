@@ -16,7 +16,12 @@
 		F3607C9823275A4200503D55 /* ScrapChat_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C9723275A4200503D55 /* ScrapChat_iOSUITests.swift */; };
 		F3607CAF232760B000503D55 /* Model_ScrapChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3607CAD232760B000503D55 /* Model_ScrapChat.xcdatamodeld */; };
 		F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607CB3232770BD00503D55 /* RoundRectButton.swift */; };
-		F3B6DBB7232BE5BF00122974 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBB6232BE5BF00122974 /* ProfileViewController.swift */; };
+		F3B6DBB9232CC70E00122974 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBB8232CC70D00122974 /* SettingsViewController.swift */; };
+		F3B6DBBB232CD07600122974 /* SettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBBA232CD07600122974 /* SettingTableView.swift */; };
+		F3B6DBBD232CE01200122974 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBBC232CE01100122974 /* SignInViewController.swift */; };
+		F3B6DBBF232CE02300122974 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBBE232CE02300122974 /* EventsViewController.swift */; };
+		F3B6DBC1232CE03A00122974 /* ScrapBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */; };
+		F3B6DBC3232CE04700122974 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBC2232CE04700122974 /* CommunityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +57,12 @@
 		F3607C9923275A4200503D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3607CAE232760B000503D55 /* Model_ScrapChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model_ScrapChat.xcdatamodel; sourceTree = "<group>"; };
 		F3607CB3232770BD00503D55 /* RoundRectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundRectButton.swift; sourceTree = "<group>"; };
-		F3B6DBB6232BE5BF00122974 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F3B6DBB8232CC70D00122974 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F3B6DBBA232CD07600122974 /* SettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
+		F3B6DBBC232CE01100122974 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		F3B6DBBE232CE02300122974 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookViewController.swift; sourceTree = "<group>"; };
+		F3B6DBC2232CE04700122974 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +154,12 @@
 		F3607CAC23275D9200503D55 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F3B6DBB6232BE5BF00122974 /* ProfileViewController.swift */,
 				F3607C7923275A4000503D55 /* ViewController.swift */,
+				F3B6DBB8232CC70D00122974 /* SettingsViewController.swift */,
+				F3B6DBBC232CE01100122974 /* SignInViewController.swift */,
+				F3B6DBBE232CE02300122974 /* EventsViewController.swift */,
+				F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */,
+				F3B6DBC2232CE04700122974 /* CommunityViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -162,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				F3607CB3232770BD00503D55 /* RoundRectButton.swift */,
+				F3B6DBBA232CD07600122974 /* SettingTableView.swift */,
 			);
 			path = Designable;
 			sourceTree = "<group>";
@@ -297,11 +312,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B6DBBD232CE01200122974 /* SignInViewController.swift in Sources */,
+				F3B6DBBF232CE02300122974 /* EventsViewController.swift in Sources */,
 				F3607C7A23275A4000503D55 /* ViewController.swift in Sources */,
 				F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */,
-				F3B6DBB7232BE5BF00122974 /* ProfileViewController.swift in Sources */,
+				F3B6DBBB232CD07600122974 /* SettingTableView.swift in Sources */,
 				F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */,
+				F3B6DBB9232CC70E00122974 /* SettingsViewController.swift in Sources */,
 				F3607CAF232760B000503D55 /* Model_ScrapChat.xcdatamodeld in Sources */,
+				F3B6DBC3232CE04700122974 /* CommunityViewController.swift in Sources */,
+				F3B6DBC1232CE03A00122974 /* ScrapBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
