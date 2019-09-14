@@ -16,6 +16,7 @@
 		F3607C9823275A4200503D55 /* ScrapChat_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C9723275A4200503D55 /* ScrapChat_iOSUITests.swift */; };
 		F3607CAF232760B000503D55 /* Model_ScrapChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3607CAD232760B000503D55 /* Model_ScrapChat.xcdatamodeld */; };
 		F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607CB3232770BD00503D55 /* RoundRectButton.swift */; };
+		F3B6DBB7232BE5BF00122974 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBB6232BE5BF00122974 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F3607C9923275A4200503D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3607CAE232760B000503D55 /* Model_ScrapChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model_ScrapChat.xcdatamodel; sourceTree = "<group>"; };
 		F3607CB3232770BD00503D55 /* RoundRectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundRectButton.swift; sourceTree = "<group>"; };
+		F3B6DBB6232BE5BF00122974 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		F3607CAC23275D9200503D55 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F3B6DBB6232BE5BF00122974 /* ProfileViewController.swift */,
 				F3607C7923275A4000503D55 /* ViewController.swift */,
 			);
 			name = Controller;
@@ -296,6 +299,7 @@
 			files = (
 				F3607C7A23275A4000503D55 /* ViewController.swift in Sources */,
 				F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */,
+				F3B6DBB7232BE5BF00122974 /* ProfileViewController.swift in Sources */,
 				F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */,
 				F3607CAF232760B000503D55 /* Model_ScrapChat.xcdatamodeld in Sources */,
 			);
