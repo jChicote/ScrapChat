@@ -1,0 +1,9 @@
+
+platform :ios, '11.0'
+
+target 'ScrapChat_iOS' do
+  use_frameworks!
+
+  pod 'AgoraRtcEngine_iOS'
+
+end
