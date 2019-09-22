@@ -7,13 +7,16 @@
 //
 
 import UIKit
-
+import FirebaseFirestore
 class EventsViewController: UIViewController {
-
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let database = DatabaseManager()
+        database.getData()
     }
     
 

@@ -7,21 +7,32 @@
 //
 
 import Foundation
+import FirebaseAuth
 import FirebaseFirestore
 
 class DatabaseManager {
     let db = Firestore.firestore()
     
     func createAccount(firstName: String, lastName: String, userID: String) -> Bool {
-        var completion: Bool = true
-        db.collection("users").addDocument(data: ["firstname":firstName,"lastname":lastName,"UID":userID]) { (error) in
-            if error != nil {
-                completion = false
-            }
-            else {
-                completion = true
+        //var completion: Bool = true
+        let ref = db.collection("users").document(Auth.auth().currentUser!.uid)
+        //ref.setData(["firstname":firstName,"lastname":lastName,"UID":userID]), completion: error in {
+        ref.setData(["firstname":firstName,"lastname":lastName,"UID":userID])
+        return true
+    }
+    
+    func updateLastLoggedIn() {
+        let ref = db.collection("users").document(Auth.auth().currentUser!.uid)
+        ref.setData(["lastonline":FieldValue.serverTimestamp()], merge: true)
+    }
+    
+    func getData() {
+        let docRef = db.collection("users").document(Auth.auth().currentUser!.uid)
+        docRef.getDocument { (snapshot, error) in
+            if error == nil {
+                let fName = snapshot?.get("firstname")
+                print(fName as Any)
             }
         }
-        return completion
     }
 }
