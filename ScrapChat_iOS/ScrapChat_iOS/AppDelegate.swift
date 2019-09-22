@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        Auth.auth().addStateDidChangeListener{ [weak self] (_, user) in
+            if let user = user {
+                //If user haven't signed out from the last session, executes this block of code
+                //Updates the log in timestamp
+                DatabaseManager().updateLastLoggedIn()
+                //Changes the initial view controller
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
+                self!.window?.rootViewController = HomeVC
+                self!.window?.makeKeyAndVisible()
+            }
+        }
         return true
     }
 

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9rounded" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,13 +19,13 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzv-x3-ivF" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
-                                <rect key="frame" x="392.5" y="529.5" width="273.5" height="273"/>
+                                <rect key="frame" x="167.5" y="507" width="116" height="116"/>
                                 <color key="backgroundColor" red="1" green="0.38624763181288513" blue="0.35657650975903188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fzv-x3-ivF" secondAttribute="height" multiplier="1:1" id="YjQ-5p-ljq"/>
@@ -43,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFx-M5-df0" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
-                                <rect key="frame" x="700" y="529.5" width="273.5" height="273"/>
+                                <rect key="frame" x="298" y="507" width="116.5" height="116"/>
                                 <color key="backgroundColor" red="1" green="0.8484356852295083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kFx-M5-df0" secondAttribute="height" multiplier="1:1" id="XQ2-hX-JOK"/>
@@ -59,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dX-hC-cJq" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
-                                <rect key="frame" x="700" y="225.5" width="273.5" height="273"/>
+                                <rect key="frame" x="298" y="361" width="116.5" height="116"/>
                                 <color key="backgroundColor" red="0.84320938337984241" green="0.49067540459584003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9dX-hC-cJq" secondAttribute="height" multiplier="1:1" id="vK8-wT-E8I"/>
@@ -75,7 +73,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObS-3D-jq4" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
-                                <rect key="frame" x="1219" y="48" width="106" height="106"/>
+                                <rect key="frame" x="458.5" y="0.0" width="106" height="106"/>
                                 <color key="backgroundColor" red="0.4446041127" green="0.4446041127" blue="0.4446041127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ObS-3D-jq4" secondAttribute="height" multiplier="1:1" id="THA-TR-W2r"/>
@@ -95,14 +93,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5W-cF-eF3">
-                                <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                                <rect key="frame" x="0.0" y="-24" width="582" height="1028"/>
                                 <color key="backgroundColor" red="0.037926594503358287" green="0.12880394907555104" blue="0.28521696891191706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="collapseClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YRr-De-VRg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5em-Gj-pwo" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
-                                <rect key="frame" x="216" y="225.5" width="150.5" height="273"/>
+                                <rect key="frame" x="92" y="361" width="64" height="116"/>
                                 <color key="backgroundColor" red="0.68838435411453247" green="0.99994796514511108" blue="0.81896191835403442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="As Group"/>
                                 <userDefinedRuntimeAttributes>
@@ -112,7 +110,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wig-v2-gsb" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
-                                <rect key="frame" x="392.5" y="54.5" width="273.5" height="150.5"/>
+                                <rect key="frame" x="167.5" y="264" width="116" height="64"/>
                                 <color key="backgroundColor" red="0.6898067129813269" green="0.99977070089999998" blue="0.81806813590057903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="As Individual"/>
                                 <userDefinedRuntimeAttributes>
@@ -125,7 +123,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avV-nU-Wxx" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
-                                <rect key="frame" x="392.5" y="225.5" width="273.5" height="273"/>
+                                <rect key="frame" x="167.5" y="361" width="116" height="116"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.54168102114921401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="avV-nU-Wxx" secondAttribute="height" multiplier="1:1" id="zga-dB-kJ1"/>
@@ -141,7 +139,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJ6-dq-PUS">
-                                <rect key="frame" x="0.0" y="-24" width="1366" height="1048"/>
+                                <rect key="frame" x="0.0" y="-48" width="582" height="1052"/>
                                 <color key="backgroundColor" red="0.037926594500000001" green="0.12880394910000001" blue="0.28521696889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -149,9 +147,9 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XqH-0f-toO">
-                                <rect key="frame" x="273" y="1604.5" width="820" height="819"/>
+                                <rect key="frame" x="116.5" y="1598.5" width="349" height="787"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECp-iy-6BU" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECp-iy-6BU" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
                                         <rect key="frame" x="51" y="45" width="205" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.24405127860582487" blue="0.11279239137814678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -201,7 +199,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naK-Zg-V2R">
-                                <rect key="frame" x="-791" y="0.0" width="582" height="1024"/>
+                                <rect key="frame" x="-791" y="0.0" width="582" height="984"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="582" id="aW5-tM-j3g"/>
                                 </constraints>
@@ -274,27 +272,55 @@
             </objects>
             <point key="canvasLocation" x="10.980966325036603" y="16.9921875"/>
         </scene>
+        <!--Login-->
+        <scene sceneID="Gef-Ph-tem">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="R9X-Ol-gHe" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9sg-BJ-0Pe"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P5s-rv-ynh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="572" y="-1151"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="OM4-aW-g9h">
             <objects>
                 <tableViewController id="4a2-lG-h9Z" customClass="SettingsViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Xe5-YE-DcA">
-                        <rect key="frame" x="0.0" y="0.0" width="582" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="582" height="984"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.037926594500000001" green="0.12880394910000001" blue="0.28521696889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="uwb-oa-AwD">
                             <rect key="frame" x="0.0" y="0.0" width="582" height="116"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eA-y8-9Rn">
-                                    <rect key="frame" x="155" y="47" width="212" height="69"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eA-y8-9Rn">
+                                    <rect key="frame" x="220.5" y="34" width="141.5" height="48"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpe-09-xDx">
+                                    <rect key="frame" x="441" y="30" width="121" height="56"/>
+                                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                    <state key="normal" title="Logout">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="logoutPressed:" destination="4a2-lG-h9Z" eventType="touchUpInside" id="nbs-L5-d0Y"/>
+                                        <segue destination="R9X-Ol-gHe" kind="show" id="oCt-ja-FIu"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.037926594500000001" green="0.12880394910000001" blue="0.28521696889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Cpe-09-xDx" secondAttribute="trailing" constant="20" id="1sn-J2-z7p"/>
+                                <constraint firstItem="2eA-y8-9Rn" firstAttribute="centerX" secondItem="uwb-oa-AwD" secondAttribute="centerX" id="Edf-gW-7Es"/>
+                                <constraint firstItem="Cpe-09-xDx" firstAttribute="centerY" secondItem="2eA-y8-9Rn" secondAttribute="centerY" id="HJg-cc-W3G"/>
+                                <constraint firstItem="2eA-y8-9Rn" firstAttribute="centerY" secondItem="uwb-oa-AwD" secondAttribute="centerY" id="PtU-XM-tXm"/>
+                            </constraints>
                         </view>
                         <sections>
                             <tableViewSection headerTitle="General" id="aIE-LX-TAm">
@@ -584,7 +610,7 @@
                                         <rect key="frame" x="0.0" y="1015.5" width="582" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nff-KY-PUn" id="Apr-Bx-lRo">
-                                            <rect key="frame" x="0.0" y="0.0" width="582" height="51.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="582" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notification Sounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Pf-LI-uGH">
@@ -619,11 +645,11 @@
             <objects>
                 <viewController id="7WB-h8-sWf" customClass="CommunityViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ye-Y7-VMI">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xi4-To-VuK">
-                                <rect key="frame" x="0.0" y="0.0" width="1366" height="164"/>
+                                <rect key="frame" x="0.0" y="0.0" width="712" height="157.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eya-EH-w7f">
                                         <rect key="frame" x="78" y="47" width="228" height="70"/>
@@ -655,61 +681,21 @@
             </objects>
             <point key="canvasLocation" x="744.94875549048311" y="16.9921875"/>
         </scene>
-        <!--Sign In View Controller-->
-        <scene sceneID="7PR-Ex-A8d">
-            <objects>
-                <viewController id="IAW-hc-h13" customClass="SignInViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9oD-LU-2I0">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGh-QR-3x0">
-                                <rect key="frame" x="273" y="104.5" width="820" height="819"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-vh-Hci">
-                                        <rect key="frame" x="321" y="697" width="178" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Submit">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="Rwm-Wc-L02"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.12812607749999999" green="0.39344127979999999" blue="0.53803027849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="YGh-QR-3x0" firstAttribute="centerY" secondItem="Feg-nD-rcL" secondAttribute="centerY" id="Ftz-8O-Gq3"/>
-                            <constraint firstItem="YGh-QR-3x0" firstAttribute="height" secondItem="9oD-LU-2I0" secondAttribute="height" multiplier="0.8" id="jrd-az-6IO"/>
-                            <constraint firstItem="YGh-QR-3x0" firstAttribute="centerX" secondItem="Feg-nD-rcL" secondAttribute="centerX" id="s6W-sG-GxI"/>
-                            <constraint firstItem="YGh-QR-3x0" firstAttribute="width" secondItem="9oD-LU-2I0" secondAttribute="width" multiplier="0.6" id="vTX-C7-qdE"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Feg-nD-rcL"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k12-2D-flN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-743.19180087847724" y="16.9921875"/>
-        </scene>
         <!--Events View Controller-->
         <scene sceneID="fPb-xY-p0P">
             <objects>
                 <viewController id="5pp-mW-kaF" customClass="EventsViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dPo-Py-6c8">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUy-eo-0UT">
-                                <rect key="frame" x="0.0" y="0.0" width="1366" height="164"/>
+                                <rect key="frame" x="0.0" y="-24" width="712" height="157.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0P4-LL-znA">
-                                        <rect key="frame" x="56" y="47" width="228" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0P4-LL-znA">
+                                        <rect key="frame" x="56" y="54.5" width="228" height="48"/>
                                         <color key="backgroundColor" red="1" green="0.2440512786" blue="0.1127923914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="15" maxX="10" maxY="15"/>
                                         <state key="normal" title="Back">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -717,8 +703,19 @@
                                             <segue destination="BYZ-38-t0r" kind="show" id="icN-Y8-QP3"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3p-jw-0Fo">
+                                        <rect key="frame" x="592" y="57.5" width="90" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="a3p-jw-0Fo" firstAttribute="centerY" secondItem="yUy-eo-0UT" secondAttribute="centerY" id="78q-7F-2Oc"/>
+                                    <constraint firstAttribute="trailing" secondItem="a3p-jw-0Fo" secondAttribute="trailing" constant="30" id="aUJ-Zn-skh"/>
+                                    <constraint firstItem="0P4-LL-znA" firstAttribute="centerY" secondItem="yUy-eo-0UT" secondAttribute="centerY" id="ynT-Pg-AH1"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.12812607749999999" green="0.39344127979999999" blue="0.53803027849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -731,6 +728,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DNB-Oj-LCZ"/>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="a3p-jw-0Fo" id="1Ao-8F-Nwd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfq-ll-6aR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -741,11 +741,11 @@
             <objects>
                 <viewController id="ZSP-D4-bvG" customClass="ScrapBookViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XqK-4P-6ZE">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twf-7M-zO1">
-                                <rect key="frame" x="0.0" y="0.0" width="1366" height="164"/>
+                                <rect key="frame" x="0.0" y="-24" width="712" height="157.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1G-HD-1pP">
                                         <rect key="frame" x="92" y="47" width="228" height="70"/>
