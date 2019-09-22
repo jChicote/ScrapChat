@@ -5,5 +5,10 @@ target 'ScrapChat_iOS' do
   use_frameworks!
 
   pod 'AgoraRtcEngine_iOS'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'FirebaseFirestore', :inhibit_warnings => true
+  pod 'Protobuf', :inhibit_warnings => true
 
 end

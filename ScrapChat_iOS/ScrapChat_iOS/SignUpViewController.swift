@@ -1,18 +1,20 @@
 //
-//  SignInViewController.swift
+//  SignUpViewController.swift
 //  ScrapChat_iOS
 //
-//  Created by Jaiden Chicote on 14/9/19.
+//  Created by Richard James on 22/9/19.
 //  Copyright © 2019 Dream Team. All rights reserved.
 //
 
 import UIKit
 import FirebaseAuth
 
-class SignInViewController: UIViewController {
-
+class SignUpViewController: UIViewController {
+    
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var firstNameTF: UITextField!
+    @IBOutlet weak var lastNameTF: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
@@ -22,7 +24,7 @@ class SignInViewController: UIViewController {
     
     func validateInput() -> String? {
         
-        if emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+        if emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || firstNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Please enter all fields"
         }
         else {
@@ -32,7 +34,7 @@ class SignInViewController: UIViewController {
         // TODO: validate email regex
     }
     
-    @IBAction func loginPressed(_ sender: UIButton) {
+    @IBAction func createPressed(_ sender: UIButton) {
         //Input validation
         let errorMess = validateInput()
         guard errorMess == nil else {
@@ -42,15 +44,21 @@ class SignInViewController: UIViewController {
         
         let email = emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let firstName = firstNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let lastName = lastNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        Auth.auth().signIn(withEmail: email!, password: password!) { (result, error) in
+        Auth.auth().createUser(withEmail: email!, password: password!) { (result, error) in
             if error != nil {
-                //Sign in not successful
-                self.showError("Incorrect email or password.")
+                self.showError("Account was not successfully created.")
                 //print(error!.localizedDescription)
             }
             else {
-                self.transitionToHome()
+                if !DatabaseManager().createAccount(firstName: firstName!, lastName: lastName!, userID: result!.user.uid) {
+                    self.showError("Data was not successfully created")
+                }
+                else {
+                    self.transitionToHome()
+                }
             }
         }
     }
