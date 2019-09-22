@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsViewController: UITableViewController {
 
@@ -16,6 +17,9 @@ class SettingsViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func logoutPressed(_ sender: UIButton) {
+        try! Auth.auth().signOut()
+    }
     /*override func didRecieveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }*/
