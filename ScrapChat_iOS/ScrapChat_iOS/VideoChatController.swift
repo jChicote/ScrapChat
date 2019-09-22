@@ -110,7 +110,7 @@ class VideoChatController: UIViewController {
         // same channel successfully using the same app id.
         // 2. One token is only valid for the channel name that
         // you use to generate this token.
-        agoraKit.joinChannel(byToken: Token, channelId: "chatBeeTest1", info: nil, uid: 0) { [unowned self] (channel, uid, elapsed) -> Void in
+        agoraKit.joinChannel(byToken: Token, channelId: "chatBeeDemo", info: nil, uid: 0) { [unowned self] (channel, uid, elapsed) -> Void in
             // Did join channel "demoChannel1"
             self.isLocalVideoRender = true
             //self.logVC?.log(type: .info, content: "did join channel")
