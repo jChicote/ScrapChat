@@ -50,6 +50,7 @@ class SignInViewController: UIViewController {
                 //print(error!.localizedDescription)
             }
             else {
+                DatabaseManager().updateLastLoggedIn()
                 self.transitionToHome()
             }
         }
@@ -63,7 +64,6 @@ class SignInViewController: UIViewController {
     func transitionToHome() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
-        
-        self.navigationController?.pushViewController(HomeVC, animated: true)
+        present(HomeVC, animated: true, completion: nil)
     }
 }
