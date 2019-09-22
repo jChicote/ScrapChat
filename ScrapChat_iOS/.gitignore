@@ -1,5 +1,5 @@
 # remove files that are contained in Pods
 Pods/
 
-#Remove DS_Store files
+#Remove DS_Store files -- may have not on remote repo
 .DS_Store
