@@ -1,22 +1,19 @@
 //
-//  EventsViewController.swift
+//  LoginViewController.swift
 //  ScrapChat_iOS
 //
-//  Created by Jaiden Chicote on 14/9/19.
+//  Created by Richard James on 22/9/19.
 //  Copyright © 2019 Dream Team. All rights reserved.
 //
 
 import UIKit
-import FirebaseFirestore
-class EventsViewController: UIViewController {
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    
+
+class LoginViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let database = DatabaseManager()
-        database.getData()
+        // Do any additional setup after loading the view.
     }
     
 

@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D012310EA91407B45A86171 /* Pods_ScrapChat_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B434BA5254008FCF0DF661C /* Pods_ScrapChat_iOS.framework */; };
+		B2CB147A2336E42300CD1C9D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2CB14782336E42300CD1C9D /* Login.storyboard */; };
+		B2CB147C2336E50600CD1C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB147B2336E50600CD1C9D /* LoginViewController.swift */; };
+		B2CB147E2336E51A00CD1C9D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB147D2336E51A00CD1C9D /* SignUpViewController.swift */; };
+		B2CB14822336E74E00CD1C9D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2CB14812336E74E00CD1C9D /* GoogleService-Info.plist */; };
+		B2CB14842336EC2100CD1C9D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB14832336EC2100CD1C9D /* DatabaseManager.swift */; };
+		B2CB14862336F5F400CD1C9D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB14852336F5F400CD1C9D /* Constants.swift */; };
+		F319CD0023389D0C003787D5 /* AppID.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CCFF23389D0C003787D5 /* AppID.swift */; };
+		F319CD88233E27FD003787D5 /* FriendsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F319CD87233E27FD003787D5 /* FriendsStoryboard.storyboard */; };
+		F319CD8A233E37B0003787D5 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD89233E37B0003787D5 /* RoundedView.swift */; };
 		F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7723275A4000503D55 /* AppDelegate.swift */; };
 		F3607C7A23275A4000503D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7923275A4000503D55 /* ViewController.swift */; };
 		F3607C7D23275A4000503D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3607C7B23275A4000503D55 /* Main.storyboard */; };
@@ -16,6 +26,8 @@
 		F3607C9823275A4200503D55 /* ScrapChat_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C9723275A4200503D55 /* ScrapChat_iOSUITests.swift */; };
 		F3607CAF232760B000503D55 /* Model_ScrapChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3607CAD232760B000503D55 /* Model_ScrapChat.xcdatamodeld */; };
 		F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607CB3232770BD00503D55 /* RoundRectButton.swift */; };
+		F36ED8A32336389900ACDB2E /* VideoChatScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36ED8A22336389900ACDB2E /* VideoChatScreen.storyboard */; };
+		F36ED8A52336393C00ACDB2E /* VideoChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36ED8A42336393C00ACDB2E /* VideoChatController.swift */; };
 		F3B6DBB9232CC70E00122974 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBB8232CC70D00122974 /* SettingsViewController.swift */; };
 		F3B6DBBB232CD07600122974 /* SettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBBA232CD07600122974 /* SettingTableView.swift */; };
 		F3B6DBBD232CE01200122974 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBBC232CE01100122974 /* SignInViewController.swift */; };
@@ -42,6 +54,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B434BA5254008FCF0DF661C /* Pods_ScrapChat_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrapChat_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7C2ECF7EC6972B92078C125 /* Pods-ScrapChat_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapChat_iOS.release.xcconfig"; path = "Target Support Files/Pods-ScrapChat_iOS/Pods-ScrapChat_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		B2CB14792336E42300CD1C9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		B2CB147B2336E50600CD1C9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B2CB147D2336E51A00CD1C9D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B2CB14812336E74E00CD1C9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B2CB14832336EC2100CD1C9D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseManager.swift; path = ScrapChat_iOS/DatabaseManager.swift; sourceTree = SOURCE_ROOT; };
+		B2CB14852336F5F400CD1C9D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ScrapChat_iOS/Constants.swift; sourceTree = SOURCE_ROOT; };
+		F319CCFF23389D0C003787D5 /* AppID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppID.swift; sourceTree = "<group>"; };
+		F319CD87233E27FD003787D5 /* FriendsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendsStoryboard.storyboard; sourceTree = "<group>"; };
+		F319CD89233E37B0003787D5 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		F3607C7423275A4000503D55 /* ScrapChat_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapChat_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3607C7723275A4000503D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3607C7923275A4000503D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,12 +80,15 @@
 		F3607C9923275A4200503D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3607CAE232760B000503D55 /* Model_ScrapChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model_ScrapChat.xcdatamodel; sourceTree = "<group>"; };
 		F3607CB3232770BD00503D55 /* RoundRectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundRectButton.swift; sourceTree = "<group>"; };
+		F36ED8A22336389900ACDB2E /* VideoChatScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoChatScreen.storyboard; sourceTree = "<group>"; };
+		F36ED8A42336393C00ACDB2E /* VideoChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatController.swift; sourceTree = "<group>"; };
 		F3B6DBB8232CC70D00122974 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F3B6DBBA232CD07600122974 /* SettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
 		F3B6DBBC232CE01100122974 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F3B6DBBE232CE02300122974 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookViewController.swift; sourceTree = "<group>"; };
 		F3B6DBC2232CE04700122974 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		FF89D27146E993D9D6B31C96 /* Pods-ScrapChat_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapChat_iOS.debug.xcconfig"; path = "Target Support Files/Pods-ScrapChat_iOS/Pods-ScrapChat_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D012310EA91407B45A86171 /* Pods_ScrapChat_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +117,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C617B6B3F13B1CE7AF132323 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B434BA5254008FCF0DF661C /* Pods_ScrapChat_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E959444563533729771F97E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF89D27146E993D9D6B31C96 /* Pods-ScrapChat_iOS.debug.xcconfig */,
+				A7C2ECF7EC6972B92078C125 /* Pods-ScrapChat_iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F3607C6B23275A4000503D55 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +141,8 @@
 				F3607C8B23275A4100503D55 /* ScrapChat_iOSTests */,
 				F3607C9623275A4200503D55 /* ScrapChat_iOSUITests */,
 				F3607C7523275A4000503D55 /* Products */,
+				E959444563533729771F97E7 /* Pods */,
+				C617B6B3F13B1CE7AF132323 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,9 +163,11 @@
 				F3607C7723275A4000503D55 /* AppDelegate.swift */,
 				F3607C7E23275A4100503D55 /* Assets.xcassets */,
 				F3607C8323275A4100503D55 /* Info.plist */,
+				B2CB14812336E74E00CD1C9D /* GoogleService-Info.plist */,
 				F3607CB0232760C600503D55 /* Model */,
 				F3607CAC23275D9200503D55 /* Controller */,
 				F3607CA923275D4400503D55 /* View */,
+				F319CCFF23389D0C003787D5 /* AppID.swift */,
 			);
 			path = ScrapChat_iOS;
 			sourceTree = "<group>";
@@ -146,7 +194,10 @@
 			isa = PBXGroup;
 			children = (
 				F3607C8023275A4100503D55 /* LaunchScreen.storyboard */,
+				B2CB14782336E42300CD1C9D /* Login.storyboard */,
 				F3607C7B23275A4000503D55 /* Main.storyboard */,
+				F36ED8A22336389900ACDB2E /* VideoChatScreen.storyboard */,
+				F319CD87233E27FD003787D5 /* FriendsStoryboard.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -155,11 +206,14 @@
 			isa = PBXGroup;
 			children = (
 				F3607C7923275A4000503D55 /* ViewController.swift */,
+				B2CB147B2336E50600CD1C9D /* LoginViewController.swift */,
 				F3B6DBB8232CC70D00122974 /* SettingsViewController.swift */,
 				F3B6DBBC232CE01100122974 /* SignInViewController.swift */,
+				B2CB147D2336E51A00CD1C9D /* SignUpViewController.swift */,
 				F3B6DBBE232CE02300122974 /* EventsViewController.swift */,
 				F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */,
 				F3B6DBC2232CE04700122974 /* CommunityViewController.swift */,
+				F36ED8A42336393C00ACDB2E /* VideoChatController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -168,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				F3607CAD232760B000503D55 /* Model_ScrapChat.xcdatamodeld */,
+				B2CB14832336EC2100CD1C9D /* DatabaseManager.swift */,
+				B2CB14852336F5F400CD1C9D /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +233,7 @@
 			children = (
 				F3607CB3232770BD00503D55 /* RoundRectButton.swift */,
 				F3B6DBBA232CD07600122974 /* SettingTableView.swift */,
+				F319CD89233E37B0003787D5 /* RoundedView.swift */,
 			);
 			path = Designable;
 			sourceTree = "<group>";
@@ -188,9 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3607C9C23275A4200503D55 /* Build configuration list for PBXNativeTarget "ScrapChat_iOS" */;
 			buildPhases = (
+				18A74CFD072163D65178F222 /* [CP] Check Pods Manifest.lock */,
 				F3607C7023275A4000503D55 /* Sources */,
 				F3607C7123275A4000503D55 /* Frameworks */,
 				F3607C7223275A4000503D55 /* Resources */,
+				18D8F4952BB13D064E5DA005 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,9 +344,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36ED8A32336389900ACDB2E /* VideoChatScreen.storyboard in Resources */,
 				F3607C8223275A4100503D55 /* LaunchScreen.storyboard in Resources */,
+				F319CD88233E27FD003787D5 /* FriendsStoryboard.storyboard in Resources */,
 				F3607C7F23275A4100503D55 /* Assets.xcassets in Resources */,
+				B2CB147A2336E42300CD1C9D /* Login.storyboard in Resources */,
 				F3607C7D23275A4000503D55 /* Main.storyboard in Resources */,
+				B2CB14822336E74E00CD1C9D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,20 +370,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18A74CFD072163D65178F222 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScrapChat_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		18D8F4952BB13D064E5DA005 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScrapChat_iOS/Pods-ScrapChat_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScrapChat_iOS/Pods-ScrapChat_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScrapChat_iOS/Pods-ScrapChat_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F3607C7023275A4000503D55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F3B6DBBD232CE01200122974 /* SignInViewController.swift in Sources */,
+				B2CB14842336EC2100CD1C9D /* DatabaseManager.swift in Sources */,
 				F3B6DBBF232CE02300122974 /* EventsViewController.swift in Sources */,
+				F36ED8A52336393C00ACDB2E /* VideoChatController.swift in Sources */,
+				F319CD0023389D0C003787D5 /* AppID.swift in Sources */,
 				F3607C7A23275A4000503D55 /* ViewController.swift in Sources */,
 				F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */,
+				B2CB14862336F5F400CD1C9D /* Constants.swift in Sources */,
 				F3B6DBBB232CD07600122974 /* SettingTableView.swift in Sources */,
 				F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */,
+				B2CB147E2336E51A00CD1C9D /* SignUpViewController.swift in Sources */,
+				F319CD8A233E37B0003787D5 /* RoundedView.swift in Sources */,
 				F3B6DBB9232CC70E00122974 /* SettingsViewController.swift in Sources */,
 				F3607CAF232760B000503D55 /* Model_ScrapChat.xcdatamodeld in Sources */,
 				F3B6DBC3232CE04700122974 /* CommunityViewController.swift in Sources */,
+				B2CB147C2336E50600CD1C9D /* LoginViewController.swift in Sources */,
 				F3B6DBC1232CE03A00122974 /* ScrapBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +469,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B2CB14782336E42300CD1C9D /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2CB14792336E42300CD1C9D /* Base */,
+			);
+			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
 		F3607C7B23275A4000503D55 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -494,6 +614,7 @@
 		};
 		F3607C9D23275A4200503D55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF89D27146E993D9D6B31C96 /* Pods-ScrapChat_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -506,12 +627,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cpp.ScrapChat-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		F3607C9E23275A4200503D55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7C2ECF7EC6972B92078C125 /* Pods-ScrapChat_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -524,7 +646,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cpp.ScrapChat-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>96780705797-b90ok700q8i4pudcmbqokpdomdr6liam.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.96780705797-b90ok700q8i4pudcmbqokpdomdr6liam</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB7Lwn7EfpgkdZAwZe1Go5ZEYJQ9oF63c4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>96780705797</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>cpp.ScrapChat-iOS</string>
+	<key>PROJECT_ID</key>
+	<string>scrapchat-77d1f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>scrapchat-77d1f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:96780705797:ios:4506175f2c742f4038bc6c</string>
+	<key>DATABASE_URL</key>
+	<string>https://scrapchat-77d1f.firebaseio.com</string>
+</dict>
+</plist>
