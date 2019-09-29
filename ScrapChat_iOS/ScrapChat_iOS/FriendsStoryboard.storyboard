@@ -1,7 +1,71 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad12_9rounded" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="UlC-IF-eH0">
+            <objects>
+                <viewController id="f9s-6x-Up0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gke-sg-BDn">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPN-E7-35R" userLabel="Top Bar">
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="123"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLT-Nz-JVR" userLabel="Setting Cog">
+                                        <rect key="frame" x="1252.5" y="24.5" width="73.5" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="DLT-Nz-JVR" secondAttribute="height" multiplier="1:1" id="KRy-qM-EnW"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="0.0015601739879999999" blue="0.84701783350000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="settings_cog"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rI-uA-6vc" userLabel="Back button">
+                                        <rect key="frame" x="40" y="34.5" width="73.5" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6rI-uA-6vc" secondAttribute="height" multiplier="1:1" id="iqv-8T-yWZ"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="0.2440512786" blue="0.1127923914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button" image="back-arrow"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="6rI-uA-6vc" firstAttribute="centerY" secondItem="gPN-E7-35R" secondAttribute="centerY" constant="10" id="2WE-DN-XIg"/>
+                                    <constraint firstItem="DLT-Nz-JVR" firstAttribute="centerY" secondItem="gPN-E7-35R" secondAttribute="centerY" id="GbF-Re-v8U"/>
+                                    <constraint firstAttribute="trailing" secondItem="DLT-Nz-JVR" secondAttribute="trailing" multiplier="1.03" id="VCK-Tr-gpk"/>
+                                    <constraint firstItem="DLT-Nz-JVR" firstAttribute="height" secondItem="gPN-E7-35R" secondAttribute="height" multiplier="0.6" id="jbJ-ho-RKp"/>
+                                    <constraint firstItem="6rI-uA-6vc" firstAttribute="leading" secondItem="gPN-E7-35R" secondAttribute="leading" constant="40" id="ke8-9c-pCn"/>
+                                    <constraint firstItem="6rI-uA-6vc" firstAttribute="height" secondItem="gPN-E7-35R" secondAttribute="height" multiplier="0.6" id="yLr-oC-jdV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gPN-E7-35R" firstAttribute="height" secondItem="gke-sg-BDn" secondAttribute="height" multiplier="0.12" id="Hon-Hn-A2A"/>
+                            <constraint firstItem="gPN-E7-35R" firstAttribute="top" secondItem="gke-sg-BDn" secondAttribute="top" id="Hqb-e5-GB3"/>
+                            <constraint firstItem="gPN-E7-35R" firstAttribute="leading" secondItem="WH9-za-MPp" secondAttribute="leading" id="Uyk-pt-jij"/>
+                            <constraint firstItem="WH9-za-MPp" firstAttribute="trailing" secondItem="gPN-E7-35R" secondAttribute="trailing" id="cx8-ji-vdE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WH9-za-MPp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KVw-Dx-at7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.84626647144947" y="38.671875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back-arrow" width="100" height="100"/>
+        <image name="settings_cog" width="100" height="100"/>
+    </resources>
 </document>
