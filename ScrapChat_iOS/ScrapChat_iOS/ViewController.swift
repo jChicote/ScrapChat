@@ -17,8 +17,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.mingleBackImage.tintColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.mingleBackImage.tintColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
     }
     
     //Needs to use viewDidRender due to the load cycle
@@ -33,6 +39,8 @@ class ViewController: UIViewController {
             self.mingleBackImage.tintColor = #colorLiteral(red: 1, green: 0.6372304196, blue: 0, alpha: 1)
         }
     }
+    
+    @IBAction func UnwindToHome(_ sender: UIStoryboardSegue) {}
     
     
 }

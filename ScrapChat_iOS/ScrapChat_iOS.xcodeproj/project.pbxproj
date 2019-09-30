@@ -20,6 +20,7 @@
 		F319CD8C23406F0D003787D5 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD8B23406F0D003787D5 /* FriendCell.swift */; };
 		F319CD8E234076A4003787D5 /* FriendCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD8D234076A4003787D5 /* FriendCollectionView.swift */; };
 		F319CD90234085F2003787D5 /* FriendCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD8F234085F2003787D5 /* FriendCollectionLayout.swift */; };
+		F319CD9223419803003787D5 /* Events Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F319CD9123419802003787D5 /* Events Storyboard.storyboard */; };
 		F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7723275A4000503D55 /* AppDelegate.swift */; };
 		F3607C7A23275A4000503D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7923275A4000503D55 /* ViewController.swift */; };
 		F3607C7D23275A4000503D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3607C7B23275A4000503D55 /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 		F319CD8B23406F0D003787D5 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		F319CD8D234076A4003787D5 /* FriendCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionView.swift; sourceTree = "<group>"; };
 		F319CD8F234085F2003787D5 /* FriendCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionLayout.swift; sourceTree = "<group>"; };
+		F319CD9123419802003787D5 /* Events Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Events Storyboard.storyboard"; sourceTree = "<group>"; };
 		F3607C7423275A4000503D55 /* ScrapChat_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapChat_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3607C7723275A4000503D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3607C7923275A4000503D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				F3607C7B23275A4000503D55 /* Main.storyboard */,
 				F36ED8A22336389900ACDB2E /* VideoChatScreen.storyboard */,
 				F319CD87233E27FD003787D5 /* FriendsStoryboard.storyboard */,
+				F319CD9123419802003787D5 /* Events Storyboard.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36ED8A32336389900ACDB2E /* VideoChatScreen.storyboard in Resources */,
+				F319CD9223419803003787D5 /* Events Storyboard.storyboard in Resources */,
 				F3607C8223275A4100503D55 /* LaunchScreen.storyboard in Resources */,
 				F319CD88233E27FD003787D5 /* FriendsStoryboard.storyboard in Resources */,
 				F3607C7F23275A4100503D55 /* Assets.xcassets in Resources */,

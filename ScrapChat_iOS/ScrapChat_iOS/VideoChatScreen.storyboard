@@ -86,7 +86,6 @@
                                         <state key="normal" title="Button" image="end"/>
                                         <connections>
                                             <action selector="didClickHangUpButton:" destination="SDJ-4z-i7T" eventType="touchUpInside" id="1Ca-9r-Bys"/>
-                                            <segue destination="J1B-kp-faK" kind="showDetail" id="snb-FM-cSJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y00-c9-SGl" userLabel="Switch Button">
@@ -158,14 +157,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckg-6j-6zC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="63.689604685212295" y="-24.0234375"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="jwb-k0-qH4">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="J1B-kp-faK" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hKh-We-KtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="27" y="400"/>
         </scene>
     </scenes>
     <resources>

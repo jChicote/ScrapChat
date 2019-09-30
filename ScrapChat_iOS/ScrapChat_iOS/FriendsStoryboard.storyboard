@@ -10,14 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Storyboard-->
-        <scene sceneID="gjg-lI-Xpa">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="vB5-gm-Fpa" userLabel="Main Storyboard" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uWe-v1-V2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-207" y="566"/>
-        </scene>
         <!--Friends View Controller-->
         <scene sceneID="UlC-IF-eH0">
             <objects>
@@ -50,6 +42,9 @@
                                                     </constraints>
                                                     <state key="normal" image="call"/>
                                                     <state key="selected" image="call_pressed"/>
+                                                    <connections>
+                                                        <segue destination="x91-6u-yPe" kind="show" id="ZGL-JJ-Dhd"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round-account" translatesAutoresizingMaskIntoConstraints="NO" id="bSA-nB-Zjn">
                                                     <rect key="frame" x="20" y="21" width="98" height="98"/>
@@ -105,7 +100,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="123"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLT-Nz-JVR" userLabel="Setting Cog">
-                                        <rect key="frame" x="1252.5" y="24.5" width="73.5" height="74"/>
+                                        <rect key="frame" x="1265" y="40.5" width="61" height="61.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="DLT-Nz-JVR" secondAttribute="height" multiplier="1:1" id="KRy-qM-EnW"/>
                                         </constraints>
@@ -120,16 +115,16 @@
                                         <color key="tintColor" red="1" green="0.2440512786" blue="0.1127923914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button" image="back-arrow"/>
                                         <connections>
-                                            <segue destination="vB5-gm-Fpa" kind="show" id="CE1-qz-UBN"/>
+                                            <segue destination="3Ft-M4-9eO" kind="unwind" identifier="UnwindToHome" animates="NO" unwindAction="UnwindToHome:" id="2Yl-oo-DiH"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="6rI-uA-6vc" firstAttribute="centerY" secondItem="gPN-E7-35R" secondAttribute="centerY" constant="10" id="2WE-DN-XIg"/>
-                                    <constraint firstItem="DLT-Nz-JVR" firstAttribute="centerY" secondItem="gPN-E7-35R" secondAttribute="centerY" id="GbF-Re-v8U"/>
+                                    <constraint firstItem="DLT-Nz-JVR" firstAttribute="centerY" secondItem="gPN-E7-35R" secondAttribute="centerY" constant="10" id="GbF-Re-v8U"/>
                                     <constraint firstAttribute="trailing" secondItem="DLT-Nz-JVR" secondAttribute="trailing" multiplier="1.03" id="VCK-Tr-gpk"/>
-                                    <constraint firstItem="DLT-Nz-JVR" firstAttribute="height" secondItem="gPN-E7-35R" secondAttribute="height" multiplier="0.6" id="jbJ-ho-RKp"/>
+                                    <constraint firstItem="DLT-Nz-JVR" firstAttribute="height" secondItem="gPN-E7-35R" secondAttribute="height" multiplier="0.5" id="jbJ-ho-RKp"/>
                                     <constraint firstItem="6rI-uA-6vc" firstAttribute="leading" secondItem="gPN-E7-35R" secondAttribute="leading" constant="40" id="ke8-9c-pCn"/>
                                     <constraint firstItem="6rI-uA-6vc" firstAttribute="height" secondItem="gPN-E7-35R" secondAttribute="height" multiplier="0.6" id="yLr-oC-jdV"/>
                                 </constraints>
@@ -222,6 +217,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajw-pZ-8cj" userLabel="EventsButton">
                                                 <rect key="frame" x="262.5" y="0.0" width="320.5" height="176.5"/>
+                                                <connections>
+                                                    <segue destination="Lk1-FU-a8v" kind="presentation" animates="NO" modalTransitionStyle="crossDissolve" id="KQc-LG-gfT"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scrap_icon" translatesAutoresizingMaskIntoConstraints="NO" id="5iw-IT-NwH">
                                                 <rect key="frame" x="78" y="15" width="106" height="106"/>
@@ -346,9 +344,11 @@
                     </view>
                     <connections>
                         <outlet property="friendCollection" destination="LIP-0J-lXB" id="U4a-Ik-BgK"/>
+                        <outlet property="minglebackImage" destination="Hkc-RO-VeZ" id="dxf-Xj-6ZQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KVw-Dx-at7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3Ft-M4-9eO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="134.84626647144947" y="38.671875"/>
         </scene>
@@ -358,7 +358,15 @@
                 <viewControllerPlaceholder storyboardName="VideoChatScreen" id="x91-6u-yPe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FET-q2-g8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="565"/>
+            <point key="canvasLocation" x="149" y="555"/>
+        </scene>
+        <!--Events Storyboard-->
+        <scene sceneID="kri-DZ-qqu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Events Storyboard" id="Lk1-FU-a8v" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tie-86-Vu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-35" y="555"/>
         </scene>
     </scenes>
     <resources>
@@ -373,4 +381,7 @@
         <image name="scrap_icon" width="500" height="500"/>
         <image name="settings_cog" width="100" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZGL-JJ-Dhd"/>
+    </inferredMetricsTieBreakers>
 </document>

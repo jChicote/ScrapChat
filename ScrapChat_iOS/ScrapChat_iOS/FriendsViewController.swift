@@ -11,17 +11,25 @@ import UIKit
 class FriendsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     @IBOutlet weak var friendCollection: UICollectionView!
+    @IBOutlet var minglebackImage: UIImageView!
+    //@IBOutlet var mingleIcon: UIImageView!
     
+    
+    //temp test data
     private var collectionData = ["Neveah Wilkins", "Rylie Knox", "Yuliana Jennings", "Ezekiel Fields", "Edith Meyer", "Micaela Curry", " Marshall Hamilton", " Nicolas Phillips", "Aleena Butler", "Raiden Ross", "Antony Downs", "Jade Caldwell"]
 
+    //padding for cells to prevent 'breaking' constraints
     let padding: CGFloat = 300
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        minglebackImage.tintColor = #colorLiteral(red: 0.8078431373, green: 0.7921568627, blue: 0.7921568627, alpha: 1)
+        
         friendCollection.delegate = self
         friendCollection.dataSource = self
         
+        //setup general cell layout
         let width = view.frame.width * 0.75
         let height = view.frame.height / 6
         let layout = friendCollection.collectionViewLayout as! UICollectionViewFlowLayout
@@ -32,14 +40,24 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         layout.minimumLineSpacing = 20
     }
     
+    @IBAction func onMingle(_ sender: Any){
+        UIView.animate(withDuration: 0.1) {
+            self.minglebackImage.tintColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
+        }
+    }
+    
 }
 
+//This extension supplements the controller with flow layout and delegate classes for collection view
 extension FriendsViewController {
+    
+    //defines the length of cell items (before being loaded into screen)
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionData.count
     }
     
     
+    //creates reusable programatic collection cells
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! FriendCell
@@ -51,9 +69,8 @@ extension FriendsViewController {
         return cell
     }
     
+    //set the collection view edge insets
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
     }
-    
-    
 }
