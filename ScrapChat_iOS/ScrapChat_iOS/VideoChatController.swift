@@ -135,9 +135,8 @@ class VideoChatController: UIViewController {
         sender.isSelected.toggle()
         if sender.isSelected {
             leaveChannel()
-        } else {
-            //joinChannel()
         }
+        dismiss(animated: true)
     }
     
     @IBAction func didClickMuteButton(_ sender: UIButton) {

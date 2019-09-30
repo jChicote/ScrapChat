@@ -10,18 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var backgroundButton: UIButton!
     @IBOutlet weak var settingBackButton: UIButton!
+    @IBOutlet var mingleBackImage: UIImageView!
     
-    var isExpanded = false
-    var oneButtonCenter: CGPoint!
-    var groupButtonCenter: CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.mingleBackImage.tintColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.mingleBackImage.tintColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
     }
     
     //Needs to use viewDidRender due to the load cycle
@@ -30,6 +33,15 @@ class ViewController: UIViewController {
         settingBackButton.setImage(cogStencil, for: .normal)
         settingBackButton.tintColor = UIColor.gray
     }
+    
+    @IBAction func OnMingleTouch(_ sender: Any) {
+        UIView.animate(withDuration: 0.1) {
+            self.mingleBackImage.tintColor = #colorLiteral(red: 1, green: 0.6372304196, blue: 0, alpha: 1)
+        }
+    }
+    
+    @IBAction func UnwindToHome(_ sender: UIStoryboardSegue) {}
+    
     
 }
 

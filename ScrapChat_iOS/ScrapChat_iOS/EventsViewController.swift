@@ -8,7 +8,8 @@
 
 import UIKit
 import FirebaseFirestore
-class EventsViewController: UIViewController {
+
+class EventsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -17,17 +18,47 @@ class EventsViewController: UIViewController {
 
         let database = DatabaseManager()
         database.getData()
+        
+        //setup layout
+        
+    }
+}
+
+extension EventsViewController {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 18
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! FriendCell
+        cell.backgroundColor = .white
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 10
+        //cell.cellLabel.text = (collectionData[indexPath.row])
+        cell.layoutIfNeeded()
+        return cell
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+            
+        case UICollectionView.elementKindSectionHeader:
+            
+                let headerCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Header", for: indexPath)
+                
+                headerCell.backgroundColor = UIColor.blue
+                return headerCell
+        default:
+            assert(false, "Invalid Header Tye")
+        }
+        
+    }
 }
+
