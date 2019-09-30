@@ -14,12 +14,10 @@ class LoginViewController: UIViewController {
         @IBOutlet weak var emailTF: UITextField!
         @IBOutlet weak var passwordTF: UITextField!
         @IBOutlet weak var errorLabel: UILabel!
-        @IBOutlet weak var loginBtn: UIButton!
-        
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             errorLabel.alpha = 0
-            loginBtn.layer.cornerRadius = 10
         }
         
         @IBAction func backToLogin(_sender: UIStoryboardSegue) {}
