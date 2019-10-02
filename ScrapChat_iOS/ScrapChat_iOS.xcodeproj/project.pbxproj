@@ -39,6 +39,8 @@
 		F3B6DBBF232CE02300122974 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBBE232CE02300122974 /* EventsViewController.swift */; };
 		F3B6DBC1232CE03A00122974 /* ScrapBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */; };
 		F3B6DBC3232CE04700122974 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBC2232CE04700122974 /* FriendsViewController.swift */; };
+		F806D35A2342478000EC47E8 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D3592342478000EC47E8 /* QuestionnaireViewController.swift */; };
+		F806D35C234248A500EC47E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D35B234248A500EC47E8 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		F3B6DBBE232CE02300122974 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookViewController.swift; sourceTree = "<group>"; };
 		F3B6DBC2232CE04700122974 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		F806D3592342478000EC47E8 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
+		F806D35B234248A500EC47E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = ScrapChat_iOS/User.swift; sourceTree = SOURCE_ROOT; };
 		FF89D27146E993D9D6B31C96 /* Pods-ScrapChat_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapChat_iOS.debug.xcconfig"; path = "Target Support Files/Pods-ScrapChat_iOS/Pods-ScrapChat_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,6 +229,7 @@
 				F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */,
 				F3B6DBC2232CE04700122974 /* FriendsViewController.swift */,
 				F36ED8A42336393C00ACDB2E /* VideoChatController.swift */,
+				F806D3592342478000EC47E8 /* QuestionnaireViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				F3607CAD232760B000503D55 /* Model_ScrapChat.xcdatamodeld */,
+				F806D35B234248A500EC47E8 /* User.swift */,
 				B2CB14832336EC2100CD1C9D /* DatabaseManager.swift */,
 				B2CB14852336F5F400CD1C9D /* Constants.swift */,
 			);
@@ -440,6 +446,7 @@
 				F36ED8A52336393C00ACDB2E /* VideoChatController.swift in Sources */,
 				F319CD0023389D0C003787D5 /* AppID.swift in Sources */,
 				F3607C7A23275A4000503D55 /* ViewController.swift in Sources */,
+				F806D35A2342478000EC47E8 /* QuestionnaireViewController.swift in Sources */,
 				F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */,
 				B2CB14862336F5F400CD1C9D /* Constants.swift in Sources */,
 				F3B6DBBB232CD07600122974 /* SettingTableView.swift in Sources */,
@@ -454,6 +461,7 @@
 				F3B6DBC3232CE04700122974 /* FriendsViewController.swift in Sources */,
 				B2CB147C2336E50600CD1C9D /* LoginViewController.swift in Sources */,
 				F3B6DBC1232CE03A00122974 /* ScrapBookViewController.swift in Sources */,
+				F806D35C234248A500EC47E8 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

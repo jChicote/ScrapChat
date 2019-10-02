@@ -8,6 +8,7 @@ target 'ScrapChat_iOS' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
+  pod 'Firebase/Storage'
   pod 'FirebaseFirestore', :inhibit_warnings => true
   pod 'Protobuf', :inhibit_warnings => true
 
