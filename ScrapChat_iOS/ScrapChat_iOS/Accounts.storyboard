@@ -16,21 +16,21 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6YT-x4-V7b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="445" y="-403"/>
+            <point key="canvasLocation" x="683" y="-407"/>
         </scene>
         <!--Accounts View Controller-->
         <scene sceneID="qnY-A4-4cz">
             <objects>
-                <viewController storyboardIdentifier="Accounts" id="YFJ-5D-cqj" customClass="AccountsViewController" customModule="ScrapChat_iOS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Accounts" id="YFJ-5D-cqj" customClass="AccountsViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EB7-hU-PUk">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6g-fX-BRs" userLabel="Top Bar">
-                                <rect key="frame" x="0.0" y="50" width="1366" height="114.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="120.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aje-ah-KrO" userLabel="Setting Cog">
-                                        <rect key="frame" x="1257.5" y="23" width="68.5" height="68.5"/>
+                                        <rect key="frame" x="1254" y="24" width="72" height="72.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aje-ah-KrO" secondAttribute="height" multiplier="1:1" id="62w-eY-ceL"/>
                                         </constraints>
@@ -38,7 +38,7 @@
                                         <state key="normal" image="settings_cog"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsj-Al-nSH" userLabel="Back button">
-                                        <rect key="frame" x="40" y="33" width="68.5" height="68.5"/>
+                                        <rect key="frame" x="40" y="34" width="72.5" height="72.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tsj-Al-nSH" secondAttribute="height" multiplier="1:1" id="fkO-sh-Zbc"/>
                                         </constraints>
@@ -215,7 +215,7 @@
                                                 <rect key="frame" x="18" y="18" width="329" height="329"/>
                                                 <color key="tintColor" red="0.091987882280000002" green="0.094126455489999997" blue="0.093879239200000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <segue destination="C1m-zn-eaT" kind="show" id="FvL-l1-cCI"/>
+                                                    <segue destination="C1m-zn-eaT" kind="show" animates="NO" id="FvL-l1-cCI"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -253,23 +253,23 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="rpA-gW-YBm">
-                                <rect key="frame" x="20" y="284" width="266" height="326.5"/>
+                                <rect key="frame" x="20" y="211" width="266" height="326"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portrait Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aSD-Le-dkt">
-                                        <rect key="frame" x="0.0" y="0.0" width="266" height="266.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="266" height="266"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aSD-Le-dkt" secondAttribute="height" multiplier="1:1" id="q3q-9V-OkG"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hz4-JZ-sDx">
-                                        <rect key="frame" x="50.5" y="284.5" width="165" height="42"/>
+                                        <rect key="frame" x="50.5" y="284" width="165" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Change picture"/>
                                     </button>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9V-xu-G41">
-                                <rect key="frame" x="315" y="274" width="973" height="477"/>
+                                <rect key="frame" x="315" y="201" width="973" height="502"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2XN-Bl-1tQ" userLabel="Fields Stack View">
                                         <rect key="frame" x="40" y="35" width="139" height="330"/>
@@ -342,7 +342,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s0-G2-z3v">
-                                        <rect key="frame" x="40" y="388" width="286" height="54"/>
+                                        <rect key="frame" x="40" y="413" width="286" height="54"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                         <state key="normal" title="Change Password"/>
                                     </button>
@@ -416,10 +416,9 @@
         <!--Navigation Controller-->
         <scene sceneID="39o-nY-ULg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YXb-JF-AMl" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="YXb-JF-AMl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sWv-47-p17">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

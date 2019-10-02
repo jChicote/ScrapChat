@@ -26,23 +26,25 @@ class AccountsViewController: UIViewController {
     }
     
     func updateData() {
+        //Updates data while providing a default value in case of nil value
+        
         let database = DatabaseManager()
         //Updates name
         database.getData("firstname") { (data) in
-            self.nameLabel.text = data + " "
+            self.nameLabel.text = data! + " "
             database.getData("lastname") { (data) in
-                 self.nameLabel.text! += data
+                 self.nameLabel.text! += data!
             }
         }
         
         //Updates gender
         database.getData("gender") { (data) in
-            self.genderLabel.text = data
+            self.genderLabel.text = data ?? ""
         }
         
         //Updates location
         database.getData("suburb") { (data) in
-            self.suburbLabel.text = data
+            self.suburbLabel.text = data ?? ""
         }
         
         //Updates email address
@@ -50,13 +52,9 @@ class AccountsViewController: UIViewController {
         
         //Updates gender
         database.getData("interest") { (data) in
-            self.interestsLabel.text = data
+            self.interestsLabel.text = data ?? ""
         }
         
         //profileImage.image =
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.navigationController?.popViewController(animated: false)
     }
 }
