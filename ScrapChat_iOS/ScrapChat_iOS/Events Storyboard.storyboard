@@ -176,7 +176,7 @@
                                         <color key="tintColor" red="1" green="0.2440512786" blue="0.1127923914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button" image="back-arrow"/>
                                         <connections>
-                                            <segue destination="ndm-e3-Zwd" kind="unwind" identifier="UnwindToHome" unwindAction="UnwindToHome:" id="B6G-zC-hka"/>
+                                            <segue destination="ndm-e3-Zwd" kind="unwind" identifier="UnwindToHome" animates="NO" unwindAction="UnwindToHome:" id="B6G-zC-hka"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatbeeBOLD" translatesAutoresizingMaskIntoConstraints="NO" id="6qa-4q-lnj">
@@ -234,6 +234,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVQ-hq-Cxd" userLabel="FriendButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="320.5" height="176.5"/>
+                                                <connections>
+                                                    <segue destination="Pxm-5k-jLs" kind="presentation" animates="NO" id="y5U-0z-iYV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -349,6 +352,10 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EH1-Vk-eu9" userLabel="Mingle Button">
                                                 <rect key="frame" x="18" y="18" width="329" height="329"/>
                                                 <color key="tintColor" red="0.091987882280000002" green="0.094126455489999997" blue="0.093879239200000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="onMingle:" destination="tJU-AN-6G8" eventType="touchDown" id="f6W-Gu-e4p"/>
+                                                    <segue destination="XYH-L9-Sno" kind="presentation" animates="NO" id="Kfd-qX-yQ8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -411,6 +418,7 @@
                     <connections>
                         <outlet property="dayLabel" destination="h1F-J3-Upe" id="iOO-wJ-cZy"/>
                         <outlet property="eventCollection" destination="w1C-6b-Vp0" id="sun-nc-p6V"/>
+                        <outlet property="mingleBack" destination="FwC-Qe-fFQ" id="NhS-Si-4jD"/>
                         <outlet property="monthLabel" destination="paq-Pz-YD9" id="4li-Hc-KKi"/>
                     </connections>
                 </viewController>
@@ -418,6 +426,22 @@
                 <exit id="ndm-e3-Zwd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="32.942898975109806" y="120.70312499999999"/>
+        </scene>
+        <!--FriendsStoryboard-->
+        <scene sceneID="bG8-Px-N5h">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FriendsStoryboard" id="Pxm-5k-jLs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="188-aw-yDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="177" y="536"/>
+        </scene>
+        <!--VideoChatScreen-->
+        <scene sceneID="hQA-T3-Db0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="VideoChatScreen" id="XYH-L9-Sno" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNr-cf-hyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="609"/>
         </scene>
     </scenes>
     <resources>

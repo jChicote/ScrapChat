@@ -14,6 +14,7 @@ class EventsViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var eventCollection: UICollectionView!
+    @IBOutlet weak var mingleBack: UIImageView!
     
     //Array of calender days / data
     var gregorianCalendar: [String] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -57,9 +58,19 @@ class EventsViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         layout.itemSize = CGSize(width: width, height: height)
         layout.minimumLineSpacing = 20
-        //layout.headerReferenceSize = CGSize(width: width, height: 80)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.mingleBack.tintColor = #colorLiteral(red: 0.8078431373, green: 0.7921568627, blue: 0.7921568627, alpha: 1)
+    }
+    
+    @IBAction func onMingle(_ sender: Any) {
+        UIView.animate(withDuration: 0.1) {
+            self.mingleBack.tintColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
+        }
+    }
     
 }
 
