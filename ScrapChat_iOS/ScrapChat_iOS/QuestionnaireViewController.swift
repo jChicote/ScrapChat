@@ -70,6 +70,6 @@ class QuestionnaireViewController: UIViewController {
     func transitionToHome() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
-        present(HomeVC, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController = HomeVC
     }
 }

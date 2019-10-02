@@ -8,16 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main-->
-        <scene sceneID="PUb-1i-vVk">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="5LC-fB-fZg" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="u61-oC-f3i"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6YT-x4-V7b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="683" y="-407"/>
-        </scene>
         <!--Accounts View Controller-->
         <scene sceneID="qnY-A4-4cz">
             <objects>
@@ -45,7 +35,7 @@
                                         <color key="tintColor" red="1" green="0.2440512786" blue="0.1127923914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button" image="back-arrow"/>
                                         <connections>
-                                            <segue destination="5LC-fB-fZg" kind="show" animates="NO" id="iUA-hE-Ub3"/>
+                                            <action selector="backPressed:" destination="YFJ-5D-cqj" eventType="touchUpInside" id="BLQ-ob-zcw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -101,7 +91,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hg-aX-K9m" userLabel="FriendButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="320.5" height="176.5"/>
                                                 <connections>
-                                                    <segue destination="PXd-qC-VHE" kind="show" animates="NO" id="0PM-3C-7Rb"/>
+                                                    <action selector="friendsPressed:" destination="YFJ-5D-cqj" eventType="touchUpInside" id="fZV-KC-nJt"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -214,9 +204,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJ3-bZ-7rf" userLabel="Mingle Button">
                                                 <rect key="frame" x="18" y="18" width="329" height="329"/>
                                                 <color key="tintColor" red="0.091987882280000002" green="0.094126455489999997" blue="0.093879239200000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <connections>
-                                                    <segue destination="C1m-zn-eaT" kind="show" animates="NO" id="FvL-l1-cCI"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -392,26 +379,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Psr-lk-9Ny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="665.88579795021963" y="30.468749999999996"/>
-        </scene>
-        <!--VideoChatScreen-->
-        <scene sceneID="yQD-1R-07n">
-            <objects>
-                <viewControllerPlaceholder storyboardName="VideoChatScreen" id="C1m-zn-eaT" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Tz0-gV-Y5D"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hzY-ls-CUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="666" y="471"/>
-        </scene>
-        <!--FriendsStoryboard-->
-        <scene sceneID="KeA-sc-dqc">
-            <objects>
-                <viewControllerPlaceholder storyboardName="FriendsStoryboard" id="PXd-qC-VHE" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Gjm-aJ-UTn"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N4n-bc-Y9M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1131" y="45"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="39o-nY-ULg">

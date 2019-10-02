@@ -54,7 +54,18 @@ class AccountsViewController: UIViewController {
         database.getData("interest") { (data) in
             self.interestsLabel.text = data ?? ""
         }
-        
         //profileImage.image =
+    }
+    
+    @IBAction func friendsPressed(_ sender: UIButton) {
+       let storyboard = UIStoryboard(name: "FriendsStoryboard", bundle: nil)
+        let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.FriendsVC)
+       UIApplication.shared.keyWindow?.rootViewController = HomeVC
+    }
+    
+    @IBAction func backPressed(_ sender: UIButton) {
+       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
+       UIApplication.shared.keyWindow?.rootViewController = HomeVC
     }
 }

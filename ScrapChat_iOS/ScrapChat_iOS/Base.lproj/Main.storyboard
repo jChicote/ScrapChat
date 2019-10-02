@@ -18,14 +18,6 @@
             </objects>
             <point key="canvasLocation" x="1781.9912152269399" y="-275.9765625"/>
         </scene>
-        <!--Friends List Storyboard-->
-        <scene sceneID="stj-Rv-JM7">
-            <objects>
-                <viewControllerPlaceholder storyboardName="FriendsStoryboard" id="Wuo-nO-bWa" userLabel="Friends List Storyboard" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QNh-WY-gup" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1938.7994143484625" y="-98.4375"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -125,7 +117,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtB-GN-KyB" userLabel="FriendButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="320.5" height="176.5"/>
                                                 <connections>
-                                                    <segue destination="Wuo-nO-bWa" kind="presentation" animates="NO" modalTransitionStyle="crossDissolve" id="OFS-LG-VXK"/>
+                                                    <action selector="friendsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hww-bi-9aZ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -322,7 +314,6 @@
                     <connections>
                         <outlet property="MingleBackImage" destination="s24-vv-NaU" id="4kZ-0q-9x0"/>
                         <outlet property="settingBackButton" destination="tid-yR-XCr" id="YIs-OS-uTf"/>
-                        <segue destination="lWE-8j-5yY" kind="show" identifier="accountsSegue" animates="NO" id="fPm-x8-uie"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -706,20 +697,9 @@
             </objects>
             <point key="canvasLocation" x="1862.8111273792092" y="181.640625"/>
         </scene>
-        <!--Accounts-->
-        <scene sceneID="e0W-22-Z2w">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Accounts" id="lWE-8j-5yY" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="tnq-vZ-jfo"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sJs-Po-A86" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1399" y="440"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="5wu-G4-7Et">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DcE-Aq-HNL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="Home" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="kZx-Os-Qa7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D7b-Bu-M4Y">
@@ -730,6 +710,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2oN-ls-qFV"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DcE-Aq-HNL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704.97803806734987" y="16.9921875"/>
         </scene>
