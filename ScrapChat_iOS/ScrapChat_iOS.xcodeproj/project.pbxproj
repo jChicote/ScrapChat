@@ -41,6 +41,9 @@
 		F3B6DBC3232CE04700122974 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBC2232CE04700122974 /* FriendsViewController.swift */; };
 		F806D35A2342478000EC47E8 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D3592342478000EC47E8 /* QuestionnaireViewController.swift */; };
 		F806D35C234248A500EC47E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D35B234248A500EC47E8 /* User.swift */; };
+		F81860462344CA1700A4C080 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81860452344CA1600A4C080 /* AccountsViewController.swift */; };
+		F81860482344CA2F00A4C080 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81860472344CA2F00A4C080 /* StorageManager.swift */; };
+		F818604A2344CA3700A4C080 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81860492344CA3700A4C080 /* Accounts.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,9 @@
 		F3B6DBC2232CE04700122974 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		F806D3592342478000EC47E8 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		F806D35B234248A500EC47E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = ScrapChat_iOS/User.swift; sourceTree = SOURCE_ROOT; };
+		F81860452344CA1600A4C080 /* AccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
+		F81860472344CA2F00A4C080 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = ScrapChat_iOS/StorageManager.swift; sourceTree = SOURCE_ROOT; };
+		F81860492344CA3700A4C080 /* Accounts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Accounts.storyboard; sourceTree = "<group>"; };
 		FF89D27146E993D9D6B31C96 /* Pods-ScrapChat_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapChat_iOS.debug.xcconfig"; path = "Target Support Files/Pods-ScrapChat_iOS/Pods-ScrapChat_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -210,6 +216,7 @@
 				F3607C8023275A4100503D55 /* LaunchScreen.storyboard */,
 				B2CB14782336E42300CD1C9D /* Login.storyboard */,
 				F3607C7B23275A4000503D55 /* Main.storyboard */,
+				F81860492344CA3700A4C080 /* Accounts.storyboard */,
 				F36ED8A22336389900ACDB2E /* VideoChatScreen.storyboard */,
 				F319CD87233E27FD003787D5 /* FriendsStoryboard.storyboard */,
 				F319CD9123419802003787D5 /* Events Storyboard.storyboard */,
@@ -221,6 +228,7 @@
 		F3607CAC23275D9200503D55 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F81860452344CA1600A4C080 /* AccountsViewController.swift */,
 				F3607C7923275A4000503D55 /* ViewController.swift */,
 				B2CB147B2336E50600CD1C9D /* LoginViewController.swift */,
 				F3B6DBB8232CC70D00122974 /* SettingsViewController.swift */,
@@ -241,6 +249,7 @@
 				F806D35B234248A500EC47E8 /* User.swift */,
 				B2CB14832336EC2100CD1C9D /* DatabaseManager.swift */,
 				B2CB14852336F5F400CD1C9D /* Constants.swift */,
+				F81860472344CA2F00A4C080 /* StorageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -371,6 +380,7 @@
 				F319CD9A2344AE31003787D5 /* ScrapbookStoryboard.storyboard in Resources */,
 				F319CD88233E27FD003787D5 /* FriendsStoryboard.storyboard in Resources */,
 				F3607C7F23275A4100503D55 /* Assets.xcassets in Resources */,
+				F818604A2344CA3700A4C080 /* Accounts.storyboard in Resources */,
 				B2CB147A2336E42300CD1C9D /* Login.storyboard in Resources */,
 				F3607C7D23275A4000503D55 /* Main.storyboard in Resources */,
 				B2CB14822336E74E00CD1C9D /* GoogleService-Info.plist in Resources */,
@@ -453,7 +463,9 @@
 				F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */,
 				B2CB147E2336E51A00CD1C9D /* SignUpViewController.swift in Sources */,
 				F319CD8A233E37B0003787D5 /* RoundedView.swift in Sources */,
+				F81860462344CA1700A4C080 /* AccountsViewController.swift in Sources */,
 				F319CD9623438A6D003787D5 /* EventCell.swift in Sources */,
+				F81860482344CA2F00A4C080 /* StorageManager.swift in Sources */,
 				F319CD8E234076A4003787D5 /* FriendCollectionView.swift in Sources */,
 				F3B6DBB9232CC70E00122974 /* SettingsViewController.swift in Sources */,
 				F319CD8C23406F0D003787D5 /* FriendCell.swift in Sources */,
