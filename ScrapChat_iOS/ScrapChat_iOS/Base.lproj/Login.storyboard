@@ -90,6 +90,9 @@
                                                 <state key="normal" title="NEXT">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="nextPressed:" destination="LwE-K4-kVD" eventType="touchUpInside" id="NUh-1t-CrZ"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Placeholder Error Text&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNn-fA-lHR">
                                                 <rect key="frame" x="0.0" y="80" width="430" height="30"/>
@@ -140,7 +143,7 @@
                         <outlet property="genderTF" destination="wod-bg-k3S" id="JxO-nT-qPf"/>
                         <outlet property="lastNameTF" destination="bhD-ka-f52" id="Spm-9h-yzF"/>
                         <outlet property="passwordTF" destination="lkF-JV-pXO" id="iTV-Ib-YGw"/>
-                        <segue destination="aE3-Pw-evj" kind="show" identifier="questionnaireSegue" id="SG3-vu-oHi"/>
+                        <segue destination="aE3-Pw-evj" kind="show" identifier="questionnaireSegue" id="VOd-to-4BD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpc-n7-epz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -287,7 +290,7 @@
         <!--Questionnaire View Controller-->
         <scene sceneID="kfr-Wr-TuE">
             <objects>
-                <viewController id="aE3-Pw-evj" customClass="QuestionnaireViewController" sceneMemberID="viewController">
+                <viewController id="aE3-Pw-evj" customClass="QuestionnaireViewController" customModule="ScrapChat_iOS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iae-ig-LKO">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -316,12 +319,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Upload a profile picture" textAlignment="natural" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="9VB-FV-MaL">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QP1-QT-qlr" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="168.5" width="430" height="59"/>
-                                                <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.99215686274509807" green="0.99215686274509807" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            </textField>
+                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5Ov-Z8-RvV" secondAttribute="height" multiplier="240:127" id="5xn-Ic-nLA"/>
@@ -338,8 +344,13 @@
                                                 <state key="normal" title="DONE">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="createPressed:" destination="aE3-Pw-evj" eventType="touchUpInside" id="7dg-FV-eUn"/>
+                                                    <action selector="donePressed:" destination="aE3-Pw-evj" eventType="touchUpInside" id="XPh-jc-KB5"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Placeholder Error Text&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tnq-iY-HKN">
@@ -385,7 +396,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="lZU-p0-RVC"/>
                     <connections>
-                        <outlet property="errorLabel" destination="Tnq-iY-HKN" id="IOw-eu-LEP"/>
+                        <outlet property="errorLabel" destination="Tnq-iY-HKN" id="uaa-cX-ZXD"/>
+                        <outlet property="imagePickerBtn" destination="QP1-QT-qlr" id="jnD-ei-FUk"/>
+                        <outlet property="interestTF" destination="y5M-Tw-qFS" id="kGP-po-0R2"/>
+                        <outlet property="suburbTF" destination="PF0-Nx-8sf" id="096-d0-gjV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vi1-qD-qQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

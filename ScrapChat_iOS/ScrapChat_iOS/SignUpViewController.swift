@@ -19,6 +19,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
+    var user = User()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.alpha = 0
@@ -30,31 +32,26 @@ class SignUpViewController: UIViewController {
             return "Please enter all fields"
         }
         
-        if validateEmail() == false {
-            return "Email is used?"
+        let emailValidity = validateEmail()
+        if emailValidity != "" {
+            return emailValidity
         }
         
+        if (passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count)! < 6 {
+            return "Password must be 6 characters long or more"
+        }
         return nil
         // TODO: validate email regex
     }
     
-    func validateEmail() -> Bool {
+    func validateEmail() -> String {
         let email = emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         var isValidated: Bool = false
-        Auth.auth().fetchSignInMethods(forEmail: email!) { (providers, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                isValidated = false
-            } else if let providers = providers {
-                print(providers)
-                isValidated = false
-            }
-            isValidated = true
-        }
-        return isValidated
+        var message: String = ""
+        return message
     }
     
-    @IBAction func createPressed(_ sender: UIButton) {
+    @IBAction func nextPressed(_ sender: UIButton) {
         //Input validation
         let errorMess = validateInput()
         guard errorMess == nil else {
@@ -69,23 +66,13 @@ class SignUpViewController: UIViewController {
         let gender = genderTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let dateOfBirth = dobTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        var user = User(firstName: firstName!, lastName: lastName!, email: email!, password: password!, gender: gender!, dateOfBirth: dateOfBirth!)
-        
-            /*Auth.auth().createUser(withEmail: email!, password: password!) { (result, error) in
-            if error != nil {
-                self.showError("Account was not successfully created.")
-                //print(error!.localizedDescription)
-            }
-            else {
-                if !DatabaseManager().createAccount(firstName: firstName!, lastName: lastName!, gender: gender!, dateOfBirth: dateOfBirth!, userID: result!.user.uid) {
-                    self.showError("Data was not successfully created")
-                }
-                else {
-                    DatabaseManager().updateLastLoggedIn()
-                    self.transitionToHome()
-                }
-            }
-        }*/
+        user = User(firstName: firstName!, lastName: lastName!, email: email!, password: password!, gender: gender!, dateOfBirth: dateOfBirth!)
+        performSegue(withIdentifier: "questionnaireSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! QuestionnaireViewController
+        vc.newUser = self.user
     }
     
     func showError(_ message: String) {

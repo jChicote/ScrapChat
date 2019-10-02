@@ -9,10 +9,25 @@
 import Foundation
 
 struct User {
-    var firstName: String
-    var lastName: String
-    var email: String
-    var password: String
-    var gender: String
-    var dateOfBirth: String
+    let firstName: String?
+    let lastName: String?
+    let email: String?
+    let password: String?
+    let gender: String?
+    let dateOfBirth: String?
+    
+    init(firstName: String? = nil,
+         lastName: String? = nil,
+         email: String? = nil,
+         password: String? = nil,
+         gender: String? = nil,
+         dateOfBirth: String? = nil) {
+        
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.password = password
+        self.gender = gender
+        self.dateOfBirth = dateOfBirth
+    }
 }
