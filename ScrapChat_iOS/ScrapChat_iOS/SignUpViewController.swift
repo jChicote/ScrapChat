@@ -45,9 +45,9 @@ class SignUpViewController: UIViewController {
     }
     
     func validateEmail() -> String {
-        let email = emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var isValidated: Bool = false
-        var message: String = ""
+        //let email = emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        //var isValidated: Bool = false
+        let message: String = ""
         return message
     }
     
