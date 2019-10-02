@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         Auth.auth().addStateDidChangeListener{ [weak self] (_, user) in
-            if user != user {
+            if user != nil {
                 //If user haven't signed out from the last session, executes this block of code
                 //Updates the log in timestamp
                 DatabaseManager().updateLastLoggedIn()
