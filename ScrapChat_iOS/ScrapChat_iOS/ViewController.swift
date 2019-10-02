@@ -40,6 +40,12 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func accountsPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Accounts", bundle: nil)
+        let HomeVC = storyboard.instantiateViewController(withIdentifier: "Accounts")
+        UIApplication.shared.keyWindow?.rootViewController = HomeVC
+    }
+    
     @IBAction func UnwindToHome(_ sender: UIStoryboardSegue) {}
     
     
