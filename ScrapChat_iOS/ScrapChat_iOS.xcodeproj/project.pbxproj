@@ -21,6 +21,7 @@
 		F319CD8E234076A4003787D5 /* FriendCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD8D234076A4003787D5 /* FriendCollectionView.swift */; };
 		F319CD90234085F2003787D5 /* FriendCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD8F234085F2003787D5 /* FriendCollectionLayout.swift */; };
 		F319CD9223419803003787D5 /* Events Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F319CD9123419802003787D5 /* Events Storyboard.storyboard */; };
+		F319CD9623438A6D003787D5 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD9523438A6D003787D5 /* EventCell.swift */; };
 		F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7723275A4000503D55 /* AppDelegate.swift */; };
 		F3607C7A23275A4000503D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7923275A4000503D55 /* ViewController.swift */; };
 		F3607C7D23275A4000503D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3607C7B23275A4000503D55 /* Main.storyboard */; };
@@ -34,7 +35,6 @@
 		F36ED8A52336393C00ACDB2E /* VideoChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36ED8A42336393C00ACDB2E /* VideoChatController.swift */; };
 		F3B6DBB9232CC70E00122974 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBB8232CC70D00122974 /* SettingsViewController.swift */; };
 		F3B6DBBB232CD07600122974 /* SettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBBA232CD07600122974 /* SettingTableView.swift */; };
-		F3B6DBBD232CE01200122974 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBBC232CE01100122974 /* SignInViewController.swift */; };
 		F3B6DBBF232CE02300122974 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBBE232CE02300122974 /* EventsViewController.swift */; };
 		F3B6DBC1232CE03A00122974 /* ScrapBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */; };
 		F3B6DBC3232CE04700122974 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBC2232CE04700122974 /* FriendsViewController.swift */; };
@@ -73,6 +73,7 @@
 		F319CD8D234076A4003787D5 /* FriendCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionView.swift; sourceTree = "<group>"; };
 		F319CD8F234085F2003787D5 /* FriendCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionLayout.swift; sourceTree = "<group>"; };
 		F319CD9123419802003787D5 /* Events Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Events Storyboard.storyboard"; sourceTree = "<group>"; };
+		F319CD9523438A6D003787D5 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		F3607C7423275A4000503D55 /* ScrapChat_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapChat_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3607C7723275A4000503D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3607C7923275A4000503D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		F36ED8A42336393C00ACDB2E /* VideoChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatController.swift; sourceTree = "<group>"; };
 		F3B6DBB8232CC70D00122974 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F3B6DBBA232CD07600122974 /* SettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
-		F3B6DBBC232CE01100122974 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F3B6DBBE232CE02300122974 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookViewController.swift; sourceTree = "<group>"; };
 		F3B6DBC2232CE04700122974 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -217,7 +217,6 @@
 				F3607C7923275A4000503D55 /* ViewController.swift */,
 				B2CB147B2336E50600CD1C9D /* LoginViewController.swift */,
 				F3B6DBB8232CC70D00122974 /* SettingsViewController.swift */,
-				F3B6DBBC232CE01100122974 /* SignInViewController.swift */,
 				B2CB147D2336E51A00CD1C9D /* SignUpViewController.swift */,
 				F3B6DBBE232CE02300122974 /* EventsViewController.swift */,
 				F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */,
@@ -246,6 +245,7 @@
 				F319CD89233E37B0003787D5 /* RoundedView.swift */,
 				F319CD8B23406F0D003787D5 /* FriendCell.swift */,
 				F319CD8F234085F2003787D5 /* FriendCollectionLayout.swift */,
+				F319CD9523438A6D003787D5 /* EventCell.swift */,
 			);
 			path = Designable;
 			sourceTree = "<group>";
@@ -430,7 +430,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3B6DBBD232CE01200122974 /* SignInViewController.swift in Sources */,
 				F319CD90234085F2003787D5 /* FriendCollectionLayout.swift in Sources */,
 				B2CB14842336EC2100CD1C9D /* DatabaseManager.swift in Sources */,
 				F3B6DBBF232CE02300122974 /* EventsViewController.swift in Sources */,
@@ -443,6 +442,7 @@
 				F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */,
 				B2CB147E2336E51A00CD1C9D /* SignUpViewController.swift in Sources */,
 				F319CD8A233E37B0003787D5 /* RoundedView.swift in Sources */,
+				F319CD9623438A6D003787D5 /* EventCell.swift in Sources */,
 				F319CD8E234076A4003787D5 /* FriendCollectionView.swift in Sources */,
 				F3B6DBB9232CC70E00122974 /* SettingsViewController.swift in Sources */,
 				F319CD8C23406F0D003787D5 /* FriendCell.swift in Sources */,
