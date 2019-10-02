@@ -26,12 +26,12 @@ class DatabaseManager {
         ref.setData(["lastonline":FieldValue.serverTimestamp()], merge: true)
     }
     
-    func getData(_ fieldName: String, completion: @escaping (String) -> Void) {
+    func getData(_ fieldName: String, completion: @escaping (String?) -> Void) {
         let docRef = db.collection("users").document(Auth.auth().currentUser!.uid)
         docRef.getDocument { (snapshot, error) in
             if error == nil {
                 let data = snapshot?.get(fieldName)
-                completion(data as! String)
+                completion(data as! String?)
             }
         }
     }
