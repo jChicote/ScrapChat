@@ -80,10 +80,6 @@ class SignUpViewController: UIViewController {
         errorLabel.alpha = 1
     }
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
-    }*/
-    
     func transitionToHome() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
