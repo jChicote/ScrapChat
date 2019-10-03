@@ -217,7 +217,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLe-09-e7X">
-                                <rect key="frame" x="239" y="155.5" width="888" height="717"/>
+                                <rect key="frame" x="239" y="1055.5" width="888" height="717"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Matched" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbP-t8-w4o">
                                         <rect key="frame" x="89" y="305" width="710" height="60"/>
@@ -255,7 +255,7 @@
                                             <action selector="backButton:" destination="Jfs-2P-G0J" eventType="touchUpInside" id="fSI-PU-mcB"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKE-Tq-FIR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="kKE-Tq-FIR">
                                         <rect key="frame" x="20" y="132.5" width="107.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cuR-Vq-HuO"/>
@@ -264,7 +264,7 @@
                                         <color key="textColor" red="1" green="0.2440512786" blue="0.1127923914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5B-OQ-BkE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="c5B-OQ-BkE">
                                         <rect key="frame" x="550" y="662" width="143.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="anb-O9-SUI"/>
@@ -284,7 +284,7 @@
                                             <action selector="declineSuggestion:" destination="Jfs-2P-G0J" eventType="touchUpInside" id="qr0-mS-B3n"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dI7-1f-CNI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="dI7-1f-CNI">
                                         <rect key="frame" x="206" y="662" width="143" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="BGu-Xf-AzN"/>
@@ -340,7 +340,7 @@
                         <color key="backgroundColor" red="0.14671713080000001" green="0.14671713080000001" blue="0.14671713080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OVA-LS-h04" firstAttribute="centerX" secondItem="XFB-pI-bqE" secondAttribute="centerX" id="Pro-vf-uIj"/>
-                            <constraint firstItem="rLe-09-e7X" firstAttribute="centerY" secondItem="XFB-pI-bqE" secondAttribute="centerY" id="Sfl-0V-Ibt"/>
+                            <constraint firstItem="rLe-09-e7X" firstAttribute="centerY" secondItem="XFB-pI-bqE" secondAttribute="centerY" constant="900" id="Sfl-0V-Ibt"/>
                             <constraint firstItem="rLe-09-e7X" firstAttribute="centerX" secondItem="XFB-pI-bqE" secondAttribute="centerX" id="bTm-LU-Mve"/>
                             <constraint firstItem="rLe-09-e7X" firstAttribute="height" secondItem="jt6-z4-MQa" secondAttribute="height" multiplier="0.7" id="e9D-sO-nwf"/>
                             <constraint firstItem="OVA-LS-h04" firstAttribute="width" secondItem="jt6-z4-MQa" secondAttribute="width" id="rIf-vG-tAW"/>
