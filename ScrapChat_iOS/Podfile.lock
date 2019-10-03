@@ -132,7 +132,7 @@ DEPENDENCIES:
   - Protobuf
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
     - AgoraRtcEngine_iOS
     - BoringSSL-GRPC
     - Firebase
@@ -182,4 +182,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: eadae3c026793461a374f7d9506d6ba8a7b9a20a
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.7.5
