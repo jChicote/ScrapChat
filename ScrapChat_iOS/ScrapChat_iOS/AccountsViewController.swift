@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SDWebImage
 
 class AccountsViewController: UIViewController {
 
@@ -28,6 +29,7 @@ class AccountsViewController: UIViewController {
         profileImage.layer.cornerRadius = profileImage.frame.width/2
         profileImage.clipsToBounds = true
         updateData()
+        updateImage()
     }
     
     func updateData() {
@@ -54,15 +56,18 @@ class AccountsViewController: UIViewController {
         database.getData("interest") { (data) in
             self.interestsLabel.text = data ?? ""
         }
-        //profileImage.image =
     }
     
     func updateImage() {
+        //Updates image view with profile image from the database
         let database = DatabaseManager()
-        database.getData("profilePicture"){ (data) in
-            if data != nil {
-                print("Image loaded")
-                //profileImage.sdImage
+        database.getData("profilePicture"){ (url) in
+            if url != nil {
+                self.profileImage.sd_setImage(with: URL(string: url!),
+                                              placeholderImage: UIImage(named: "Portrait Placeholder.png"),
+                                              options: SDWebImageOptions.highPriority,
+                                              progress: nil,
+                                              completed: nil)
             }
         }
     }
@@ -79,18 +84,13 @@ class AccountsViewController: UIViewController {
         let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
        UIApplication.shared.keyWindow?.rootViewController = HomeVC
     }
+    
+    @IBAction func unwindToAccounts(_ sender: UIStoryboardSegue) {}
 }
 
 extension AccountsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBAction func picturePressed(_ sender: Any) {
         showImagePickerController()
-        /*guard let image = profileImage.image, let data = image.jpegData(compressionQuality: 1.0) else {
-            //present alert
-            //print(data)
-            return
-        }
-        
-        let imageName = UUID().uuidString*/
     }
     
     /*func showImagePickerControllerActionSheet() {

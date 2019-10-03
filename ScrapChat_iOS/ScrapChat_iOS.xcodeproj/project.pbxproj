@@ -45,6 +45,7 @@
 		F81860462344CA1700A4C080 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81860452344CA1600A4C080 /* AccountsViewController.swift */; };
 		F81860482344CA2F00A4C080 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81860472344CA2F00A4C080 /* StorageManager.swift */; };
 		F818604A2344CA3700A4C080 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81860492344CA3700A4C080 /* Accounts.storyboard */; };
+		F8390C0B2346248000E78123 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8390C0A2346248000E78123 /* PasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		F81860452344CA1600A4C080 /* AccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		F81860472344CA2F00A4C080 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = ScrapChat_iOS/StorageManager.swift; sourceTree = SOURCE_ROOT; };
 		F81860492344CA3700A4C080 /* Accounts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Accounts.storyboard; sourceTree = "<group>"; };
+		F8390C0A2346248000E78123 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		FF89D27146E993D9D6B31C96 /* Pods-ScrapChat_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapChat_iOS.debug.xcconfig"; path = "Target Support Files/Pods-ScrapChat_iOS/Pods-ScrapChat_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				F81860452344CA1600A4C080 /* AccountsViewController.swift */,
+				F8390C0A2346248000E78123 /* PasswordViewController.swift */,
 				F3607C7923275A4000503D55 /* ViewController.swift */,
 				B2CB147B2336E50600CD1C9D /* LoginViewController.swift */,
 				F3B6DBB8232CC70D00122974 /* SettingsViewController.swift */,
@@ -472,6 +475,7 @@
 				F81860482344CA2F00A4C080 /* StorageManager.swift in Sources */,
 				F319CD8E234076A4003787D5 /* FriendCollectionView.swift in Sources */,
 				F3B6DBB9232CC70E00122974 /* SettingsViewController.swift in Sources */,
+				F8390C0B2346248000E78123 /* PasswordViewController.swift in Sources */,
 				F319CD8C23406F0D003787D5 /* FriendCell.swift in Sources */,
 				F3607CAF232760B000503D55 /* Model_ScrapChat.xcdatamodeld in Sources */,
 				F3B6DBC3232CE04700122974 /* FriendsViewController.swift in Sources */,
