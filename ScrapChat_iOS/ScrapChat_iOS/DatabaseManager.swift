@@ -26,6 +26,11 @@ class DatabaseManager {
         ref.setData(["lastonline":FieldValue.serverTimestamp()], merge: true)
     }
     
+    func updateData(key: String, value:String) {
+        let ref = db.collection("users").document(Auth.auth().currentUser!.uid)
+        ref.setData([key:value], merge: true)
+    }
+    
     func getData(_ fieldName: String, completion: @escaping (String?) -> Void) {
         let docRef = db.collection("users").document(Auth.auth().currentUser!.uid)
         docRef.getDocument { (snapshot, error) in

@@ -26,6 +26,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Allow Camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app wants to use your photos</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Allow Microphone</string>
 	<key>UILaunchStoryboardName</key>

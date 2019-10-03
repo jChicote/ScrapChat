@@ -8,21 +8,38 @@
 
 import Foundation
 import FirebaseStorage
+import FirebaseAuth
 
 class StorageManager {
     // Create a root reference
     let storage = Storage.storage(url:"gs://scrapchat-77d1f.appspot.com/")
     
-    func uploadImage(imagePath: String) {
-        //let storageRef = storage.reference()
+    func uploadProfilePicture(image: Data) {
+        //Uploads profile picture to database and sets a URL reference on the database
+        
+        let storageRef = storage.reference()
+        let filePath = "/user/\(Auth.auth().currentUser!.uid)/\("userPhoto")"
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        storageRef.child(filePath).putData(image, metadata: metaData) {(metaData, error) in
+            if let error = error {
+               print(error.localizedDescription)
+               return
+            } else {
+                storageRef.child(filePath).downloadURL(completion: { (url, error) in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                    } else {
+                        let downloadURL = url!.absoluteString
+                        DatabaseManager().updateData(key: "profilePicture", value: downloadURL)
+                    }
+                })
+            }
+        }
     }
-    // Create a reference to "mountains.jpg"
-    //let mountainsRef = storageRef.child("mountains.jpg")
-
-    // Create a reference to 'images/mountains.jpg'
-    //let mountainImagesRef = storageRef.child("images/mountains.jpg")
-
-    // While the file names are the same, the references point to different files
-    //mountainsRef.name == mountainImagesRef.name;            // true
-    //mountainsRef.fullPath == mountainImagesRef.fullPath;    // false
+    
+    func getPicture(withReferenceURL: String) -> StorageReference {
+        let storageRef = storage.reference(forURL: withReferenceURL)
+        return storageRef
+    }
 }
