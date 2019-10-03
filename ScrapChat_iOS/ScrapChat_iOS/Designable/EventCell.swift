@@ -1,22 +1,24 @@
 //
-//  FriendCell.swift
+//  EventCell.swift
 //  ScrapChat_iOS
 //
-//  Created by Jaiden Chicote on 29/9/19.
+//  Created by Jaiden Chicote on 1/10/19.
 //  Copyright © 2019 Dream Team. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class FriendCell : UICollectionViewCell {
+class EventCell : UICollectionViewCell {
     
-    @IBOutlet var cellLabel: UILabel!
-    @IBOutlet var cellImage: UIImageView!
- 
+    @IBOutlet var dayOTWLabel: UILabel!
+    @IBOutlet var DateLabel: UILabel!
+    @IBOutlet var ddescriptionLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var locationLabel: UILabel!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        
     }
     
     override func awakeFromNib() {
@@ -29,6 +31,5 @@ class FriendCell : UICollectionViewCell {
             contentView.topAnchor.constraint(equalTo: topAnchor),
             contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-        
     }
 }

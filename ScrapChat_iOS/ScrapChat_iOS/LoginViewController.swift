@@ -7,24 +7,65 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+        @IBOutlet weak var emailTF: UITextField!
+        @IBOutlet weak var passwordTF: UITextField!
+        @IBOutlet weak var errorLabel: UILabel!
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            errorLabel.alpha = 0
+        }
+        
+        @IBAction func backToLogin(_sender: UIStoryboardSegue) {}
+        
+        func validateInput() -> String? {
+            
+            if emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+                return "Please enter all fields"
+            }
+            else {
+                return nil
+            }
+            
+            // TODO: validate email regex
+        }
+        
+        @IBAction func loginPressed(_ sender: UIButton) {
+            //Input validation
+            let errorMess = validateInput()
+            guard errorMess == nil else {
+                showError(errorMess!)
+                return
+            }
+            
+            let email = emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            Auth.auth().signIn(withEmail: email!, password: password!) { (result, error) in
+                if error != nil {
+                    //Sign in not successful
+                    self.showError("Incorrect email or password.")
+                    //print(error!.localizedDescription)
+                }
+                else {
+                    DatabaseManager().updateLastLoggedIn()
+                    self.transitionToHome()
+                }
+            }
+        }
+        
+        func showError(_ message: String) {
+            errorLabel.text = message
+            errorLabel.alpha = 1
+        }
+        
+        func transitionToHome() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
+            UIApplication.shared.keyWindow?.rootViewController = HomeVC
+        }
     }
-    */
-
-}

@@ -1,23 +1,15 @@
 //
-//  FriendCell.swift
+//  CollageCell.swift
 //  ScrapChat_iOS
 //
-//  Created by Jaiden Chicote on 29/9/19.
+//  Created by Jaiden Chicote on 3/10/19.
 //  Copyright © 2019 Dream Team. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class FriendCell : UICollectionViewCell {
-    
-    @IBOutlet var cellLabel: UILabel!
-    @IBOutlet var cellImage: UIImageView!
- 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-    }
+class CollageCell : UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +20,6 @@ class FriendCell : UICollectionViewCell {
             contentView.rightAnchor.constraint(equalTo: rightAnchor),
             contentView.topAnchor.constraint(equalTo: topAnchor),
             contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-        
+            ])
     }
 }

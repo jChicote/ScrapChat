@@ -40,6 +40,18 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func accountsPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Accounts", bundle: nil)
+        let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.AccountsVC)
+        UIApplication.shared.keyWindow?.rootViewController = HomeVC
+    }
+    
+    @IBAction func friendsPressed(_ sender: UIButton) {
+       let storyboard = UIStoryboard(name: "FriendsStoryboard", bundle: nil)
+        let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.FriendsVC)
+       UIApplication.shared.keyWindow?.rootViewController = HomeVC
+    }
+    
     @IBAction func UnwindToHome(_ sender: UIStoryboardSegue) {}
     
     

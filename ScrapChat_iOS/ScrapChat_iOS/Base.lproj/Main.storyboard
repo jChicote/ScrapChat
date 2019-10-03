@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kZx-Os-Qa7">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,23 +13,17 @@
         <!--VideoChatScreen-->
         <scene sceneID="GjR-05-cN5">
             <objects>
-                <viewControllerPlaceholder storyboardName="VideoChatScreen" id="5sP-NS-7j7" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="VideoChatScreen" id="5sP-NS-7j7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zuh-cJ-eDA"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaV-v4-i8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="394" y="-275"/>
-        </scene>
-        <!--Friends List Storyboard-->
-        <scene sceneID="stj-Rv-JM7">
-            <objects>
-                <viewControllerPlaceholder storyboardName="FriendsStoryboard" id="Wuo-nO-bWa" userLabel="Friends List Storyboard" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QNh-WY-gup" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="551" y="-98"/>
+            <point key="canvasLocation" x="1781.9912152269399" y="-275.9765625"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,6 +100,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyC-FC-tkk" userLabel="AccountButton">
                                                 <rect key="frame" x="320.5" y="0.0" width="262.5" height="176.5"/>
                                                 <color key="tintColor" red="0.094102360308170319" green="0.09412645548582077" blue="0.094100810587406158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="accountsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CN3-ys-wfc"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friends" translatesAutoresizingMaskIntoConstraints="NO" id="bu2-Fc-2Mj" userLabel="Friends Image">
                                                 <rect key="frame" x="150.5" y="15" width="106" height="106"/>
@@ -122,7 +119,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtB-GN-KyB" userLabel="FriendButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="320.5" height="176.5"/>
                                                 <connections>
-                                                    <segue destination="Wuo-nO-bWa" kind="presentation" animates="NO" modalTransitionStyle="crossDissolve" id="OFS-LG-VXK"/>
+                                                    <action selector="friendsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hww-bi-9aZ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -282,6 +279,9 @@
                                         </constraints>
                                         <color key="tintColor" red="1" green="0.0015601739875351628" blue="0.84701783351789817" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="settings_cog"/>
+                                        <connections>
+                                            <segue destination="4a2-lG-h9Z" kind="show" animates="NO" id="72k-Z9-nzT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -312,6 +312,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="uNM-tP-3EL"/>
                     <connections>
                         <outlet property="MingleBackImage" destination="s24-vv-NaU" id="4kZ-0q-9x0"/>
                         <outlet property="settingBackButton" destination="tid-yR-XCr" id="YIs-OS-uTf"/>
@@ -319,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10.980966325036603" y="16.9921875"/>
+            <point key="canvasLocation" x="1398.9751098096631" y="16.9921875"/>
         </scene>
         <!--Login-->
         <scene sceneID="Gef-Ph-tem">
@@ -329,7 +330,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5s-rv-ynh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937" y="-851"/>
+            <point key="canvasLocation" x="1895" y="-683"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="OM4-aW-g9h">
@@ -684,10 +685,11 @@
                             <outlet property="delegate" destination="4a2-lG-h9Z" id="vHM-Yj-aUM"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="VfY-Fa-plv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knr-fW-WAI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571.8887262079063" y="-730.078125"/>
+            <point key="canvasLocation" x="2336" y="-277"/>
         </scene>
         <!--Events Storyboard-->
         <scene sceneID="Syb-yZ-JoK">
@@ -695,7 +697,24 @@
                 <viewControllerPlaceholder storyboardName="Events Storyboard" id="ibi-ed-tuI" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xca-KO-VKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="475" y="182"/>
+            <point key="canvasLocation" x="1862.8111273792092" y="181.640625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5wu-G4-7Et">
+            <objects>
+                <navigationController storyboardIdentifier="Home" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="kZx-Os-Qa7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D7b-Bu-M4Y">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2oN-ls-qFV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DcE-Aq-HNL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.97803806734987" y="16.9921875"/>
         </scene>
     </scenes>
     <resources>
