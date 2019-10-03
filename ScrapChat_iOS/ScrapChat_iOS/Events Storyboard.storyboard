@@ -161,7 +161,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="123"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wq-N2-Vkf" userLabel="Setting Cog">
-                                        <rect key="frame" x="1252.5" y="34.5" width="73.5" height="74"/>
+                                        <rect key="frame" x="1265" y="40.5" width="61" height="61.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="2wq-N2-Vkf" secondAttribute="height" multiplier="1:1" id="6B1-uJ-cbB"/>
                                         </constraints>
@@ -186,7 +186,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="psy-dV-QaK" firstAttribute="centerY" secondItem="o1p-QJ-rQJ" secondAttribute="centerY" constant="10" id="5nY-V2-Pfp"/>
-                                    <constraint firstItem="2wq-N2-Vkf" firstAttribute="height" secondItem="o1p-QJ-rQJ" secondAttribute="height" multiplier="0.6" id="67d-Hl-Xqd"/>
+                                    <constraint firstItem="2wq-N2-Vkf" firstAttribute="height" secondItem="o1p-QJ-rQJ" secondAttribute="height" multiplier="0.5" id="67d-Hl-Xqd"/>
                                     <constraint firstItem="psy-dV-QaK" firstAttribute="leading" secondItem="o1p-QJ-rQJ" secondAttribute="leading" constant="40" id="9Nm-Se-32J"/>
                                     <constraint firstItem="psy-dV-QaK" firstAttribute="height" secondItem="o1p-QJ-rQJ" secondAttribute="height" multiplier="0.6" id="JPB-1r-eXe"/>
                                     <constraint firstItem="6qa-4q-lnj" firstAttribute="centerY" secondItem="o1p-QJ-rQJ" secondAttribute="centerY" constant="10" id="Mtm-uG-uAc"/>
