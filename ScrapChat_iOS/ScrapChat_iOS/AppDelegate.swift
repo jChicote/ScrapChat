@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        Auth.auth().addStateDidChangeListener{ [weak self] (_, user) in
+        /*Auth.auth().addStateDidChangeListener{ [weak self] (_, user) in
             if user != nil {
                 //If user haven't signed out from the last session, executes this block of code
                 //Updates the log in timestamp
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self!.window?.rootViewController = HomeVC
                 self!.window?.makeKeyAndVisible()
             }
-        }
+        }*/
         return true
     }
 

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SDWebImage
 
 class AccountsViewController: UIViewController {
 
@@ -25,9 +26,8 @@ class AccountsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        profileImage.layer.cornerRadius = profileImage.frame.width/2
-        profileImage.clipsToBounds = true
         updateData()
+        updateImage()
     }
     
     func updateData() {
@@ -54,43 +54,48 @@ class AccountsViewController: UIViewController {
         database.getData("interest") { (data) in
             self.interestsLabel.text = data ?? ""
         }
-        //profileImage.image =
     }
     
     func updateImage() {
+        //Updates image view with profile image from the database
         let database = DatabaseManager()
-        database.getData("profilePicture"){ (data) in
-            if data != nil {
-                print("Image loaded")
-                //profileImage.sdImage
+        database.getData("profilePicture"){ (url) in
+            if url != nil {
+                self.profileImage.sd_setImage(with: URL(string: url!),
+                                              placeholderImage: UIImage(named: "Portrait Placeholder.png"),
+                                              options: SDWebImageOptions.highPriority,
+                                              progress: nil,
+                                              completed: nil)
             }
         }
+        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
+        profileImage.layer.masksToBounds = true
+        profileImage.clipsToBounds = true
     }
     
     /*Segues*/
     @IBAction func friendsPressed(_ sender: UIButton) {
        let storyboard = UIStoryboard(name: "FriendsStoryboard", bundle: nil)
-        let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.FriendsVC)
-       UIApplication.shared.keyWindow?.rootViewController = HomeVC
+       let VC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.FriendsVC)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+       appDelegate.window!.rootViewController = VC
+       appDelegate.window!.makeKeyAndVisible()
     }
     
     @IBAction func backPressed(_ sender: UIButton) {
        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
-       UIApplication.shared.keyWindow?.rootViewController = HomeVC
+       let VC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+       appDelegate.window!.rootViewController = VC
+       appDelegate.window!.makeKeyAndVisible()
     }
+    
+    @IBAction func unwindToAccounts(_ sender: UIStoryboardSegue) {}
 }
 
 extension AccountsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBAction func picturePressed(_ sender: Any) {
         showImagePickerController()
-        /*guard let image = profileImage.image, let data = image.jpegData(compressionQuality: 1.0) else {
-            //present alert
-            //print(data)
-            return
-        }
-        
-        let imageName = UUID().uuidString*/
     }
     
     /*func showImagePickerControllerActionSheet() {
@@ -104,20 +109,15 @@ extension AccountsViewController: UIImagePickerControllerDelegate, UINavigationC
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
         imagePickerController.sourceType = .photoLibrary
-        //present(imagePickerController, animated: true, completion: nil)
-        self.show(imagePickerController, sender: self)
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let storage = StorageManager()
-        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            var data = Data()
-            data = image.jpegData(compressionQuality: 0.8)!
-            storage.uploadProfilePicture(image: data)
-        } else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            var data = Data()
-            data = image.jpegData(compressionQuality: 0.8)!
-            storage.uploadProfilePicture(image: data)
+        if let pic = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            storage.uploadProfilePicture(image: storage.generateImageDataFrom(pic))
+        } else if let pic = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            storage.uploadProfilePicture(image: storage.generateImageDataFrom(pic))
         }
         dismiss(animated: true, completion: nil)
         updateImage()
