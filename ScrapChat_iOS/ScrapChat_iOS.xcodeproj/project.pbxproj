@@ -262,8 +262,8 @@
 		F3607CB223276DC000503D55 /* Designable */ = {
 			isa = PBXGroup;
 			children = (
-				F3607CB3232770BD00503D55 /* RoundRectButton.swift */,
 				F319CD8D234076A4003787D5 /* FriendCollectionView.swift */,
+				F3607CB3232770BD00503D55 /* RoundRectButton.swift */,
 				F3B6DBBA232CD07600122974 /* SettingTableView.swift */,
 				F319CD89233E37B0003787D5 /* RoundedView.swift */,
 				F319CD8B23406F0D003787D5 /* FriendCell.swift */,
@@ -675,7 +675,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cpp.ScrapChat-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -694,7 +694,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cpp.ScrapChat-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

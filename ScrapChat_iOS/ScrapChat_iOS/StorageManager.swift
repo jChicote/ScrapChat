@@ -38,6 +38,29 @@ class StorageManager {
         }
     }
     
+    func uploadPicture(image: Data, withName: String) {
+        let storageRef = storage.reference()
+        let filePath = "/user/\(Auth.auth().currentUser!.uid)/scrapbooks/\(withName)"
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        metaData.contentType = "image/jpg"
+        storageRef.child(filePath).putData(image, metadata: metaData) {(metaData, error) in
+            if let error = error {
+               print(error.localizedDescription)
+               return
+            } else {
+                storageRef.child(filePath).downloadURL(completion: { (url, error) in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                    } else {
+                        let downloadURL = url!.absoluteString
+                        //@Jaiden: Atm the URL reference is still not used
+                    }
+                })
+            }
+        }
+    }
+    
     func getPicture(withReferenceURL: String) -> StorageReference {
         let storageRef = storage.reference(forURL: withReferenceURL)
         return storageRef
