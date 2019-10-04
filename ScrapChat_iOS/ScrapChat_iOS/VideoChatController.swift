@@ -19,6 +19,17 @@ class VideoChatController: UIViewController {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var localVideoMutedBg: UIView!
     
+    //Constraint outlets
+    var remoteTop: NSLayoutConstraint?
+    var remoteLead: NSLayoutConstraint?
+    var remoteWidth: NSLayoutConstraint?
+    var remoteHeight: NSLayoutConstraint?
+    
+    //ScrapBook View
+    @IBOutlet weak var collageView: UIView!
+    @IBOutlet weak var createButton: UIButton!
+    var collageActive = false
+    
     var agoraKit: AgoraRtcEngineKit!
     
     var isRemoteVideoRender: Bool = true {
@@ -46,6 +57,21 @@ class VideoChatController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collageView.layer.cornerRadius = 20
+        collageView.alpha = 0
+        createButton.layer.cornerRadius = 20
+        
+        //view.addSubview(remoteVideo)
+        remoteVideo.translatesAutoresizingMaskIntoConstraints = false
+        remoteLead = remoteVideo.leftAnchor.constraint(equalTo: view.leftAnchor)
+        remoteTop = remoteVideo.topAnchor.constraint(equalTo: view.topAnchor)
+        remoteWidth = remoteVideo.widthAnchor.constraint(equalToConstant: view.frame.width)
+        remoteHeight = remoteVideo.heightAnchor.constraint(equalToConstant: view.frame.height)
+        
+        remoteLead?.isActive = true
+        remoteTop?.isActive = true
+        remoteWidth?.isActive = true
+        remoteHeight?.isActive = true
         
         initializeAgoraEngine()
         setupVideo()
@@ -157,6 +183,44 @@ class VideoChatController: UIViewController {
         localVideo.isHidden = sender.isSelected
         localVideoMutedBg.isHidden = !sender.isSelected
         localVideoMutedIndicator.isHidden = !sender.isSelected
+    }
+    
+    //collage actions
+    @IBAction func buttonRender(_ sender: Any) {
+        
+        if collageActive == false {
+            
+            createButton.backgroundColor = #colorLiteral(red: 0.09410236031, green: 0.09412645549, blue: 0.09410081059, alpha: 1)
+            createButton.tintColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
+            
+            //remoteView resize
+            remoteTop?.constant = 40
+            remoteLead?.constant = 40
+            remoteWidth?.constant = (view.frame.width * 0.26) * 0.75
+            remoteHeight?.constant = (view.frame.height * 0.26) / 1.3
+            
+            UIView.animate(withDuration: 0.3) {
+                
+                self.collageView.alpha = 1
+                self.view.layoutIfNeeded()
+            }
+            collageActive = true
+        } else {
+            createButton.backgroundColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
+            createButton.tintColor = #colorLiteral(red: 0.09410236031, green: 0.09412645549, blue: 0.09410081059, alpha: 1)
+            
+            //remoteView resize
+            remoteTop?.constant = 0
+            remoteLead?.constant = 0
+            remoteWidth?.constant = view.frame.width
+            remoteHeight?.constant = view.frame.height
+            
+            UIView.animate(withDuration: 0.1) {
+                self.collageView.alpha = 0
+                self.view.layoutIfNeeded()
+            }
+            collageActive = false
+        }
     }
 }
 
