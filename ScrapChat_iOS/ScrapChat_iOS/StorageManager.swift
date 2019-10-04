@@ -14,6 +14,11 @@ class StorageManager {
     // Create a root reference
     let storage = Storage.storage(url:"gs://scrapchat-77d1f.appspot.com/")
     
+    func generateImageDataFrom(_ image: UIImage) -> Data {
+        let data = image.jpegData(compressionQuality: 0.8)
+        return data!
+    }
+    
     func uploadProfilePicture(image: Data) {
         //Uploads profile picture to database and sets a URL reference on the database
         
