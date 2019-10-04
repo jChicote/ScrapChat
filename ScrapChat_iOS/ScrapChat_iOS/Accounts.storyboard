@@ -430,7 +430,6 @@
                                         <color key="tintColor" red="1" green="0.2440512786" blue="0.1127923914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button" image="back-arrow"/>
                                         <connections>
-                                            <action selector="backPressed:" destination="hhb-jf-mjc" eventType="touchUpInside" id="JHE-CM-IVz"/>
                                             <segue destination="Fz7-is-C6w" kind="unwind" identifier="unwindAccount" unwindAction="unwindToAccounts:" id="yRK-Y9-qBt"/>
                                         </connections>
                                     </button>

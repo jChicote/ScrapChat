@@ -26,8 +26,6 @@ class AccountsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        profileImage.layer.cornerRadius = profileImage.frame.width/2
-        profileImage.clipsToBounds = true
         updateData()
         updateImage()
     }
@@ -70,19 +68,26 @@ class AccountsViewController: UIViewController {
                                               completed: nil)
             }
         }
+        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
+        profileImage.layer.masksToBounds = true
+        profileImage.clipsToBounds = true
     }
     
     /*Segues*/
     @IBAction func friendsPressed(_ sender: UIButton) {
        let storyboard = UIStoryboard(name: "FriendsStoryboard", bundle: nil)
-        let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.FriendsVC)
-       UIApplication.shared.keyWindow?.rootViewController = HomeVC
+       let VC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.FriendsVC)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+       appDelegate.window!.rootViewController = VC
+       appDelegate.window!.makeKeyAndVisible()
     }
     
     @IBAction func backPressed(_ sender: UIButton) {
        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
-       UIApplication.shared.keyWindow?.rootViewController = HomeVC
+       let VC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+       appDelegate.window!.rootViewController = VC
+       appDelegate.window!.makeKeyAndVisible()
     }
     
     @IBAction func unwindToAccounts(_ sender: UIStoryboardSegue) {}
@@ -104,20 +109,15 @@ extension AccountsViewController: UIImagePickerControllerDelegate, UINavigationC
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
         imagePickerController.sourceType = .photoLibrary
-        //present(imagePickerController, animated: true, completion: nil)
-        self.show(imagePickerController, sender: self)
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let storage = StorageManager()
-        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            var data = Data()
-            data = image.jpegData(compressionQuality: 0.8)!
-            storage.uploadProfilePicture(image: data)
-        } else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            var data = Data()
-            data = image.jpegData(compressionQuality: 0.8)!
-            storage.uploadProfilePicture(image: data)
+        if let pic = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            storage.uploadProfilePicture(image: storage.generateImageDataFrom(pic))
+        } else if let pic = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            storage.uploadProfilePicture(image: storage.generateImageDataFrom(pic))
         }
         dismiss(animated: true, completion: nil)
         updateImage()
