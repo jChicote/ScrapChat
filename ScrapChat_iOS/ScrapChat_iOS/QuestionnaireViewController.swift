@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class QuestionnaireViewController: UIViewController {
+class QuestionnaireViewController: VCKeyboardHandler {
     
     @IBOutlet weak var imagePickerBtn: RoundRectButton!
     @IBOutlet weak var suburbTF: UITextField!
@@ -69,8 +69,9 @@ class QuestionnaireViewController: UIViewController {
                                 self.transitionToHome()
                             }
                             else {
-                                self.showAlert("Please try again later.", withHeader: "Upload failed")
-                                self.transitionToHome()
+                                self.showAlert("Please try again later.", withHeader: "Upload failed", completion: {_ in
+                                    self.transitionToHome()
+                                })
                             }
                         }
                     }

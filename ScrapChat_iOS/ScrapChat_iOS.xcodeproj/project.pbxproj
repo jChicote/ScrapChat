@@ -54,6 +54,8 @@
 		F8390C0B2346248000E78123 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8390C0A2346248000E78123 /* PasswordViewController.swift */; };
 		F86E04F323486D2000D36663 /* ActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E04F223486D2000D36663 /* ActivityIndicatorViewController.swift */; };
 		F86E04F523486D2900D36663 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E04F423486D2900D36663 /* AlertViewController.swift */; };
+		F86E04F7234871F600D36663 /* VCKeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E04F6234871F600D36663 /* VCKeyboardHandler.swift */; };
+		F86E04F923488AB100D36663 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E04F823488AB100D36663 /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		F8390C0A2346248000E78123 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		F86E04F223486D2000D36663 /* ActivityIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewController.swift; sourceTree = "<group>"; };
 		F86E04F423486D2900D36663 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		F86E04F6234871F600D36663 /* VCKeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCKeyboardHandler.swift; sourceTree = "<group>"; };
+		F86E04F823488AB100D36663 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		FF89D27146E993D9D6B31C96 /* Pods-ScrapChat_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapChat_iOS.debug.xcconfig"; path = "Target Support Files/Pods-ScrapChat_iOS/Pods-ScrapChat_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +252,7 @@
 		F3607CAC23275D9200503D55 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F86E04F6234871F600D36663 /* VCKeyboardHandler.swift */,
 				F81860452344CA1600A4C080 /* AccountsViewController.swift */,
 				F86E04F423486D2900D36663 /* AlertViewController.swift */,
 				F86E04F223486D2000D36663 /* ActivityIndicatorViewController.swift */,
@@ -263,6 +268,7 @@
 				F806D3592342478000EC47E8 /* QuestionnaireViewController.swift */,
 				F319CD9D23460445003787D5 /* ChatLoadingViewController.swift */,
 				F319CDA123476706003787D5 /* CollageViewController.swift */,
+				F86E04F823488AB100D36663 /* ForgotPasswordViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 			files = (
 				F319CD90234085F2003787D5 /* FriendCollectionLayout.swift in Sources */,
 				B2CB14842336EC2100CD1C9D /* DatabaseManager.swift in Sources */,
+				F86E04F923488AB100D36663 /* ForgotPasswordViewController.swift in Sources */,
 				F3B6DBBF232CE02300122974 /* EventsViewController.swift in Sources */,
 				F319CD9E23460445003787D5 /* ChatLoadingViewController.swift in Sources */,
 				F319CDA223476706003787D5 /* CollageViewController.swift in Sources */,
@@ -494,6 +501,7 @@
 				B2CB14862336F5F400CD1C9D /* Constants.swift in Sources */,
 				F3B6DBBB232CD07600122974 /* SettingTableView.swift in Sources */,
 				F319CD9C2345F8C6003787D5 /* CollageCell.swift in Sources */,
+				F86E04F7234871F600D36663 /* VCKeyboardHandler.swift in Sources */,
 				F86E04F323486D2000D36663 /* ActivityIndicatorViewController.swift in Sources */,
 				F319CDA42348A0F1003787D5 /* PeopleManager.swift in Sources */,
 				F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */,
