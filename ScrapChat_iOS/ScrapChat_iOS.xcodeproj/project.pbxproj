@@ -26,6 +26,7 @@
 		F319CD9C2345F8C6003787D5 /* CollageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD9B2345F8C6003787D5 /* CollageCell.swift */; };
 		F319CD9E23460445003787D5 /* ChatLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD9D23460445003787D5 /* ChatLoadingViewController.swift */; };
 		F319CDA023462E77003787D5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD9F23462E77003787D5 /* Person.swift */; };
+		F319CDA223476706003787D5 /* CollageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CDA123476706003787D5 /* CollageViewController.swift */; };
 		F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7723275A4000503D55 /* AppDelegate.swift */; };
 		F3607C7A23275A4000503D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7923275A4000503D55 /* ViewController.swift */; };
 		F3607C7D23275A4000503D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3607C7B23275A4000503D55 /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 		F319CD9B2345F8C6003787D5 /* CollageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageCell.swift; sourceTree = "<group>"; };
 		F319CD9D23460445003787D5 /* ChatLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLoadingViewController.swift; sourceTree = "<group>"; };
 		F319CD9F23462E77003787D5 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		F319CDA123476706003787D5 /* CollageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageViewController.swift; sourceTree = "<group>"; };
 		F3607C7423275A4000503D55 /* ScrapChat_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapChat_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3607C7723275A4000503D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3607C7923275A4000503D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				F36ED8A42336393C00ACDB2E /* VideoChatController.swift */,
 				F806D3592342478000EC47E8 /* QuestionnaireViewController.swift */,
 				F319CD9D23460445003787D5 /* ChatLoadingViewController.swift */,
+				F319CDA123476706003787D5 /* CollageViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				B2CB14842336EC2100CD1C9D /* DatabaseManager.swift in Sources */,
 				F3B6DBBF232CE02300122974 /* EventsViewController.swift in Sources */,
 				F319CD9E23460445003787D5 /* ChatLoadingViewController.swift in Sources */,
+				F319CDA223476706003787D5 /* CollageViewController.swift in Sources */,
 				F36ED8A52336393C00ACDB2E /* VideoChatController.swift in Sources */,
 				F319CD0023389D0C003787D5 /* AppID.swift in Sources */,
 				F3607C7A23275A4000503D55 /* ViewController.swift in Sources */,
