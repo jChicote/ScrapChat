@@ -48,14 +48,14 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBAction func backPressed(_ sender: UIButton) {
        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
+    let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
        UIApplication.shared.keyWindow?.rootViewController = HomeVC
     }
     
     @IBAction func accountsPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Accounts", bundle: nil)
-        let HomeVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.AccountsVC)
-        UIApplication.shared.keyWindow?.rootViewController = HomeVC
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.AccountsVC)
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
 }

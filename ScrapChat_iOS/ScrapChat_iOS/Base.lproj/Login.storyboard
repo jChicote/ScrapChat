@@ -94,7 +94,7 @@
                                                     <action selector="nextPressed:" destination="LwE-K4-kVD" eventType="touchUpInside" id="NUh-1t-CrZ"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Placeholder Error Text&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNn-fA-lHR">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Placeholder Error Text&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uNn-fA-lHR">
                                                 <rect key="frame" x="0.0" y="80" width="430" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -170,7 +170,7 @@
         <!--Login View Controller-->
         <scene sceneID="9Ol-3Z-5f2">
             <objects>
-                <viewController id="WbM-Vj-cqY" customClass="LoginViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WbM-Vj-cqY" customClass="LoginViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ifm-Ul-bju">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,7 +213,7 @@
                                                     <action selector="loginPressed:" destination="WbM-Vj-cqY" eventType="touchUpInside" id="V5t-cE-54R"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Placeholder error text&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYe-kH-aiA">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Placeholder error text&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pYe-kH-aiA">
                                                 <rect key="frame" x="0.0" y="80" width="430" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -295,8 +295,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uku-gW-OSe">
-                                <rect key="frame" x="375.5" y="185.5" width="615" height="653"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uku-gW-OSe" userLabel="Questionnaire View">
+                                <rect key="frame" x="239" y="185.5" width="615" height="653"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearly there! Answer these questions to get started!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stg-VU-ueF">
                                         <rect key="frame" x="154" y="40" width="307" height="63.5"/>
@@ -324,9 +324,12 @@
                                                 <color key="backgroundColor" red="0.99215686274509807" green="0.99215686274509807" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Upload a profile picture">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="uploadPicturePressed:" destination="aE3-Pw-evj" eventType="touchUpInside" id="lH0-0o-dYR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -353,7 +356,7 @@
                                                     <action selector="donePressed:" destination="aE3-Pw-evj" eventType="touchUpInside" id="XPh-jc-KB5"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Placeholder Error Text&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tnq-iY-HKN">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Placeholder Error Text&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tnq-iY-HKN">
                                                 <rect key="frame" x="0.0" y="80" width="430" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -361,16 +364,20 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z0-U4-iUa">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z0-U4-iUa">
                                         <rect key="frame" x="92.5" y="578" width="287" height="35"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                         <state key="normal" title="Already have an account? Sign in">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Akk-KI-cQ4" kind="unwind" unwindAction="backToLoginWith_sender:" id="gwy-yT-ycd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="2Z0-U4-iUa" secondAttribute="trailing" multiplier="2" id="4XG-JS-OT2"/>
                                     <constraint firstItem="5Ov-Z8-RvV" firstAttribute="top" secondItem="stg-VU-ueF" secondAttribute="bottom" multiplier="1.5" id="6LZ-pD-7uR"/>
                                     <constraint firstItem="5Ov-Z8-RvV" firstAttribute="centerX" secondItem="Uku-gW-OSe" secondAttribute="centerX" id="JH2-SY-LIJ"/>
                                     <constraint firstItem="ojg-P1-MqD" firstAttribute="centerX" secondItem="Uku-gW-OSe" secondAttribute="centerX" id="MLX-X8-Nub"/>
@@ -384,12 +391,32 @@
                                     <constraint firstItem="stg-VU-ueF" firstAttribute="top" secondItem="Uku-gW-OSe" secondAttribute="top" constant="40" id="vcV-8z-zMz"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RS3-9G-SLs" userLabel="Picture View">
+                                <rect key="frame" x="884" y="185.5" width="358" height="653"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portrait Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="koW-5Y-sir">
+                                        <rect key="frame" x="0.0" y="147.5" width="358" height="358"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="koW-5Y-sir" secondAttribute="height" multiplier="1:1" id="BVG-00-AZQ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="koW-5Y-sir" firstAttribute="centerX" secondItem="RS3-9G-SLs" secondAttribute="centerX" id="KFZ-ql-6jk"/>
+                                    <constraint firstItem="koW-5Y-sir" firstAttribute="centerY" secondItem="RS3-9G-SLs" secondAttribute="centerY" id="Keu-em-7Iv"/>
+                                    <constraint firstItem="koW-5Y-sir" firstAttribute="width" secondItem="RS3-9G-SLs" secondAttribute="width" id="NdN-95-u6v"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Uku-gW-OSe" firstAttribute="centerY" secondItem="Iae-ig-LKO" secondAttribute="centerY" id="3fJ-oR-Lh2"/>
+                            <constraint firstItem="RS3-9G-SLs" firstAttribute="top" secondItem="Uku-gW-OSe" secondAttribute="top" id="H7b-J5-TKa"/>
                             <constraint firstItem="Uku-gW-OSe" firstAttribute="width" secondItem="YTe-Xf-Iqf" secondAttribute="width" multiplier="0.45" id="LXK-FV-dSo"/>
-                            <constraint firstItem="Uku-gW-OSe" firstAttribute="centerX" secondItem="Iae-ig-LKO" secondAttribute="centerX" id="ZrD-jD-Om3"/>
+                            <constraint firstItem="RS3-9G-SLs" firstAttribute="leading" secondItem="Uku-gW-OSe" secondAttribute="trailing" constant="30" id="Om4-OV-OQC"/>
+                            <constraint firstAttribute="trailing" secondItem="RS3-9G-SLs" secondAttribute="trailing" multiplier="1.1" id="ScH-At-Ceh"/>
+                            <constraint firstItem="Uku-gW-OSe" firstAttribute="centerX" secondItem="Iae-ig-LKO" secondAttribute="centerX" multiplier="0.8" id="ZrD-jD-Om3"/>
+                            <constraint firstItem="RS3-9G-SLs" firstAttribute="height" secondItem="Uku-gW-OSe" secondAttribute="height" id="d4A-z2-7Ln"/>
                             <constraint firstItem="Uku-gW-OSe" firstAttribute="height" secondItem="YTe-Xf-Iqf" secondAttribute="height" multiplier="0.65" id="tvq-5d-tLn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YTe-Xf-Iqf"/>
@@ -399,15 +426,18 @@
                         <outlet property="errorLabel" destination="Tnq-iY-HKN" id="uaa-cX-ZXD"/>
                         <outlet property="imagePickerBtn" destination="QP1-QT-qlr" id="jnD-ei-FUk"/>
                         <outlet property="interestTF" destination="y5M-Tw-qFS" id="kGP-po-0R2"/>
+                        <outlet property="profileImage" destination="koW-5Y-sir" id="kix-pO-6Dx"/>
                         <outlet property="suburbTF" destination="PF0-Nx-8sf" id="096-d0-gjV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vi1-qD-qQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Akk-KI-cQ4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2393.8506588579794" y="145.8984375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Portrait Placeholder" width="600" height="600"/>
         <image name="chatbeeBOLD" width="1166" height="420"/>
     </resources>
 </document>

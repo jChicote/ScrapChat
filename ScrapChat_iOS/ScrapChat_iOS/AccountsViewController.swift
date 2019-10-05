@@ -25,9 +25,21 @@ class AccountsViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        profileImage.setNeedsDisplay()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         updateData()
         updateImage()
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        //This gets called everytime the subview layout is changed. Sets the image corners to be perfectly rounded
+        self.profileImage.layer.cornerRadius = self.profileImage.frame.height / 2
+        profileImage.layer.masksToBounds = true
+        profileImage.clipsToBounds = true
     }
     
     func updateData() {
@@ -68,27 +80,20 @@ class AccountsViewController: UIViewController {
                                               completed: nil)
             }
         }
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
-        profileImage.layer.masksToBounds = true
-        profileImage.clipsToBounds = true
     }
     
     /*Segues*/
     @IBAction func friendsPressed(_ sender: UIButton) {
        let storyboard = UIStoryboard(name: "FriendsStoryboard", bundle: nil)
-       let VC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.FriendsVC)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-       appDelegate.window!.rootViewController = VC
-       appDelegate.window!.makeKeyAndVisible()
+       let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.FriendsVC)
+       self.navigationController?.pushViewController(vc, animated: false)
     }
     
-    @IBAction func backPressed(_ sender: UIButton) {
+    /*@IBAction func backPressed(_ sender: UIButton) {
        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-       let VC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-       appDelegate.window!.rootViewController = VC
-       appDelegate.window!.makeKeyAndVisible()
-    }
+       let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
+       self.navigationController?.pushViewController(vc, animated: false)
+    }*/
     
     @IBAction func unwindToAccounts(_ sender: UIStoryboardSegue) {}
 }
@@ -98,29 +103,61 @@ extension AccountsViewController: UIImagePickerControllerDelegate, UINavigationC
         showImagePickerController()
     }
     
-    /*func showImagePickerControllerActionSheet() {
-        let photoLibrary = UIAlertAction(title: "Choose from library", style: .default) { action) in
-            self.showImagePickerController(sourceType: .photoLibrary)
-        }
-    }*/
-    
     func showImagePickerController() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
-        imagePickerController.sourceType = .photoLibrary
-        present(imagePickerController, animated: true, completion: nil)
+        
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        
+        if let popoverController = actionSheet.popoverPresentationController {
+          popoverController.sourceView = self.view
+           popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+          }
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true, completion: nil)
+            }
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action:UIAlertAction) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let storage = StorageManager()
         if let pic = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            storage.uploadProfilePicture(image: storage.generateImageDataFrom(pic))
+            storage.uploadProfilePicture(image: storage.generateImageDataFrom(pic)) {(uploadStatus) in
+                if uploadStatus == true {
+                    self.updateImage()
+                }
+                else {
+                    self.showAlert("Please try again later.", withHeader: "Upload failed")
+                }
+            }
         } else if let pic = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            storage.uploadProfilePicture(image: storage.generateImageDataFrom(pic))
+            storage.uploadProfilePicture(image: storage.generateImageDataFrom(pic)) {(uploadStatus) in
+                if uploadStatus == true {
+                    self.updateImage()
+                }
+                else {
+                    self.showAlert("Please try again later.", withHeader: "Upload failed")
+                }
+            }
         }
-        dismiss(animated: true, completion: nil)
-        updateImage()
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 

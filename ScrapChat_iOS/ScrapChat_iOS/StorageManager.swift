@@ -12,31 +12,34 @@ import FirebaseAuth
 
 class StorageManager {
     // Create a root reference
-    let storage = Storage.storage(url:"gs://scrapchat-77d1f.appspot.com/")
+    let storageRef = Storage.storage(url:"gs://scrapchat-77d1f.appspot.com/").reference()
     
     func generateImageDataFrom(_ image: UIImage) -> Data {
         let data = image.jpegData(compressionQuality: 0.8)
         return data!
     }
     
-    func uploadProfilePicture(image: Data) {
+    func uploadProfilePicture(image: Data, completion: @escaping (Bool?) -> Void) {
         //Uploads profile picture to database and sets a URL reference on the database
-        
-        let storageRef = storage.reference()
+        ActivityIndicator().startActivity()
         let filePath = "/user/\(Auth.auth().currentUser!.uid)/\("userPhoto")"
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpg"
         storageRef.child(filePath).putData(image, metadata: metaData) {(metaData, error) in
             if let error = error {
                print(error.localizedDescription)
-               return
+               completion(false)
+               ActivityIndicator().stopActivity()
             } else {
-                storageRef.child(filePath).downloadURL(completion: { (url, error) in
+                self.storageRef.child(filePath).downloadURL(completion: { (url, error) in
                     if error != nil {
                         print(error!.localizedDescription)
+                        ActivityIndicator().stopActivity()
                     } else {
                         let downloadURL = url!.absoluteString
                         DatabaseManager().updateData(key: "profilePicture", value: downloadURL)
+                        completion(true)
+                        ActivityIndicator().stopActivity()
                     }
                 })
             }
@@ -44,7 +47,6 @@ class StorageManager {
     }
     
     func uploadPicture(image: Data, withName: String) {
-        let storageRef = storage.reference()
         let filePath = "/user/\(Auth.auth().currentUser!.uid)/scrapbooks/\(withName)"
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpg"
@@ -54,7 +56,7 @@ class StorageManager {
                print(error.localizedDescription)
                return
             } else {
-                storageRef.child(filePath).downloadURL(completion: { (url, error) in
+                self.storageRef.child(filePath).downloadURL(completion: { (url, error) in
                     if error != nil {
                         print(error!.localizedDescription)
                     } else {
@@ -67,7 +69,7 @@ class StorageManager {
     }
     
     func getPicture(withReferenceURL: String) -> StorageReference {
-        let storageRef = storage.reference(forURL: withReferenceURL)
-        return storageRef
+        let pictureStorageRef = Storage.storage().reference(forURL: withReferenceURL)
+        return pictureStorageRef
     }
 }

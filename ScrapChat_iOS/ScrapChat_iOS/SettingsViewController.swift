@@ -19,6 +19,9 @@ class SettingsViewController: UITableViewController {
     
     @IBAction func logoutPressed(_ sender: UIButton) {
         try! Auth.auth().signOut()
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.LoginVC)
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     /*override func didRecieveMemoryWarning() {
         super.didReceiveMemoryWarning()

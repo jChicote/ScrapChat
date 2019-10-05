@@ -320,16 +320,6 @@
             </objects>
             <point key="canvasLocation" x="1398.9751098096631" y="16.9921875"/>
         </scene>
-        <!--Login-->
-        <scene sceneID="Gef-Ph-tem">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="R9X-Ol-gHe" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="9sg-BJ-0Pe"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P5s-rv-ynh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1895" y="-683"/>
-        </scene>
         <!--Settings View Controller-->
         <scene sceneID="OM4-aW-g9h">
             <objects>
@@ -358,7 +348,6 @@
                                     </state>
                                     <connections>
                                         <action selector="logoutPressed:" destination="4a2-lG-h9Z" eventType="touchUpInside" id="nbs-L5-d0Y"/>
-                                        <segue destination="R9X-Ol-gHe" kind="show" id="oCt-ja-FIu"/>
                                     </connections>
                                 </button>
                             </subviews>
