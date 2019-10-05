@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: VCKeyboardHandler, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameTF: UITextField!
     @IBOutlet weak var lastNameTF: UITextField!
@@ -24,12 +24,61 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.alpha = 0
+        dobTF.delegate = self
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let char = string.cString(using: String.Encoding.utf8)
+        let isBackSpace = strcmp(char, "\\b")
+        let maxRange = 7
+        if textField == dobTF {
+
+            // check the chars length dd -->2 at the same time calculate the dd-MM --> 5
+            if (dobTF?.text?.count == 2) || (dobTF?.text?.count == 5) {
+                //Handle backspace being pressed
+                if !(string == "") {
+                    // append the text
+                    dobTF?.text = (dobTF?.text)! + "/"
+                }
+            }
+            if isBackSpace == -92 {
+                dobTF?.text = String((dobTF.text?.dropLast())!)
+            }
+            
+            // check the condition not exceed 8 chars
+            return !(textField.text!.count > maxRange)
+        }
+        else {
+            return true
+        }
+    }
+    
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       let nextTag = textField.tag + 1
+        // Try to find next responder
+        let nextResponder = textField.superview?.viewWithTag(nextTag)
+
+        if nextResponder != nil {
+            // Found next responder, so set it
+            nextResponder?.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard
+            textField.resignFirstResponder()
+        }
+
+        return false
     }
     
     func validateInput() -> String? {
         
-        if emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || firstNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || genderTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+        if emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || firstNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            dobTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            lastNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || genderTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Please enter all fields"
+        }
+        
+        if dobTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count != 8 {
+            return "Please enter a valid date in DD/MM/YY format"
         }
         
         let emailValidity = validateEmail()
@@ -38,7 +87,7 @@ class SignUpViewController: UIViewController {
         }
         
         if (passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines).count)! < 6 {
-            return "Password must be 6 characters long or more"
+            return "Password must be at least 6 characters long"
         }
         return nil
         // TODO: validate email regex
@@ -71,8 +120,9 @@ class SignUpViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! QuestionnaireViewController
-        vc.newUser = self.user
+        if let vc = segue.destination as? QuestionnaireViewController {
+                vc.newUser = self.user
+        }
     }
     
     func showError(_ message: String) {

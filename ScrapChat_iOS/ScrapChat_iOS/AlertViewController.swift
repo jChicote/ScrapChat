@@ -15,4 +15,13 @@ extension UIViewController {
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func showAlert(_ message: String, withHeader: String, completion: @escaping (Bool) -> Void) {
+        let alertController = UIAlertController(title: withHeader, message:
+            message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { _ in
+            completion(true)
+        }))
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

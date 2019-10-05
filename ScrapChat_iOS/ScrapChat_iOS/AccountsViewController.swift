@@ -89,11 +89,13 @@ class AccountsViewController: UIViewController {
        self.navigationController?.pushViewController(vc, animated: false)
     }
     
-    /*@IBAction func backPressed(_ sender: UIButton) {
-       let storyboard = UIStoryboard(name: "Main", bundle: nil)
-       let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.HomeVC)
-       self.navigationController?.pushViewController(vc, animated: false)
-    }*/
+    
+    @IBAction func logoutPressed(_ sender: UIButton) {
+        try! Auth.auth().signOut()
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.LoginVC)
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
     
     @IBAction func unwindToAccounts(_ sender: UIStoryboardSegue) {}
 }
