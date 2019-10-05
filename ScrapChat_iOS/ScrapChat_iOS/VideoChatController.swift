@@ -20,10 +20,17 @@ class VideoChatController: UIViewController {
     @IBOutlet weak var localVideoMutedBg: UIView!
     
     //Constraint outlets
+    var remoteTrail: NSLayoutConstraint?
     var remoteTop: NSLayoutConstraint?
-    var remoteLead: NSLayoutConstraint?
     var remoteWidth: NSLayoutConstraint?
     var remoteHeight: NSLayoutConstraint?
+    
+    var localTrail: NSLayoutConstraint?
+    var localTop: NSLayoutConstraint?
+    var localWidth: NSLayoutConstraint?
+    var localHeight: NSLayoutConstraint?
+    
+    @IBOutlet weak var collageTop: NSLayoutConstraint!
     
     //ScrapBook View
     @IBOutlet weak var collageView: UIView!
@@ -58,21 +65,37 @@ class VideoChatController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collageView.layer.cornerRadius = 20
+        collageView.layer.masksToBounds = true
         collageView.alpha = 0
         createButton.layer.cornerRadius = 20
         
-        //view.addSubview(remoteVideo)
+        //REMOTE VIEW constraints
         remoteVideo.translatesAutoresizingMaskIntoConstraints = false
-        remoteLead = remoteVideo.leftAnchor.constraint(equalTo: view.leftAnchor)
+        
+        remoteTrail = remoteVideo.rightAnchor.constraint(equalTo: view.rightAnchor)
         remoteTop = remoteVideo.topAnchor.constraint(equalTo: view.topAnchor)
         remoteWidth = remoteVideo.widthAnchor.constraint(equalToConstant: view.frame.width)
         remoteHeight = remoteVideo.heightAnchor.constraint(equalToConstant: view.frame.height)
         
-        remoteLead?.isActive = true
+        remoteTrail?.isActive = true
         remoteTop?.isActive = true
         remoteWidth?.isActive = true
         remoteHeight?.isActive = true
         
+        //LOCAL VIEW constraints
+        localVideo.translatesAutoresizingMaskIntoConstraints = false
+        
+        localTrail = localVideo.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40)
+        localTop = localVideo.topAnchor.constraint(equalTo: view.topAnchor, constant: 40)
+        localWidth = localVideo.widthAnchor.constraint(equalToConstant: view.frame.width * 0.2)
+        localHeight = localVideo.heightAnchor.constraint(equalToConstant: (view.frame.width * 0.2) / 1.3)
+        
+        localTrail?.isActive = true
+        localTop?.isActive = true
+        localWidth?.isActive = true
+        localHeight?.isActive = true
+        
+        //INITIALISE VIDEO
         initializeAgoraEngine()
         setupVideo()
         setupLocalVideo()
@@ -194,28 +217,44 @@ class VideoChatController: UIViewController {
             createButton.tintColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
             
             //remoteView resize
+            remoteTrail?.constant = -40
             remoteTop?.constant = 40
-            remoteLead?.constant = 40
-            remoteWidth?.constant = (view.frame.width * 0.26) * 0.75
-            remoteHeight?.constant = (view.frame.height * 0.26) / 1.3
+            remoteWidth?.constant = view.frame.width * 0.2
+            remoteHeight?.constant = (view.frame.width * 0.2) / 1.3
+            
+            //localView resize
+            localWidth?.constant = view.frame.width * 0.08
+            localHeight?.constant = (view.frame.width * 0.08) / 1.3
+            
+            //animate CollageView
+            collageTop.constant = 0
             
             UIView.animate(withDuration: 0.3) {
-                
                 self.collageView.alpha = 1
                 self.view.layoutIfNeeded()
             }
             collageActive = true
+            
         } else {
             createButton.backgroundColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
             createButton.tintColor = #colorLiteral(red: 0.09410236031, green: 0.09412645549, blue: 0.09410081059, alpha: 1)
             
             //remoteView resize
+            remoteTrail?.constant = 0
             remoteTop?.constant = 0
-            remoteLead?.constant = 0
             remoteWidth?.constant = view.frame.width
             remoteHeight?.constant = view.frame.height
             
-            UIView.animate(withDuration: 0.1) {
+            //localView resize
+            localTrail?.constant = -40
+            localTop?.constant = 40
+            localWidth?.constant = view.frame.width * 0.2
+            localHeight?.constant = (view.frame.width * 0.2) / 1.3
+
+            //animate CollageView
+            collageTop.constant = -1500
+            
+            UIView.animate(withDuration: 0.3) {
                 self.collageView.alpha = 0
                 self.view.layoutIfNeeded()
             }
