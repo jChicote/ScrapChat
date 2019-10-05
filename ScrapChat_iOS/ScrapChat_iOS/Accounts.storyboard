@@ -241,7 +241,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="rpA-gW-YBm">
-                                <rect key="frame" x="20" y="195.5" width="266" height="326"/>
+                                <rect key="frame" x="20" y="195.5" width="266" height="404"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portrait Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aSD-Le-dkt">
                                         <rect key="frame" x="0.0" y="0.0" width="266" height="266"/>
@@ -257,7 +257,19 @@
                                             <action selector="picturePressed:" destination="YFJ-5D-cqj" eventType="touchUpInside" id="xIA-4l-sJs"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9k-sL-qpX" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="50.5" y="344" width="165" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.41176470588235292" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="15" maxX="10" maxY="15"/>
+                                        <state key="normal" title="LOGOUT">
+                                            <color key="titleColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="A9k-sL-qpX" firstAttribute="width" secondItem="Hz4-JZ-sDx" secondAttribute="width" id="cdT-Lq-3Zm"/>
+                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9V-xu-G41">
                                 <rect key="frame" x="315" y="185.5" width="973" height="502"/>
