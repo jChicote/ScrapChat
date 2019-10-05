@@ -20,6 +20,7 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
 
     //padding for cells to prevent 'breaking' constraints
     let padding: CGFloat = 300
+    var friendList = FriendManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,7 @@ extension FriendsViewController {
     
     //defines the length of cell items (before being loaded into screen)
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionData.count
+        return friendList.friendArray.count
     }
     
     
@@ -76,7 +77,7 @@ extension FriendsViewController {
         cell.backgroundColor = .white
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 10
-        cell.cellLabel.text = (collectionData[indexPath.row])
+        cell.cellLabel.text = (friendList.friendArray[indexPath.row].name)
         cell.layoutIfNeeded()
         return cell
     }

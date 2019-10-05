@@ -19,7 +19,7 @@ class VideoChatController: UIViewController {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var localVideoMutedBg: UIView!
     
-    //Constraint outlets
+    //Constraint var
     var remoteTrail: NSLayoutConstraint?
     var remoteTop: NSLayoutConstraint?
     var remoteWidth: NSLayoutConstraint?
@@ -30,14 +30,29 @@ class VideoChatController: UIViewController {
     var localWidth: NSLayoutConstraint?
     var localHeight: NSLayoutConstraint?
     
+    //Constraint outlets
     @IBOutlet weak var collageTop: NSLayoutConstraint!
+    @IBOutlet weak var clearCenterY: NSLayoutConstraint!
+    @IBOutlet weak var saveCenterY: NSLayoutConstraint!
+    @IBOutlet weak var toolBottom: NSLayoutConstraint!
+    @IBOutlet weak var savePopY: NSLayoutConstraint!
     
     //ScrapBook View
     @IBOutlet weak var collageView: UIView!
     @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var toolButton: UIButton!
+    @IBOutlet weak var savePopup: UIView!
+    @IBOutlet weak var darkMask: UIView!
     var collageActive = false
     
+    //Tool button labels
+    @IBOutlet weak var toolLabel: UILabel!
+    @IBOutlet weak var saveLabel: UILabel!
+    @IBOutlet weak var clearLabel: UILabel!
+    
     var agoraKit: AgoraRtcEngineKit!
+    var callRecipient: Person?
+    var madeScrap = false
     
     var isRemoteVideoRender: Bool = true {
         didSet {
@@ -68,6 +83,14 @@ class VideoChatController: UIViewController {
         collageView.layer.masksToBounds = true
         collageView.alpha = 0
         createButton.layer.cornerRadius = 20
+        savePopup.layer.cornerRadius = 20
+        toolBottom.constant = -300
+        savePopY.constant = 800
+        
+        clearLabel.alpha = 0
+        saveLabel.alpha = 0
+        toolLabel.alpha = 1
+        savePopup.alpha = 0
         
         //REMOTE VIEW constraints
         remoteVideo.translatesAutoresizingMaskIntoConstraints = false
@@ -228,6 +251,7 @@ class VideoChatController: UIViewController {
             
             //animate CollageView
             collageTop.constant = 0
+            toolBottom.constant = 15
             
             UIView.animate(withDuration: 0.3) {
                 self.collageView.alpha = 1
@@ -253,14 +277,83 @@ class VideoChatController: UIViewController {
 
             //animate CollageView
             collageTop.constant = -1500
+            toolBottom.constant = -300
             
             UIView.animate(withDuration: 0.3) {
                 self.collageView.alpha = 0
                 self.view.layoutIfNeeded()
             }
+            collapseTools()
             collageActive = false
+            
+            toolButton.isSelected = false
         }
     }
+    
+    @IBAction func toggleTools(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        print(sender.isSelected)
+        
+        if toolButton.isSelected == true {
+            clearCenterY.constant = -120
+            saveCenterY.constant = -125
+            UIView.animate(withDuration: 0.3) {
+                self.clearLabel.alpha = 1
+                self.saveLabel.alpha = 1
+                self.toolLabel.alpha = 0
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            collapseTools();
+        }
+    }
+    
+    @IBAction func triggerSave(_ sender: Any) {
+        savePopY.constant = 0
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+            self.savePopup.alpha = 1
+            self.darkMask.alpha = 0.8
+        }
+    }
+    
+    @IBAction func triggerDecline(_ sender: Any) {
+        retractPopup()
+    }
+    
+    
+    @IBAction func saveCollage(_ sender: Any) {
+       
+        var scrapBook: LocalScrapManager?
+        UIGraphicsBeginImageContext(collageView.frame.size)
+        collageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        let scrapObj = ScrapObject(collage: image!, date: Date(), partner: callRecipient!)
+        scrapBook?.scraps.append(scrapObj)
+        
+    }
+    
+    func retractPopup() {
+        savePopY.constant = 800
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+            self.savePopup.alpha = 0
+            self.darkMask.alpha = 0
+        }
+    }
+    
+    func collapseTools() {
+        clearCenterY.constant = 0
+        saveCenterY.constant = 0
+        UIView.animate(withDuration: 0.3) {
+            self.clearLabel.alpha = 0
+            self.saveLabel.alpha = 0
+            self.toolLabel.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    
 }
 
 extension VideoChatController: AgoraRtcEngineDelegate {

@@ -27,6 +27,9 @@
 		F319CD9E23460445003787D5 /* ChatLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD9D23460445003787D5 /* ChatLoadingViewController.swift */; };
 		F319CDA023462E77003787D5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CD9F23462E77003787D5 /* Person.swift */; };
 		F319CDA223476706003787D5 /* CollageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CDA123476706003787D5 /* CollageViewController.swift */; };
+		F319CDA42348A0F1003787D5 /* PeopleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CDA32348A0F0003787D5 /* PeopleManager.swift */; };
+		F319CDA62348A11F003787D5 /* LocalScrapbookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CDA52348A11F003787D5 /* LocalScrapbookManager.swift */; };
+		F319CDA82348A83C003787D5 /* scrapObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CDA72348A83C003787D5 /* scrapObject.swift */; };
 		F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7723275A4000503D55 /* AppDelegate.swift */; };
 		F3607C7A23275A4000503D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7923275A4000503D55 /* ViewController.swift */; };
 		F3607C7D23275A4000503D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3607C7B23275A4000503D55 /* Main.storyboard */; };
@@ -92,6 +95,9 @@
 		F319CD9D23460445003787D5 /* ChatLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLoadingViewController.swift; sourceTree = "<group>"; };
 		F319CD9F23462E77003787D5 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		F319CDA123476706003787D5 /* CollageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageViewController.swift; sourceTree = "<group>"; };
+		F319CDA32348A0F0003787D5 /* PeopleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PeopleManager.swift; path = ScrapChat_iOS/PeopleManager.swift; sourceTree = SOURCE_ROOT; };
+		F319CDA52348A11F003787D5 /* LocalScrapbookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalScrapbookManager.swift; path = ScrapChat_iOS/LocalScrapbookManager.swift; sourceTree = SOURCE_ROOT; };
+		F319CDA72348A83C003787D5 /* scrapObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scrapObject.swift; sourceTree = "<group>"; };
 		F3607C7423275A4000503D55 /* ScrapChat_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapChat_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3607C7723275A4000503D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3607C7923275A4000503D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +275,8 @@
 				B2CB14832336EC2100CD1C9D /* DatabaseManager.swift */,
 				B2CB14852336F5F400CD1C9D /* Constants.swift */,
 				F81860472344CA2F00A4C080 /* StorageManager.swift */,
+				F319CDA32348A0F0003787D5 /* PeopleManager.swift */,
+				F319CDA52348A11F003787D5 /* LocalScrapbookManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +293,7 @@
 				F319CD9523438A6D003787D5 /* EventCell.swift */,
 				F319CD9B2345F8C6003787D5 /* CollageCell.swift */,
 				F319CD9F23462E77003787D5 /* Person.swift */,
+				F319CDA72348A83C003787D5 /* scrapObject.swift */,
 			);
 			path = Designable;
 			sourceTree = "<group>";
@@ -479,12 +488,14 @@
 				F36ED8A52336393C00ACDB2E /* VideoChatController.swift in Sources */,
 				F319CD0023389D0C003787D5 /* AppID.swift in Sources */,
 				F3607C7A23275A4000503D55 /* ViewController.swift in Sources */,
+				F319CDA62348A11F003787D5 /* LocalScrapbookManager.swift in Sources */,
 				F806D35A2342478000EC47E8 /* QuestionnaireViewController.swift in Sources */,
 				F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */,
 				B2CB14862336F5F400CD1C9D /* Constants.swift in Sources */,
 				F3B6DBBB232CD07600122974 /* SettingTableView.swift in Sources */,
 				F319CD9C2345F8C6003787D5 /* CollageCell.swift in Sources */,
 				F86E04F323486D2000D36663 /* ActivityIndicatorViewController.swift in Sources */,
+				F319CDA42348A0F1003787D5 /* PeopleManager.swift in Sources */,
 				F3607CB4232770BD00503D55 /* RoundRectButton.swift in Sources */,
 				B2CB147E2336E51A00CD1C9D /* SignUpViewController.swift in Sources */,
 				F319CD8A233E37B0003787D5 /* RoundedView.swift in Sources */,
@@ -499,6 +510,7 @@
 				F3607CAF232760B000503D55 /* Model_ScrapChat.xcdatamodeld in Sources */,
 				F3B6DBC3232CE04700122974 /* FriendsViewController.swift in Sources */,
 				B2CB147C2336E50600CD1C9D /* LoginViewController.swift in Sources */,
+				F319CDA82348A83C003787D5 /* scrapObject.swift in Sources */,
 				F3B6DBC1232CE03A00122974 /* ScrapBookViewController.swift in Sources */,
 				F806D35C234248A500EC47E8 /* User.swift in Sources */,
 				F86E04F523486D2900D36663 /* AlertViewController.swift in Sources */,

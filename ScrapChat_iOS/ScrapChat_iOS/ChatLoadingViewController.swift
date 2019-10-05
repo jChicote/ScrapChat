@@ -19,9 +19,15 @@ class ChatLoadingViewController: UIViewController {
     @IBOutlet weak var popWindow: UIView!
     @IBOutlet weak var popWindowY: NSLayoutConstraint!
     
+    //Window Outlets
+    @IBOutlet weak var matchedName: UILabel!
+    
+    
     var displayLink: CADisplayLink!
     var timer: Timer!
     let color: UIColor = #colorLiteral(red: 1, green: 0.799602002, blue: 0.005400067895, alpha: 1)
+    var chosenRecipient: Person?
+    var listOfPeople = PeopleManageer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +40,12 @@ class ChatLoadingViewController: UIViewController {
         displayLink = CADisplayLink(target: self, selector: #selector(handleLoadAnimations))
         displayLink.add(to: RunLoop.main, forMode: .default)
         timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(stopAnimation), userInfo: nil, repeats: false)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? VideoChatController {
+            controller.callRecipient = self.chosenRecipient
+        }
     }
     
     //animation section
@@ -64,6 +76,8 @@ class ChatLoadingViewController: UIViewController {
     }
     
     @objc func stopAnimation() {
+        chooseCaller()
+        matchedName.text = chosenRecipient?.name
         popWindowY.constant = 0.0
         displayLink?.invalidate()
         displayLink = nil
@@ -89,8 +103,9 @@ class ChatLoadingViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func createExampleNames() {
-        
+    func chooseCaller() {
+        let number = Int.random(in: 0 ..< listOfPeople.peopleArray.count)
+        chosenRecipient = listOfPeople.peopleArray[number]
     }
     
 }
