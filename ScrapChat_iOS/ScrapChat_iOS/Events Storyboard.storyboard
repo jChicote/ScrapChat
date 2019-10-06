@@ -13,7 +13,7 @@
         <!--Events View Controller-->
         <scene sceneID="esn-Gb-5CQ">
             <objects>
-                <viewController id="tJU-AN-6G8" customClass="EventsViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Events" id="tJU-AN-6G8" customClass="EventsViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D7s-gh-EB5">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,14 +24,14 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1F-J3-Upe">
                                         <rect key="frame" x="0.0" y="81.5" width="216" height="123"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paq-Pz-YD9">
                                         <rect key="frame" x="0.0" y="0.0" width="216" height="81.5"/>
                                         <color key="backgroundColor" red="0.7540681670984456" green="0.10593676845783885" blue="0.011360259858809825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -71,7 +71,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="8xU-eX-vBQ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -81,7 +81,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="jtf-YD-lxS"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -91,7 +91,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="cSw-CF-mr8"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -101,7 +101,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="EJI-33-lxr"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -111,17 +111,18 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="LF2-Ta-Wcm"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WB-Q5-Gwt" userLabel="Edit Button">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WB-Q5-Gwt" userLabel="Edit Button">
                                                     <rect key="frame" x="628.5" y="45" width="89.5" height="89.5"/>
-                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="2WB-Q5-Gwt" secondAttribute="height" multiplier="1:1" id="gqX-q4-psN"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
+                                                    <color key="tintColor" white="0.60172755280000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="Button" image="edit-icon"/>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -219,6 +220,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONM-Np-j3l" userLabel="AccountButton">
                                                 <rect key="frame" x="320.5" y="0.0" width="262.5" height="176.5"/>
                                                 <color key="tintColor" red="0.094102360309999994" green="0.094126455489999997" blue="0.09410081059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <segue destination="bPU-fx-eyI" kind="show" animates="NO" id="Ne3-0t-lUi"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friends" translatesAutoresizingMaskIntoConstraints="NO" id="foI-TM-nuQ" userLabel="Friends Image">
                                                 <rect key="frame" x="150.5" y="15" width="106" height="106"/>
@@ -272,6 +276,7 @@
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="Y9F-sv-HKK">
                                                 <rect key="frame" x="315" y="15" width="106" height="106"/>
+                                                <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Y9F-sv-HKK" secondAttribute="height" multiplier="1:1" id="7wL-zV-bgI"/>
                                                 </constraints>
@@ -299,6 +304,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsW-pg-roe" userLabel="ScrapbookButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="262.5" height="176.5"/>
+                                                <connections>
+                                                    <segue destination="wB9-gg-VNC" kind="show" animates="NO" id="xQc-e9-geg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -433,7 +441,15 @@
                 <viewControllerPlaceholder storyboardName="FriendsStoryboard" id="Pxm-5k-jLs" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="188-aw-yDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="177" y="536"/>
+            <point key="canvasLocation" x="154" y="609"/>
+        </scene>
+        <!--Accounts-->
+        <scene sceneID="NE3-RT-gXK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Accounts" id="bPU-fx-eyI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzv-kk-auo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334" y="584"/>
         </scene>
         <!--VideoChatScreen-->
         <scene sceneID="hQA-T3-Db0">
@@ -443,12 +459,21 @@
             </objects>
             <point key="canvasLocation" x="22" y="609"/>
         </scene>
+        <!--ScrapbookStoryboard-->
+        <scene sceneID="Ua9-F4-Dwl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ScrapbookStoryboard" id="wB9-gg-VNC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X05-g9-ly6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-168" y="587"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Mingle-home-button" width="250" height="250"/>
         <image name="back-arrow" width="100" height="100"/>
         <image name="calendar" width="512" height="512"/>
         <image name="chatbeeBOLD" width="1166" height="420"/>
+        <image name="edit-icon" width="100" height="100"/>
         <image name="friends" width="512" height="512"/>
         <image name="high-five" width="512" height="512"/>
         <image name="round-account" width="512" height="512"/>

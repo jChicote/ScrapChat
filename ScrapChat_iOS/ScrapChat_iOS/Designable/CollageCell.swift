@@ -9,7 +9,17 @@
 import Foundation
 import UIKit
 
+protocol CollageCellDelegate {
+    func didTapCell(pImage: UIImage)
+}
+
 class CollageCell : UICollectionViewCell {
+    
+    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var date: UILabel!
+    
+    var delegateCell: CollageCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,5 +31,9 @@ class CollageCell : UICollectionViewCell {
             contentView.topAnchor.constraint(equalTo: topAnchor),
             contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
+    }
+    
+    @IBAction func viewPhoto(_ sender: Any) {
+        delegateCell?.didTapCell(pImage: thumbnail.image!)
     }
 }

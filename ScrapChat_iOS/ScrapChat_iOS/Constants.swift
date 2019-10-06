@@ -14,5 +14,7 @@ struct Constants {
         static let AccountsVC = "Accounts"
         static let FriendsVC = "Friends"
         static let HomeVC = "Home"
+        static let EventsVC = "Events"
+        static let ScrapBookVC = "Scrapbook"
     }
 }

@@ -77,4 +77,17 @@ class PasswordViewController: VCKeyboardHandler {
           let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.FriendsVC)
           self.navigationController?.pushViewController(vc, animated: false)
        }
+    
+    @IBAction func eventsPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "EventsStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.EventsVC)
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @IBAction func scrapPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "ScrapbookStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.ScrapBookVC)
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
 }

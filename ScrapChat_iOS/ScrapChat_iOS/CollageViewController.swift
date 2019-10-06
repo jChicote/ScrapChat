@@ -8,9 +8,24 @@
 
 import UIKit
 
+protocol CollageToChat {
+    func clearCollage(makeClear: Bool)
+}
+
 class CollageViewController: UIViewController, UIDragInteractionDelegate, UIDropInteractionDelegate{
     
     @IBOutlet weak var testImage: UIImageView!
+    
+    var viewActive = false
+    var isAdded = false
+    var clearBoard = false
+    var videoChat: VideoChatController?
+    var timer: Timer!
+    var currentTag: Int!
+    
+    var ccDelegate: CollageToChat?
+    
+    var default_Images = [UIImage(named: "stock-image-1")!, UIImage(named: "stock-image-2")!, UIImage(named: "stock-image-3")!, UIImage(named: "stock-image-4")!, UIImage(named: "stock-image-5")!, UIImage(named: "stock-image-6")!, UIImage(named: "stock-image-7")!, UIImage(named: "stock-image-8")!, UIImage(named: "stock-image-9")!, UIImage(named: "stock-image-10")!, UIImage(named: "stock-image-11")!, UIImage(named: "stock-image-12")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +34,33 @@ class CollageViewController: UIViewController, UIDragInteractionDelegate, UIDrop
         view.addInteraction(UIDropInteraction(delegate: self))
 
         // Do any additional setup after loading the view.
-        testImage.isUserInteractionEnabled = true
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(renderNewImage), userInfo: nil, repeats: true)
+    }
+    
+    @objc func renderNewImage() {
+        
+        if isAdded == false {
+            currentTag = Int.random(in: 0 ..< 999)
+            let numVal = Int.random(in: 0 ..< default_Images.count)
+            let newImage = UIImageView(image:default_Images[numVal])
+            newImage.isUserInteractionEnabled = true
+            newImage.frame = CGRect(x: 40, y: 40, width: view.frame.width * 0.2, height: (view.frame.width * 0.2) * (default_Images[numVal].size.height/default_Images[numVal].size.width))
+            newImage.tag = currentTag
+            self.view.addSubview(newImage)
+            print("Added new image")
+            isAdded = true
+        } else {
+            if let subview = self.view.viewWithTag(currentTag) {
+                subview.removeFromSuperview()
+            }
+            let numVal = Int.random(in: 0 ..< default_Images.count)
+            let newImage = UIImageView(image:default_Images[numVal])
+            newImage.isUserInteractionEnabled = true
+            newImage.tag = currentTag
+            newImage.frame = CGRect(x: 40, y: 40, width: view.frame.width * 0.3, height: (view.frame.width * 0.3) * (default_Images[numVal].size.height/default_Images[numVal].size.width))
+            self.view.addSubview(newImage)
+            print("reloaded new image")
+        }
     }
     
     func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
@@ -28,7 +69,7 @@ class CollageViewController: UIViewController, UIDragInteractionDelegate, UIDrop
         print(touchedPoint)
         if let touchedImageView = self.view.hitTest(touchedPoint, with: nil) as? UIImageView {
             let touchedImage = touchedImageView.image
-            
+            isAdded = false
             let itemProvider = NSItemProvider(object: touchedImage!)
             let dragItem = UIDragItem(itemProvider: itemProvider)
             
@@ -62,8 +103,8 @@ class CollageViewController: UIViewController, UIDragInteractionDelegate, UIDrop
                 DispatchQueue.main.async {
                     let imageView = UIImageView(image:draggedImage)
                     imageView.isUserInteractionEnabled = true
+                    imageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.2, height: (self.view.frame.width * 0.2) * (draggedImage.size.height/draggedImage.size.width))
                     self.view.addSubview(imageView)
-                    imageView.frame = CGRect(x: 0, y: 0, width: draggedImage.size.width, height: draggedImage.size.height)
                     print(imageView.frame)
                     let centerPoint = session.location(in: self.view)
                     imageView.center = centerPoint
@@ -88,6 +129,18 @@ class CollageViewController: UIViewController, UIDragInteractionDelegate, UIDrop
         self.view.addSubview(item.localObject as! UIView)
     }
     
+    func clearTheBoard() {
+        for subview in view.subviews{
+            subview.removeFromSuperview()
+        }
+    }
     
-
+    func checkCollage() -> Int {
+        var count = 0
+        for _ in view.subviews{
+            count += 1
+        }
+        print(count)
+        return count
+    }
 }

@@ -66,7 +66,7 @@ extension FriendsViewController {
     
     //defines the length of cell items (before being loaded into screen)
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friendList.friendArray.count
+        return FriendManager.friendArray.count
     }
     
     
@@ -77,7 +77,7 @@ extension FriendsViewController {
         cell.backgroundColor = .white
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 10
-        cell.cellLabel.text = (friendList.friendArray[indexPath.row].name)
+        cell.cellLabel.text = (FriendManager.friendArray[indexPath.row].name)
         cell.layoutIfNeeded()
         return cell
     }

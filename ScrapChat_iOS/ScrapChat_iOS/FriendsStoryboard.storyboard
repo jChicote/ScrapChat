@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSp-6I-Pou">
-    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSp-6I-Pou">
+    <device id="ipad12_9rounded" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -97,6 +99,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPN-E7-35R" userLabel="Top Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="123"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatbeeBOLD" translatesAutoresizingMaskIntoConstraints="NO" id="vOz-ZK-uXz">
+                                        <rect key="frame" x="341.5" y="-2.5" width="683" height="147.5"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLT-Nz-JVR" userLabel="Setting Cog">
                                         <rect key="frame" x="1265" y="40.5" width="61" height="61.5"/>
                                         <constraints>
@@ -121,10 +126,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="6rI-uA-6vc" firstAttribute="centerY" secondItem="gPN-E7-35R" secondAttribute="centerY" constant="10" id="2WE-DN-XIg"/>
+                                    <constraint firstItem="vOz-ZK-uXz" firstAttribute="width" secondItem="gPN-E7-35R" secondAttribute="width" multiplier="0.5" id="2mM-qQ-azm"/>
                                     <constraint firstItem="DLT-Nz-JVR" firstAttribute="centerY" secondItem="gPN-E7-35R" secondAttribute="centerY" constant="10" id="GbF-Re-v8U"/>
                                     <constraint firstAttribute="trailing" secondItem="DLT-Nz-JVR" secondAttribute="trailing" multiplier="1.03" id="VCK-Tr-gpk"/>
+                                    <constraint firstItem="vOz-ZK-uXz" firstAttribute="centerY" secondItem="gPN-E7-35R" secondAttribute="centerY" constant="10" id="YS4-xK-auR"/>
+                                    <constraint firstItem="vOz-ZK-uXz" firstAttribute="height" secondItem="gPN-E7-35R" secondAttribute="height" multiplier="1.2" id="dF3-4P-Vge"/>
                                     <constraint firstItem="DLT-Nz-JVR" firstAttribute="height" secondItem="gPN-E7-35R" secondAttribute="height" multiplier="0.5" id="jbJ-ho-RKp"/>
                                     <constraint firstItem="6rI-uA-6vc" firstAttribute="leading" secondItem="gPN-E7-35R" secondAttribute="leading" constant="40" id="ke8-9c-pCn"/>
+                                    <constraint firstItem="vOz-ZK-uXz" firstAttribute="centerX" secondItem="gPN-E7-35R" secondAttribute="centerX" id="v1a-Ck-c0X"/>
                                     <constraint firstItem="6rI-uA-6vc" firstAttribute="height" secondItem="gPN-E7-35R" secondAttribute="height" multiplier="0.6" id="yLr-oC-jdV"/>
                                 </constraints>
                             </view>
@@ -152,6 +161,7 @@
                                                 <color key="tintColor" red="0.094102360309999994" green="0.094126455489999997" blue="0.09410081059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="accountsPressed:" destination="f9s-6x-Up0" eventType="touchUpInside" id="wDQ-8h-Bjx"/>
+                                                    <segue destination="vjr-wF-l3j" kind="show" animates="NO" id="kKB-zt-DPC"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbX-5Q-li7" userLabel="FriendViewBack">
@@ -207,6 +217,7 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="Vwc-Wb-diV">
                                                 <rect key="frame" x="315" y="15" width="106" height="106"/>
+                                                <color key="tintColor" red="0.067863503889999996" green="0.060283863260000001" blue="0.053238287189999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Vwc-Wb-diV" secondAttribute="height" multiplier="1:1" id="gfe-sC-Z2B"/>
                                                 </constraints>
@@ -237,6 +248,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNN-nz-sdR" userLabel="ScrapbookButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="262.5" height="176.5"/>
+                                                <connections>
+                                                    <segue destination="Ctf-ex-ppj" kind="show" animates="NO" id="cFh-S4-KMg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -355,6 +369,14 @@
             </objects>
             <point key="canvasLocation" x="828.84333821376276" y="38.671875"/>
         </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="GE2-D1-zfn">
+            <objects>
+                <viewControllerPlaceholder id="vjr-wF-l3j" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Po8-HA-eca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209" y="444"/>
+        </scene>
         <!--VideoChatScreen-->
         <scene sceneID="OMn-hR-Jg0">
             <objects>
@@ -363,7 +385,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FET-q2-g8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149" y="555"/>
+            <point key="canvasLocation" x="990" y="555"/>
+        </scene>
+        <!--ScrapbookStoryboard-->
+        <scene sceneID="gXz-nc-7lw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ScrapbookStoryboard" id="Ctf-ex-ppj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cET-qf-YnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="498" y="440"/>
         </scene>
         <!--Events Storyboard-->
         <scene sceneID="kri-DZ-qqu">
@@ -371,7 +401,7 @@
                 <viewControllerPlaceholder storyboardName="Events Storyboard" id="Lk1-FU-a8v" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tie-86-Vu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-35" y="555"/>
+            <point key="canvasLocation" x="687" y="555"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fbX-PD-JE4">
@@ -397,6 +427,7 @@
         <image name="calendar" width="512" height="512"/>
         <image name="call" width="284" height="284"/>
         <image name="call_pressed" width="284" height="284"/>
+        <image name="chatbeeBOLD" width="1166" height="420"/>
         <image name="friends" width="512" height="512"/>
         <image name="high-five" width="512" height="512"/>
         <image name="round-account" width="512" height="512"/>

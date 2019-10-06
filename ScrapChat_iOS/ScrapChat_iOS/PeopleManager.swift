@@ -13,5 +13,9 @@ struct PeopleManageer {
 }
 
 struct FriendManager {
-    var friendArray = [Person(name: "Neveah Wilkins", age: 23, suburb: "Plumpton", gender: "Female"),Person(name: "Rylie Knox", age: 23, suburb: "Plumpton", gender: "Female"),Person(name: "Yuliana Jennings", age: 23, suburb: "Plumpton", gender: "Yuliana"),Person(name: "Ezekiel Fields", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Edith Meyer", age: 23, suburb: "Plumpton", gender: "Female"),Person(name: "Micaela Curry", age: 23, suburb: "Plumpton", gender: "Female"),Person(name: "Marshall Hamilton", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Nicolas Phillips", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Nicolas Phillips", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Raiden Ross", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Antony Downs", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Jade Caldwell", age: 23, suburb: "Plumpton", gender: "Male")]
+    static var friendArray = [Person(name: "Neveah Wilkins", age: 23, suburb: "Plumpton", gender: "Female"),Person(name: "Rylie Knox", age: 23, suburb: "Plumpton", gender: "Female"),Person(name: "Yuliana Jennings", age: 23, suburb: "Plumpton", gender: "Yuliana"),Person(name: "Ezekiel Fields", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Edith Meyer", age: 23, suburb: "Plumpton", gender: "Female"),Person(name: "Micaela Curry", age: 23, suburb: "Plumpton", gender: "Female"),Person(name: "Marshall Hamilton", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Nicolas Phillips", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Nicolas Phillips", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Raiden Ross", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Antony Downs", age: 23, suburb: "Plumpton", gender: "Male"),Person(name: "Jade Caldwell", age: 23, suburb: "Plumpton", gender: "Male")]
+    
+    mutating func addAtPosition(person: Person){
+        //friendArray.append(person)
+    }
 }

@@ -36,6 +36,7 @@ class VideoChatController: UIViewController {
     @IBOutlet weak var saveCenterY: NSLayoutConstraint!
     @IBOutlet weak var toolBottom: NSLayoutConstraint!
     @IBOutlet weak var savePopY: NSLayoutConstraint!
+    @IBOutlet weak var friendRequestY: NSLayoutConstraint!
     
     //ScrapBook View
     @IBOutlet weak var collageView: UIView!
@@ -49,10 +50,14 @@ class VideoChatController: UIViewController {
     @IBOutlet weak var toolLabel: UILabel!
     @IBOutlet weak var saveLabel: UILabel!
     @IBOutlet weak var clearLabel: UILabel!
+    @IBOutlet weak var createLabel: UILabel!
     
     var agoraKit: AgoraRtcEngineKit!
     var callRecipient: Person?
     var madeScrap = false
+    var friends = FriendManager()
+    var containerCollage: CollageViewController? = nil
+    @IBOutlet weak var messageLabel: UILabel!
     
     var isRemoteVideoRender: Bool = true {
         didSet {
@@ -79,6 +84,8 @@ class VideoChatController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         collageView.layer.cornerRadius = 20
         collageView.layer.masksToBounds = true
         collageView.alpha = 0
@@ -126,6 +133,12 @@ class VideoChatController: UIViewController {
         //setClientRole()
         joinChannel()
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? CollageViewController {
+            self.containerCollage = vc
+        }
     }
     
     func initializeAgoraEngine() {
@@ -204,11 +217,26 @@ class VideoChatController: UIViewController {
     }
     
     @IBAction func didClickHangUpButton(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        if sender.isSelected {
-            leaveChannel()
+        
+        if (containerCollage?.checkCollage())! > 1 {
+            releasePopup()
+        } else {
+            var isThere = false
+            for person in FriendManager.friendArray {
+                if callRecipient?.name == person.name {
+                    isThere = true
+                }
+            }
+            if isThere == true {
+                sender.isSelected.toggle()
+                if sender.isSelected {
+                    leaveChannel()
+                }
+                self.performSegue(withIdentifier: "unwindToHome", sender: self)
+            } else {
+               releaseFriendRequest()
+            }
         }
-        dismiss(animated: true)
     }
     
     @IBAction func didClickMuteButton(_ sender: UIButton) {
@@ -238,6 +266,7 @@ class VideoChatController: UIViewController {
             
             createButton.backgroundColor = #colorLiteral(red: 0.09410236031, green: 0.09412645549, blue: 0.09410081059, alpha: 1)
             createButton.tintColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
+            createLabel.text = "Close"
             
             //remoteView resize
             remoteTrail?.constant = -40
@@ -262,6 +291,7 @@ class VideoChatController: UIViewController {
         } else {
             createButton.backgroundColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
             createButton.tintColor = #colorLiteral(red: 0.09410236031, green: 0.09412645549, blue: 0.09410081059, alpha: 1)
+            createLabel.text = "Create"
             
             //remoteView resize
             remoteTrail?.constant = 0
@@ -285,7 +315,7 @@ class VideoChatController: UIViewController {
             }
             collapseTools()
             collageActive = false
-            
+
             toolButton.isSelected = false
         }
     }
@@ -309,28 +339,44 @@ class VideoChatController: UIViewController {
     }
     
     @IBAction func triggerSave(_ sender: Any) {
-        savePopY.constant = 0
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-            self.savePopup.alpha = 1
-            self.darkMask.alpha = 0.8
-        }
+        releasePopup()
     }
     
     @IBAction func triggerDecline(_ sender: Any) {
         retractPopup()
     }
     
+    @IBAction func addFriend(_ sender: Any) {
+        //friends.friendArray.insert(callRecipient!, at: 2)
+        print(FriendManager.friendArray.count)
+        FriendManager.friendArray.insert(callRecipient!, at: 0)
+        print(FriendManager.friendArray.count)
+    }
     
     @IBAction func saveCollage(_ sender: Any) {
        
-        var scrapBook: LocalScrapManager?
         UIGraphicsBeginImageContext(collageView.frame.size)
         collageView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         let scrapObj = ScrapObject(collage: image!, date: Date(), partner: callRecipient!)
-        scrapBook?.scraps.append(scrapObj)
+        LocalScrapManager.scraps.append(scrapObj)
+        print(LocalScrapManager.scraps.count)
+        retractPopup()
+        containerCollage?.clearTheBoard()
         
+    }
+    
+    @IBAction func clearCollage(_ sender: Any) {
+        containerCollage?.clearTheBoard()
+    }
+    
+    func releasePopup() {
+        savePopY.constant = 0
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+            self.savePopup.alpha = 1
+            self.darkMask.alpha = 0.8
+        }
     }
     
     func retractPopup() {
@@ -340,6 +386,15 @@ class VideoChatController: UIViewController {
             self.savePopup.alpha = 0
             self.darkMask.alpha = 0
         }
+    }
+    
+    func releaseFriendRequest() {
+        messageLabel.text = "Would you like to add \(callRecipient!.name) as your friend?"
+        friendRequestY.constant = 0
+        UIView.animate(withDuration: 0.4, animations: {
+            self.darkMask.alpha = 0.8
+            self.view.layoutIfNeeded()
+        })
     }
     
     func collapseTools() {
@@ -387,3 +442,4 @@ extension VideoChatController: AgoraRtcEngineDelegate {
         //logVC?.log(type: .error, content: "did occur error, code: \(errorCode.rawValue)")
     }
 }
+

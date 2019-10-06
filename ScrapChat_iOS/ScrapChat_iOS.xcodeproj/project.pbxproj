@@ -30,6 +30,7 @@
 		F319CDA42348A0F1003787D5 /* PeopleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CDA32348A0F0003787D5 /* PeopleManager.swift */; };
 		F319CDA62348A11F003787D5 /* LocalScrapbookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CDA52348A11F003787D5 /* LocalScrapbookManager.swift */; };
 		F319CDA82348A83C003787D5 /* scrapObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CDA72348A83C003787D5 /* scrapObject.swift */; };
+		F319CDAA234997A9003787D5 /* FriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319CDA9234997A9003787D5 /* FriendRequestViewController.swift */; };
 		F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7723275A4000503D55 /* AppDelegate.swift */; };
 		F3607C7A23275A4000503D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3607C7923275A4000503D55 /* ViewController.swift */; };
 		F3607C7D23275A4000503D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3607C7B23275A4000503D55 /* Main.storyboard */; };
@@ -100,6 +101,7 @@
 		F319CDA32348A0F0003787D5 /* PeopleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PeopleManager.swift; path = ScrapChat_iOS/PeopleManager.swift; sourceTree = SOURCE_ROOT; };
 		F319CDA52348A11F003787D5 /* LocalScrapbookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalScrapbookManager.swift; path = ScrapChat_iOS/LocalScrapbookManager.swift; sourceTree = SOURCE_ROOT; };
 		F319CDA72348A83C003787D5 /* scrapObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scrapObject.swift; sourceTree = "<group>"; };
+		F319CDA9234997A9003787D5 /* FriendRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestViewController.swift; sourceTree = "<group>"; };
 		F3607C7423275A4000503D55 /* ScrapChat_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapChat_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3607C7723275A4000503D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3607C7923275A4000503D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				F319CD9D23460445003787D5 /* ChatLoadingViewController.swift */,
 				F319CDA123476706003787D5 /* CollageViewController.swift */,
 				F86E04F823488AB100D36663 /* ForgotPasswordViewController.swift */,
+				F319CDA9234997A9003787D5 /* FriendRequestViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				F81860462344CA1700A4C080 /* AccountsViewController.swift in Sources */,
 				F319CD9623438A6D003787D5 /* EventCell.swift in Sources */,
 				F81860482344CA2F00A4C080 /* StorageManager.swift in Sources */,
+				F319CDAA234997A9003787D5 /* FriendRequestViewController.swift in Sources */,
 				F319CD8E234076A4003787D5 /* FriendCollectionView.swift in Sources */,
 				F3B6DBB9232CC70E00122974 /* SettingsViewController.swift in Sources */,
 				F8390C0B2346248000E78123 /* PasswordViewController.swift in Sources */,
