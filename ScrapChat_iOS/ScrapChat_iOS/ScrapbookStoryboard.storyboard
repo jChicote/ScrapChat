@@ -122,6 +122,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZP-7h-SSP" userLabel="AccountButton">
                                                 <rect key="frame" x="320.5" y="0.0" width="262.5" height="176.5"/>
                                                 <color key="tintColor" red="0.094102360309999994" green="0.094126455489999997" blue="0.09410081059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="accountTapped:" destination="Url-fk-oe2" eventType="touchUpInside" id="Ul5-pi-fht"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friends" translatesAutoresizingMaskIntoConstraints="NO" id="KmG-T6-Kux" userLabel="Friends Image">
                                                 <rect key="frame" x="150.5" y="15" width="106" height="106"/>
@@ -137,6 +140,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0M-ex-fGm" userLabel="FriendButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="320.5" height="176.5"/>
+                                                <connections>
+                                                    <action selector="friendsTapped:" destination="Url-fk-oe2" eventType="touchUpInside" id="J1e-tZ-6G3"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,6 +191,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DF9-7y-aUg" userLabel="EventsButton">
                                                 <rect key="frame" x="262.5" y="0.0" width="320.5" height="176.5"/>
+                                                <connections>
+                                                    <action selector="eventTapped:" destination="Url-fk-oe2" eventType="touchUpInside" id="r9t-aj-pOD"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scrap_icon" translatesAutoresizingMaskIntoConstraints="NO" id="EMY-zM-krf">
                                                 <rect key="frame" x="78" y="15" width="106" height="106"/>
@@ -253,6 +262,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yg-OL-t1y" userLabel="Mingle Button">
                                                 <rect key="frame" x="18" y="18" width="329" height="329"/>
                                                 <color key="tintColor" red="0.091987882280000002" green="0.094126455489999997" blue="0.093879239200000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="mingleTapped:" destination="Url-fk-oe2" eventType="touchUpInside" id="V2G-Jr-2SH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -298,6 +310,9 @@
                                         </constraints>
                                         <color key="tintColor" red="1" green="0.0015601739879999999" blue="0.84701783350000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="settings_cog"/>
+                                        <connections>
+                                            <action selector="onSetting:" destination="Url-fk-oe2" eventType="touchUpInside" id="fjD-1j-esh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPc-dg-ga2" userLabel="Back button">
                                         <rect key="frame" x="40" y="34.5" width="73.5" height="74"/>

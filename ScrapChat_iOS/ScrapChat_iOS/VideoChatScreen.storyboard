@@ -13,7 +13,7 @@
         <!--Video Chat Controller-->
         <scene sceneID="asu-ix-JRV">
             <objects>
-                <viewController id="SDJ-4z-i7T" customClass="VideoChatController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainCall" id="SDJ-4z-i7T" customClass="VideoChatController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5QC-Yh-uNU">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,6 +225,14 @@
                                 <color key="textColor" red="0.0" green="0.91724012310000003" blue="0.71299798290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMY-vJ-bvO">
+                                <rect key="frame" x="0.0" y="49" width="1366" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.79934893559999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="1" green="0.79934893559999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfF-rL-QtS">
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                                 <color key="backgroundColor" red="0.14671713080000001" green="0.14671713080000001" blue="0.14671713080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -291,10 +299,9 @@
                                             <constraint firstAttribute="width" secondItem="T9J-Bz-wtZ" secondAttribute="height" multiplier="1:1" id="RfD-SJ-jhw"/>
                                         </constraints>
                                         <color key="tintColor" red="0.14671713080000001" green="0.14671713080000001" blue="0.14671713080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" backgroundImage="call_icon"/>
+                                        <state key="normal" backgroundImage="add-icon"/>
                                         <connections>
                                             <action selector="addFriend:" destination="SDJ-4z-i7T" eventType="touchUpInside" id="n2B-FA-iZF"/>
-                                            <segue destination="KlP-OY-CtC" kind="unwind" unwindAction="UnwindToHome:" id="0VF-ez-OLG"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="GzP-5i-zJE">
@@ -314,8 +321,7 @@
                                         <color key="tintColor" red="0.14671713080000001" green="0.14671713080000001" blue="0.14671713080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" backgroundImage="decline_icon"/>
                                         <connections>
-                                            <action selector="declineSuggestion:" destination="Jfs-2P-G0J" eventType="touchUpInside" id="Web-hZ-4ev"/>
-                                            <segue destination="KlP-OY-CtC" kind="unwind" unwindAction="UnwindToHome:" id="Vlw-2X-0MP"/>
+                                            <action selector="declineFriend:" destination="SDJ-4z-i7T" eventType="touchUpInside" id="MvX-Nw-Zsu"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="J3l-h4-Tzf">
@@ -394,6 +400,7 @@
                             <constraint firstItem="YJU-Qh-QIn" firstAttribute="centerY" secondItem="pTb-a5-ItJ" secondAttribute="centerY" constant="-2" id="HN4-w7-waT"/>
                             <constraint firstItem="snf-nu-mpu" firstAttribute="height" secondItem="DkA-fC-j99" secondAttribute="height" id="J5n-uv-dhw"/>
                             <constraint firstItem="mLv-AP-ms1" firstAttribute="width" secondItem="5QC-Yh-uNU" secondAttribute="width" id="K8P-fX-wcQ"/>
+                            <constraint firstItem="WMY-vJ-bvO" firstAttribute="width" secondItem="5QC-Yh-uNU" secondAttribute="width" id="LQ4-hh-oKB"/>
                             <constraint firstItem="dWb-yq-0xR" firstAttribute="width" secondItem="iJS-o2-Tpt" secondAttribute="width" id="Ltp-4c-6GC"/>
                             <constraint firstItem="snf-nu-mpu" firstAttribute="centerY" secondItem="DkA-fC-j99" secondAttribute="centerY" id="M7B-Lt-NFy"/>
                             <constraint firstItem="RTJ-qF-EAs" firstAttribute="width" secondItem="5QC-Yh-uNU" secondAttribute="width" multiplier="0.6" id="N0a-xS-eyK"/>
@@ -412,6 +419,7 @@
                             <constraint firstItem="YJU-Qh-QIn" firstAttribute="centerX" secondItem="pTb-a5-ItJ" secondAttribute="centerX" id="eQs-Aq-Lzy"/>
                             <constraint firstItem="DkA-fC-j99" firstAttribute="height" secondItem="pWg-pq-w3w" secondAttribute="height" multiplier="0.9" id="fc6-WZ-WzM"/>
                             <constraint firstItem="DkA-fC-j99" firstAttribute="centerX" secondItem="pWg-pq-w3w" secondAttribute="centerX" id="fwg-Xq-XeC"/>
+                            <constraint firstItem="WMY-vJ-bvO" firstAttribute="top" secondItem="bJE-14-Acb" secondAttribute="top" constant="25" id="g5G-h7-ae2"/>
                             <constraint firstItem="Fao-iH-n6g" firstAttribute="centerX" secondItem="pTb-a5-ItJ" secondAttribute="centerX" constant="1" id="gB1-tC-lEp"/>
                             <constraint firstItem="KI8-Yu-rcF" firstAttribute="height" secondItem="5QC-Yh-uNU" secondAttribute="height" multiplier="0.3" id="hCK-GP-MVQ"/>
                             <constraint firstItem="KI8-Yu-rcF" firstAttribute="width" secondItem="5QC-Yh-uNU" secondAttribute="width" multiplier="0.5" id="hYR-oB-OyQ"/>
@@ -419,6 +427,7 @@
                             <constraint firstItem="J8y-S4-39Q" firstAttribute="height" secondItem="5QC-Yh-uNU" secondAttribute="height" multiplier="0.82" id="iJl-bV-tOz"/>
                             <constraint firstItem="e4b-Dj-Fdb" firstAttribute="leading" secondItem="fEJ-2Y-r45" secondAttribute="trailing" constant="20" id="j6r-mN-FFA"/>
                             <constraint firstItem="xfF-rL-QtS" firstAttribute="width" secondItem="5QC-Yh-uNU" secondAttribute="width" id="l3a-QE-x8E"/>
+                            <constraint firstItem="WMY-vJ-bvO" firstAttribute="centerX" secondItem="bJE-14-Acb" secondAttribute="centerX" id="oN6-Es-0pD"/>
                             <constraint firstItem="pWg-pq-w3w" firstAttribute="width" secondItem="pWg-pq-w3w" secondAttribute="height" multiplier="1:1" id="pK8-lW-aiL"/>
                             <constraint firstItem="K7B-bo-knT" firstAttribute="width" secondItem="iJS-o2-Tpt" secondAttribute="width" multiplier="0.3" id="puL-sH-ADg"/>
                             <constraint firstItem="J8y-S4-39Q" firstAttribute="top" secondItem="5QC-Yh-uNU" secondAttribute="top" constant="-1500" id="qBa-E9-GKT"/>
@@ -453,21 +462,20 @@
                         <outlet property="saveLabel" destination="snf-nu-mpu" id="hks-MQ-dx6"/>
                         <outlet property="savePopY" destination="A1N-OA-E2R" id="cGn-Yq-wJ4"/>
                         <outlet property="savePopup" destination="KI8-Yu-rcF" id="UQA-ay-nUS"/>
+                        <outlet property="suggestionText" destination="WMY-vJ-bvO" id="Ojj-sd-zeD"/>
                         <outlet property="toolBottom" destination="Fcr-1T-YCn" id="JPq-lt-vV9"/>
                         <outlet property="toolButton" destination="pWg-pq-w3w" id="OtQ-Nh-ehX"/>
                         <outlet property="toolLabel" destination="ano-9x-LEp" id="wmC-qC-kAw"/>
-                        <segue destination="KlP-OY-CtC" kind="unwind" identifier="unwindToHome" unwindAction="UnwindToHome:" id="axU-dv-2iz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckg-6j-6zC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="KlP-OY-CtC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="849" y="104"/>
         </scene>
         <!--Chat Loading View Controller-->
         <scene sceneID="R7j-vY-M3q">
             <objects>
-                <viewController id="Jfs-2P-G0J" customClass="ChatLoadingViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatLoader" id="Jfs-2P-G0J" customClass="ChatLoadingViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jt6-z4-MQa">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

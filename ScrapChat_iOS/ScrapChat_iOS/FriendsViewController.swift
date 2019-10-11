@@ -14,6 +14,15 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet var minglebackImage: UIImageView!
     //@IBOutlet var mingleIcon: UIImageView!
     
+    //Event Outlets
+    @IBOutlet weak var descriptionOut: UITextField!
+    @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var eventView: UIView!
+    @IBOutlet weak var darkMode: UIView!
+    
+    //event constraint
+    @IBOutlet weak var eventCenterY: NSLayoutConstraint!
     
     //temp test data
     private var collectionData = ["Neveah Wilkins", "Rylie Knox", "Yuliana Jennings", "Ezekiel Fields", "Edith Meyer", "Micaela Curry", " Marshall Hamilton", " Nicolas Phillips", "Aleena Butler", "Raiden Ross", "Antony Downs", "Jade Caldwell"]
@@ -21,10 +30,14 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     //padding for cells to prevent 'breaking' constraints
     let padding: CGFloat = 300
     var friendList = FriendManager()
+    var fetchedPerson: Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        darkMode.alpha = 0
+        eventView.layer.cornerRadius = 20
+        eventView.layer.masksToBounds = true
+        eventCenterY.constant = 1500
         minglebackImage.tintColor = #colorLiteral(red: 0.8078431373, green: 0.7921568627, blue: 0.7921568627, alpha: 1)
         
         friendCollection.delegate = self
@@ -45,6 +58,9 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         UIView.animate(withDuration: 0.1) {
             self.minglebackImage.tintColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
         }
+        let storyboard = UIStoryboard(name: "VideoChatScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.ChatVC)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func backPressed(_ sender: UIButton) {
@@ -59,6 +75,75 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
+    @IBAction func eventsPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Events Storyboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.EventsVC)
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @IBAction func scrapbookPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ScrapbookStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.ScrapBookVC)
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    
+    @IBAction func onCancel(_ sender: Any) {
+        eventCenterY.constant = 1500
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+            self.darkMode.alpha = 0
+        }
+    }
+    
+    @IBAction func onComplete(_ sender: Any) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy-HH:mm"
+        
+        eventCenterY.constant = 1500
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+            self.darkMode.alpha = 0
+        }
+        
+        let stringDate = dateFormatter.string(from: datePicker.date)
+        EventsManager.events.append(EventsObject(dayOTW: "Default", dateTime: stringDate, amPM: "am", description: descriptionOut.text!, location: "Unknown", person: fetchedPerson!))
+        
+        let iteratedDateFormat = DateFormatter()
+        iteratedDateFormat.dateFormat = "dd/MM/yyy-HH:mm"
+        
+        let sortedEvents = EventsManager.events.sorted { iteratedDateFormat.date(from: $0.dateTime)! < iteratedDateFormat.date(from: $1.dateTime)!
+        }
+        EventsManager.events = sortedEvents
+    }
+    
+    @IBAction func onSettings(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.SettingVC)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+extension FriendsViewController : CellDelegate {
+    func didTapCall(person: Person) {
+        let storyboard = UIStoryboard(name: "VideoChatScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.MainCallScreen) as! VideoChatController
+        vc.callRecipient = person
+        print(person.name)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func didTapEvent(person: Person) {
+        fetchedPerson = person
+        
+        eventCenterY.constant = 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+            self.darkMode.alpha = 0.8
+        }
+    }
 }
 
 //This extension supplements the controller with flow layout and delegate classes for collection view
@@ -74,6 +159,8 @@ extension FriendsViewController {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! FriendCell
+        cell.cellDelegate = self
+        cell.individual = FriendManager.friendArray[indexPath.row]
         cell.backgroundColor = .white
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 10

@@ -26,5 +26,9 @@ class SettingsViewController: UITableViewController {
     /*override func didRecieveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }*/
-
+    
+    @IBAction func exitTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }

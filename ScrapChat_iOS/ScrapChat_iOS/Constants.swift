@@ -16,5 +16,8 @@ struct Constants {
         static let HomeVC = "Home"
         static let EventsVC = "Events"
         static let ScrapBookVC = "Scrapbook"
+        static let MainCallScreen = "MainCall"
+        static let SettingVC = "Settings"
+        static let ChatVC = "ChatLoader"
     }
 }

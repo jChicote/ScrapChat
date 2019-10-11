@@ -31,7 +31,6 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let cogStencil = UIImage(named: "settings_cog")?.withRenderingMode(.alwaysTemplate)
         settingBackButton.setImage(cogStencil, for: .normal)
-        settingBackButton.tintColor = UIColor.gray
     }
     
     @IBAction func OnMingleTouch(_ sender: Any) {

@@ -44,6 +44,7 @@ class VideoChatController: UIViewController {
     @IBOutlet weak var toolButton: UIButton!
     @IBOutlet weak var savePopup: UIView!
     @IBOutlet weak var darkMask: UIView!
+    @IBOutlet weak var suggestionText: UILabel!
     var collageActive = false
     
     //Tool button labels
@@ -55,8 +56,11 @@ class VideoChatController: UIViewController {
     var agoraKit: AgoraRtcEngineKit!
     var callRecipient: Person?
     var madeScrap = false
+    var index = 0
+    var timer: Timer!
     var friends = FriendManager()
     var containerCollage: CollageViewController? = nil
+    var chatPrompts = ["What do you think about life?", "What is your pet like?", "What was life for you during that time?"]
     @IBOutlet weak var messageLabel: UILabel!
     
     var isRemoteVideoRender: Bool = true {
@@ -84,7 +88,10 @@ class VideoChatController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        suggestionText.layer.shadowOpacity = 0.8
+        suggestionText.layer.shadowOffset = CGSize(width: 0, height: 0)
+        suggestionText.layer.shadowRadius = 4.0
+        suggestionText.layer.shadowColor = #colorLiteral(red: 1, green: 0.7993489356, blue: 0, alpha: 1)
         
         collageView.layer.cornerRadius = 20
         collageView.layer.masksToBounds = true
@@ -98,6 +105,8 @@ class VideoChatController: UIViewController {
         saveLabel.alpha = 0
         toolLabel.alpha = 1
         savePopup.alpha = 0
+        
+        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onTextFadeIn), userInfo: nil, repeats: false)
         
         //REMOTE VIEW constraints
         remoteVideo.translatesAutoresizingMaskIntoConstraints = false
@@ -195,11 +204,12 @@ class VideoChatController: UIViewController {
         // same channel successfully using the same app id.
         // 2. One token is only valid for the channel name that
         // you use to generate this token.
-        agoraKit.joinChannel(byToken: Token, channelId: "chatBeeDemo", info: nil, uid: 0) { [unowned self] (channel, uid, elapsed) -> Void in
+        agoraKit.joinChannel(byToken: Token, channelId: "ChatBeeTest", info: nil, uid: 0) { [unowned self] (channel, uid, elapsed) -> Void in
             // Did join channel "demoChannel1"
             self.isLocalVideoRender = true
             //self.logVC?.log(type: .info, content: "did join channel")
         }
+        agoraKit.renewToken(Token!)
         
         isStartCalling = true
         UIApplication.shared.isIdleTimerDisabled = true
@@ -232,7 +242,8 @@ class VideoChatController: UIViewController {
                 if sender.isSelected {
                     leaveChannel()
                 }
-                self.performSegue(withIdentifier: "unwindToHome", sender: self)
+                //self.performSegue(withIdentifier: "unwindToHome", sender: self)
+                self.navigationController?.popToRootViewController(animated: true)
             } else {
                releaseFriendRequest()
             }
@@ -351,6 +362,8 @@ class VideoChatController: UIViewController {
         print(FriendManager.friendArray.count)
         FriendManager.friendArray.insert(callRecipient!, at: 0)
         print(FriendManager.friendArray.count)
+        leaveChannel()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func saveCollage(_ sender: Any) {
@@ -369,6 +382,12 @@ class VideoChatController: UIViewController {
     @IBAction func clearCollage(_ sender: Any) {
         containerCollage?.clearTheBoard()
     }
+    
+    @IBAction func declineFriend(_ sender: Any) {
+        leaveChannel()
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     
     func releasePopup() {
         savePopY.constant = 0
@@ -440,6 +459,28 @@ extension VideoChatController: AgoraRtcEngineDelegate {
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurError errorCode: AgoraErrorCode) {
         //logVC?.log(type: .error, content: "did occur error, code: \(errorCode.rawValue)")
+    }
+}
+
+extension VideoChatController {
+    @objc func onTextFadeIn() {
+        UIView.animate(withDuration: 0.5) {
+            self.suggestionText.alpha = 1
+        }
+        if index == chatPrompts.count {
+            index = 0
+        }
+        suggestionText.text = chatPrompts[index]
+        
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(onTextFadeOut), userInfo: nil, repeats: false)
+    }
+    
+    @objc func onTextFadeOut() {
+        UIView.animate(withDuration: 0.5) {
+            self.suggestionText.alpha = 0
+        }
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(onTextFadeIn), userInfo: nil, repeats: false)
+        index += 1
     }
 }
 

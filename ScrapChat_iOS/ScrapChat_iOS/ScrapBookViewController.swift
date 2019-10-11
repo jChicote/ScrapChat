@@ -52,6 +52,36 @@ class ScrapBookViewController: UIViewController, UICollectionViewDataSource, UIC
         }
     }
     
+    @IBAction func onSetting(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.SettingVC)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func eventTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Events Storyboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.EventsVC)
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @IBAction func accountTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Accounts", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.AccountsVC)
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @IBAction func friendsTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "FriendsStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.FriendsVC)
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @IBAction func mingleTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "VideoChatScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.ChatVC)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension ScrapBookViewController: CollageCellDelegate {

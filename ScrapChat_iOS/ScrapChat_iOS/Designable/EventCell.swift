@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol EventDelegate {
+    func onEditEvent(event: EventsObject)
+}
+
 class EventCell : UICollectionViewCell {
     
     @IBOutlet var dayOTWLabel: UILabel!
@@ -16,6 +20,9 @@ class EventCell : UICollectionViewCell {
     @IBOutlet var ddescriptionLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
+    
+    var eventObject: EventsObject!
+    var eventDelegate: EventDelegate?
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -31,5 +38,9 @@ class EventCell : UICollectionViewCell {
             contentView.topAnchor.constraint(equalTo: topAnchor),
             contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+    
+    @IBAction func pressEdit(_ sender: Any) {
+        eventDelegate?.onEditEvent(event: eventObject)
     }
 }

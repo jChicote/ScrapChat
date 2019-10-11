@@ -278,22 +278,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="123"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tid-yR-XCr" userLabel="Setting Cog">
-                                        <rect key="frame" x="1252.5" y="24.5" width="73.5" height="74"/>
+                                        <rect key="frame" x="1265" y="40.5" width="61" height="61.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tid-yR-XCr" secondAttribute="height" multiplier="1:1" id="Bgi-fa-ZKd"/>
                                         </constraints>
-                                        <color key="tintColor" red="1" green="0.0015601739875351628" blue="0.84701783351789817" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.067863503889999996" green="0.060283863260000001" blue="0.053238287189999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="settings_cog"/>
                                         <connections>
                                             <segue destination="4a2-lG-h9Z" kind="show" animates="NO" id="72k-Z9-nzT"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatbeeBOLD" translatesAutoresizingMaskIntoConstraints="NO" id="MDl-ZV-Ss8">
+                                        <rect key="frame" x="341.5" y="-12.5" width="683" height="147.5"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="tid-yR-XCr" firstAttribute="centerY" secondItem="SNP-qs-W6r" secondAttribute="centerY" id="142-SF-nT3"/>
+                                    <constraint firstItem="tid-yR-XCr" firstAttribute="centerY" secondItem="SNP-qs-W6r" secondAttribute="centerY" constant="10" id="142-SF-nT3"/>
                                     <constraint firstAttribute="trailing" secondItem="tid-yR-XCr" secondAttribute="trailing" multiplier="1.03" id="1P7-ae-iDW"/>
-                                    <constraint firstItem="tid-yR-XCr" firstAttribute="height" secondItem="SNP-qs-W6r" secondAttribute="height" multiplier="0.6" id="wa7-xK-JQs"/>
+                                    <constraint firstItem="MDl-ZV-Ss8" firstAttribute="centerY" secondItem="SNP-qs-W6r" secondAttribute="centerY" id="BKs-KD-VVW"/>
+                                    <constraint firstItem="MDl-ZV-Ss8" firstAttribute="width" secondItem="SNP-qs-W6r" secondAttribute="width" multiplier="0.5" id="LBF-Ox-SUk"/>
+                                    <constraint firstItem="MDl-ZV-Ss8" firstAttribute="height" secondItem="SNP-qs-W6r" secondAttribute="height" multiplier="0.8" constant="49.099999999999994" id="Wgf-iZ-v29"/>
+                                    <constraint firstItem="MDl-ZV-Ss8" firstAttribute="centerX" secondItem="SNP-qs-W6r" secondAttribute="centerX" id="XUA-WG-HNX"/>
+                                    <constraint firstItem="tid-yR-XCr" firstAttribute="height" secondItem="SNP-qs-W6r" secondAttribute="height" multiplier="0.5" id="wa7-xK-JQs"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -330,40 +337,70 @@
         <!--Settings View Controller-->
         <scene sceneID="OM4-aW-g9h">
             <objects>
-                <tableViewController id="4a2-lG-h9Z" customClass="SettingsViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Settings" id="4a2-lG-h9Z" customClass="SettingsViewController" customModule="ScrapChat_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Xe5-YE-DcA">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.037926594500000001" green="0.12880394910000001" blue="0.28521696889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.79934893559999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="uwb-oa-AwD">
                             <rect key="frame" x="0.0" y="0.0" width="1366" height="116"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSY-Hq-5Ub" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
+                                    <rect key="frame" x="40" y="10" width="154.5" height="116"/>
+                                    <color key="backgroundColor" red="1" green="0.2440512786" blue="0.1127923914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="kSY-Hq-5Ub" secondAttribute="height" multiplier="4:3" id="vKb-Sb-pNP"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <state key="normal" title="Exit">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="exitTapped:" destination="4a2-lG-h9Z" eventType="touchUpInside" id="3vN-8L-aZn"/>
+                                    </connections>
+                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eA-y8-9Rn">
-                                    <rect key="frame" x="612.5" y="34" width="141.5" height="48"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <rect key="frame" x="605" y="34" width="156" height="48"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpe-09-xDx">
-                                    <rect key="frame" x="1225" y="30" width="121" height="56"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpe-09-xDx" customClass="RoundRectButton" customModule="ScrapChat_iOS" customModuleProvider="target">
+                                    <rect key="frame" x="1171.5" y="10" width="154.5" height="116"/>
                                     <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Cpe-09-xDx" secondAttribute="height" multiplier="4:3" id="EIl-P0-7Yq"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                     <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
                                     <state key="normal" title="Logout">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="logoutPressed:" destination="4a2-lG-h9Z" eventType="touchUpInside" id="nbs-L5-d0Y"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.037926594500000001" green="0.12880394910000001" blue="0.28521696889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="1" green="0.79934893559999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="Cpe-09-xDx" secondAttribute="trailing" constant="20" id="1sn-J2-z7p"/>
+                                <constraint firstAttribute="trailing" secondItem="Cpe-09-xDx" secondAttribute="trailing" constant="40" id="1sn-J2-z7p"/>
+                                <constraint firstItem="kSY-Hq-5Ub" firstAttribute="leading" secondItem="uwb-oa-AwD" secondAttribute="leading" constant="40" id="9sV-0t-M3h"/>
                                 <constraint firstItem="2eA-y8-9Rn" firstAttribute="centerX" secondItem="uwb-oa-AwD" secondAttribute="centerX" id="Edf-gW-7Es"/>
-                                <constraint firstItem="Cpe-09-xDx" firstAttribute="centerY" secondItem="2eA-y8-9Rn" secondAttribute="centerY" id="HJg-cc-W3G"/>
+                                <constraint firstItem="Cpe-09-xDx" firstAttribute="centerY" secondItem="2eA-y8-9Rn" secondAttribute="centerY" constant="10" id="HJg-cc-W3G"/>
+                                <constraint firstItem="kSY-Hq-5Ub" firstAttribute="height" secondItem="uwb-oa-AwD" secondAttribute="height" id="HwV-oQ-eQd"/>
                                 <constraint firstItem="2eA-y8-9Rn" firstAttribute="centerY" secondItem="uwb-oa-AwD" secondAttribute="centerY" id="PtU-XM-tXm"/>
+                                <constraint firstItem="kSY-Hq-5Ub" firstAttribute="centerY" secondItem="uwb-oa-AwD" secondAttribute="centerY" constant="10" id="UtH-DK-Umf"/>
+                                <constraint firstItem="Cpe-09-xDx" firstAttribute="height" secondItem="uwb-oa-AwD" secondAttribute="height" id="XaR-48-3uG"/>
                             </constraints>
                         </view>
                         <sections>
@@ -722,6 +759,7 @@
     <resources>
         <image name="Mingle-home-button" width="250" height="250"/>
         <image name="calendar" width="512" height="512"/>
+        <image name="chatbeeBOLD" width="1166" height="420"/>
         <image name="friends" width="512" height="512"/>
         <image name="high-five" width="512" height="512"/>
         <image name="round-account" width="512" height="512"/>

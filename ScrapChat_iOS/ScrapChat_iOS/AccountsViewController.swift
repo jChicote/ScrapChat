@@ -90,7 +90,7 @@ class AccountsViewController: UIViewController {
     }
     
     @IBAction func eventsPressed(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "EventsStoryboard", bundle: nil)
+        let storyboard = UIStoryboard(name: "Events Storyboard", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.EventsVC)
         self.navigationController?.pushViewController(vc, animated: false)
     }

@@ -47,6 +47,8 @@
 		F3B6DBBF232CE02300122974 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBBE232CE02300122974 /* EventsViewController.swift */; };
 		F3B6DBC1232CE03A00122974 /* ScrapBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */; };
 		F3B6DBC3232CE04700122974 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6DBC2232CE04700122974 /* FriendsViewController.swift */; };
+		F3C9F0622350148C008E3428 /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C9F0612350148C008E3428 /* EventsManager.swift */; };
+		F3C9F064235014B1008E3428 /* EventsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C9F063235014B1008E3428 /* EventsObject.swift */; };
 		F806D35A2342478000EC47E8 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D3592342478000EC47E8 /* QuestionnaireViewController.swift */; };
 		F806D35C234248A500EC47E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D35B234248A500EC47E8 /* User.swift */; };
 		F81860462344CA1700A4C080 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81860452344CA1600A4C080 /* AccountsViewController.swift */; };
@@ -124,6 +126,8 @@
 		F3B6DBBE232CE02300122974 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		F3B6DBC0232CE03A00122974 /* ScrapBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookViewController.swift; sourceTree = "<group>"; };
 		F3B6DBC2232CE04700122974 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		F3C9F0612350148C008E3428 /* EventsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventsManager.swift; path = ScrapChat_iOS/EventsManager.swift; sourceTree = SOURCE_ROOT; };
+		F3C9F063235014B1008E3428 /* EventsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsObject.swift; sourceTree = "<group>"; };
 		F806D3592342478000EC47E8 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		F806D35B234248A500EC47E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = ScrapChat_iOS/User.swift; sourceTree = SOURCE_ROOT; };
 		F81860452344CA1600A4C080 /* AccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 				F81860472344CA2F00A4C080 /* StorageManager.swift */,
 				F319CDA32348A0F0003787D5 /* PeopleManager.swift */,
 				F319CDA52348A11F003787D5 /* LocalScrapbookManager.swift */,
+				F3C9F0612350148C008E3428 /* EventsManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				F319CD9B2345F8C6003787D5 /* CollageCell.swift */,
 				F319CD9F23462E77003787D5 /* Person.swift */,
 				F319CDA72348A83C003787D5 /* scrapObject.swift */,
+				F3C9F063235014B1008E3428 /* EventsObject.swift */,
 			);
 			path = Designable;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				F3607C7823275A4000503D55 /* AppDelegate.swift in Sources */,
 				B2CB14862336F5F400CD1C9D /* Constants.swift in Sources */,
 				F3B6DBBB232CD07600122974 /* SettingTableView.swift in Sources */,
+				F3C9F0622350148C008E3428 /* EventsManager.swift in Sources */,
 				F319CD9C2345F8C6003787D5 /* CollageCell.swift in Sources */,
 				F86E04F7234871F600D36663 /* VCKeyboardHandler.swift in Sources */,
 				F86E04F323486D2000D36663 /* ActivityIndicatorViewController.swift in Sources */,
@@ -513,6 +520,7 @@
 				F319CDA023462E77003787D5 /* Person.swift in Sources */,
 				F81860462344CA1700A4C080 /* AccountsViewController.swift in Sources */,
 				F319CD9623438A6D003787D5 /* EventCell.swift in Sources */,
+				F3C9F064235014B1008E3428 /* EventsObject.swift in Sources */,
 				F81860482344CA2F00A4C080 /* StorageManager.swift in Sources */,
 				F319CDAA234997A9003787D5 /* FriendRequestViewController.swift in Sources */,
 				F319CD8E234076A4003787D5 /* FriendCollectionView.swift in Sources */,
@@ -719,7 +727,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cpp.ScrapChat-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -738,7 +746,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cpp.ScrapChat-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
