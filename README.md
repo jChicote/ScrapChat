@@ -33,7 +33,7 @@ functionality between video chat and scrap-bookinbng.
 
 ### Prerequisites
 
-> These prerequisites may be outdatted due to stopped maintenance.
+> These prerequisites may be outdated due to stopped maintenance.
 
 ```
 - XCode 11.0
