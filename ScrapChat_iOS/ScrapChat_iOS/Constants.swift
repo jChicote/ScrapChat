@@ -1,0 +1,23 @@
+//
+//  Constants.swift
+//  ScrapChat_iOS
+//
+//  Created by Richard James on 22/9/19.
+//  Copyright © 2019 Dream Team. All rights reserved.
+//
+
+import Foundation
+
+struct Constants {
+    struct Storyboard {
+        static let LoginVC = "Login"
+        static let AccountsVC = "Accounts"
+        static let FriendsVC = "Friends"
+        static let HomeVC = "Home"
+        static let EventsVC = "Events"
+        static let ScrapBookVC = "Scrapbook"
+        static let MainCallScreen = "MainCall"
+        static let SettingVC = "Settings"
+        static let ChatVC = "ChatLoader"
+    }
+}
